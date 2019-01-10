@@ -57,10 +57,7 @@ class DayCollectionViewController: UICollectionViewController {
         
         cell.dayNumber.text = String(day!.dayNum)
         cell.dayName.text = day!.dayInWeek
-        cell.backgroundColor = .black
-        
-        print(cell)
-        
+
         return cell
     }
     

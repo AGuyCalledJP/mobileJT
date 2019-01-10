@@ -17,13 +17,13 @@ class EventTableViewController: UITableViewController {
         super.viewDidLoad()
         
         navigationItem.leftBarButtonItem = editButtonItem
-        
-        if let savedEvents = loadEvents() {
-            events += savedEvents
-        }
-        else {
-            loadSampleEvents()
-        }
+        loadSampleEvents()
+//        if let savedEvents = loadEvents() {
+//            events += savedEvents
+//        }
+//        else {
+//            loadSampleEvents()
+//        }
     }
 
     // MARK: - Table view data source
@@ -110,7 +110,7 @@ class EventTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
         super.prepare(for: segue, sender: sender)
         switch(segue.identifier ?? "") {
-        case "AddItem":
+        case "b":
             os_log("Adding a new meal.", log: OSLog.default, type: .debug)
         case "ShowDetail":
             guard let eventDetailViewController = segue.destination as? EventViewController else {

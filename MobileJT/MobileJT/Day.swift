@@ -13,6 +13,7 @@ import os.log
 class Day: NSObject, NSCoding {
     var dayNum: Int
     var dayInWeek: String
+    var events = [Event?]()
     
     struct PropertyKey {
         static let dayNum = "dayNum"

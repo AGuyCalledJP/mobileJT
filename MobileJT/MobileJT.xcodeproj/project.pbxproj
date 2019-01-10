@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C543009C21E68F3100475412 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C543009B21E68F3100475412 /* Main.storyboard */; };
 		C551DC0621E447570041537D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C551DC0521E447570041537D /* AppDelegate.swift */; };
 		C551DC0821E447570041537D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C551DC0721E447570041537D /* ViewController.swift */; };
 		C551DC0D21E447580041537D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C551DC0C21E447580041537D /* Assets.xcassets */; };
@@ -23,7 +24,6 @@
 		C551DC4821E447BC0041537D /* EventTableViewControllerCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C551DC3C21E447BC0041537D /* EventTableViewControllerCollectionViewController.swift */; };
 		C551DC4921E447BC0041537D /* DayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C551DC3D21E447BC0041537D /* DayTableViewCell.swift */; };
 		C551DC4A21E447BC0041537D /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C551DC3E21E447BC0041537D /* EventViewController.swift */; };
-		C551DC4D21E447F70041537D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C551DC4B21E447F70041537D /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C543009B21E68F3100475412 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C551DC0221E447570041537D /* MobileJT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileJT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C551DC0521E447570041537D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C551DC0721E447570041537D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,7 +67,6 @@
 		C551DC3C21E447BC0041537D /* EventTableViewControllerCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewControllerCollectionViewController.swift; sourceTree = "<group>"; };
 		C551DC3D21E447BC0041537D /* DayTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayTableViewCell.swift; sourceTree = "<group>"; };
 		C551DC3E21E447BC0041537D /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
-		C551DC4C21E447F70041537D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ../../../MobileJT/MobileJT/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +129,7 @@
 				C551DC3E21E447BC0041537D /* EventViewController.swift */,
 				C551DC0521E447570041537D /* AppDelegate.swift */,
 				C551DC0721E447570041537D /* ViewController.swift */,
-				C551DC4B21E447F70041537D /* Main.storyboard */,
+				C543009B21E68F3100475412 /* Main.storyboard */,
 				C551DC0C21E447580041537D /* Assets.xcassets */,
 				C551DC0E21E447580041537D /* LaunchScreen.storyboard */,
 				C551DC1121E447580041537D /* Info.plist */,
@@ -259,7 +259,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C551DC4D21E447F70041537D /* Main.storyboard in Resources */,
+				C543009C21E68F3100475412 /* Main.storyboard in Resources */,
 				C551DC1021E447580041537D /* LaunchScreen.storyboard in Resources */,
 				C551DC0D21E447580041537D /* Assets.xcassets in Resources */,
 			);
@@ -339,14 +339,6 @@
 				C551DC0F21E447580041537D /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		C551DC4B21E447F70041537D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C551DC4C21E447F70041537D /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

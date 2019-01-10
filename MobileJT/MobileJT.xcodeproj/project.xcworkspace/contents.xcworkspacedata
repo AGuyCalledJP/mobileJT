@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../../../MobileJT/MobileJT/Base.lproj/Main.storyboard">
-   </FileRef>
-   <FileRef
       location = "self:MobileJT.xcodeproj">
    </FileRef>
 </Workspace>
