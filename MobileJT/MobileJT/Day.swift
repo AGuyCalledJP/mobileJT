@@ -14,17 +14,19 @@ class Day: NSObject, NSCoding {
     var dayNum: Int
     var dayInWeek: String
     var events = [Event?]()
+    var month: String
     
     struct PropertyKey {
         static let dayNum = "dayNum"
         static let dayInWeek = "dayInWeek"
         static let events = "events"
+        static let month = "month"
     }
     
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
     static let ArchiveURL = DocumentsDirectory.appendingPathComponent("events")
     
-    init?(_ dayNum: Int,_ dayInWeek:String,_ events: [Event?]) {
+    init?(_ dayNum: Int,_ dayInWeek:String,_ events: [Event?], _ month: String) {
         guard dayNum > 0 else {
             return nil
         }
@@ -35,6 +37,7 @@ class Day: NSObject, NSCoding {
         self.dayNum = dayNum
         self.dayInWeek = dayInWeek
         self.events = events
+        self.month = month
     }
     
     //Encoding
@@ -42,6 +45,7 @@ class Day: NSObject, NSCoding {
         aCoder.encode(dayNum, forKey: PropertyKey.dayNum)
         aCoder.encode(dayInWeek, forKey: PropertyKey.dayInWeek)
         aCoder.encode(events, forKey: PropertyKey.events)
+        aCoder.encode(month, forKey: PropertyKey.month)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
@@ -55,7 +59,9 @@ class Day: NSObject, NSCoding {
         
         let events = aDecoder.decodeObject(forKey: PropertyKey.events) as? [Event?]
         
+        let month = aDecoder.decodeObject(forKey: PropertyKey.month) as? String
+        
         // Must call designated initializer.
-        self.init(dayNum, dayInWeek!, events!)
+        self.init(dayNum, dayInWeek!, events!, month!)
     }
 }

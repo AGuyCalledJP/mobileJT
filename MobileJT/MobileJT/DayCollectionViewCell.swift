@@ -13,7 +13,7 @@ class DayCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var dayNumber: UILabel!
     @IBOutlet weak var dayName: UILabel!
-       
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

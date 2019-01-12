@@ -11,53 +11,87 @@ import UIKit
 class DayCollectionViewController: UICollectionViewController {
     
     var days = [Day?]()
-
+    var month = Month()
+    var currentMonth = 0
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadSampleDays()
+        self.month = loadMonth()
+        self.title = month?.monthName
+        self.days = (month?.days)!
     }
     
-    public func loadSampleDays() {
-        let e1 = Event("Optimization", 9, 10, true, "Thompson")
-        let e2 = Event("Capstone", 10, 11, true, "Thompson")
-        let e3 = Event("Operating Systems", 14, 15, true, "Thompson")
-        var m = [Event]()
-        m.append(e1!)
-        m.append(e2!)
-        m.append(e3!)
-        let day1 = Day(1,"Monday",m)
-        let e4 = Event("Optimization", 9, 10, true, "Thompson")
-        var t = [Event]()
-        t.append(e4!)
-        let day2 = Day(2,"Tuesday",t)
-        var w = [Event]()
-        w.append(e1!)
-        w.append(e2!)
-        w.append(e3!)
-        let day3 = Day(3,"Wednesday",w)
-        var th = [Event]()
-        th.append(e4!)
-        let day4 = Day(4,"Thursday",th)
-        var f = [Event]()
-        f.append(e1!)
-        f.append(e2!)
-        f.append(e3!)
-        let day5 = Day(5,"Friday",f)
-        let weekend = Event("Hand on Cock", 0, 23, true, "Couch")
-        var s = [Event]()
-        s.append(weekend!)
-        let day6 = Day(6,"Saturday",s)
-        var s2 = [Event]()
-        s2.append(weekend!)
-        let day7 = Day(7,"Sunday",s2)
-        days.append(day1)
-        days.append(day2)
-        days.append(day3)
-        days.append(day4)
-        days.append(day5)
-        days.append(day6)
-        days.append(day7)
+    //Change this from loading days to loading a month of days at a time
+    func loadMonth() -> Month{
+        print(currentMonth)
+        let month = Month(currentMonth)
+        return month!
+//        let e1 = Event("Optimization", 9, 10, true, "Thompson")
+//        let e2 = Event("Capstone", 10, 11, true, "Thompson")
+//        let e3 = Event("Operating Systems", 14, 15, true, "Thompson")
+//        var m = [Event]()
+//        m.append(e1!)
+//        m.append(e2!)
+//        m.append(e3!)
+//        let day1 = Day(1,"Monday",m)
+//        let e4 = Event("Optimization", 9, 10, true, "Thompson")
+//        var t = [Event]()
+//        t.append(e4!)
+//        let day2 = Day(2,"Tuesday",t)
+//        var w = [Event]()
+//        w.append(e1!)
+//        w.append(e2!)
+//        w.append(e3!)
+//        let day3 = Day(3,"Wednesday",w)
+//        var th = [Event]()
+//        th.append(e4!)
+//        let day4 = Day(4,"Thursday",th)
+//        var f = [Event]()
+//        f.append(e1!)
+//        f.append(e2!)
+//        f.append(e3!)
+//        let day5 = Day(5,"Friday",f)
+//        let weekend = Event("Hand on Cock", 0, 23, true, "Couch")
+//        var s = [Event]()
+//        s.append(weekend!)
+//        let day6 = Day(6,"Saturday",s)
+//        var s2 = [Event]()
+//        s2.append(weekend!)
+//        let day7 = Day(7,"Sunday",s2)
+//        days.append(day1)
+//        days.append(day2)
+//        days.append(day3)
+//        days.append(day4)
+//        days.append(day5)
+//        days.append(day6)
+//        days.append(day7)
+        
     }
+    
+    
+    @IBAction func monthDown(_ sender: Any) {
+        if currentMonth > 0 {
+            currentMonth -= 1
+        }
+        else {
+            currentMonth = 11
+        }
+        reloadData()
+        self.collectionView.reloadData()
+    }
+    
+    @IBAction func monthUp(_ sender: Any) {
+        if currentMonth < 11 {
+            currentMonth += 1
+        }
+        else {
+            currentMonth = 0
+        }
+        reloadData()
+        self.collectionView.reloadData()
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -82,10 +116,15 @@ class DayCollectionViewController: UICollectionViewController {
         
         cell.dayNumber.text = String(day!.dayNum)
         cell.dayName.text = day!.dayInWeek
-
+        
         return cell
     }
     
+    func reloadData() {
+        self.month = loadMonth()
+        self.title = month?.monthName
+        self.days = (month?.days)!
+    }
 
     /*
     // Override to support conditional editing of the table view.

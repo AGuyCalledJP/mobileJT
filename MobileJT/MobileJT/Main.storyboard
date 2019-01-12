@@ -196,7 +196,7 @@
             </objects>
             <point key="canvasLocation" x="2441" y="402"/>
         </scene>
-        <!--Calendar-->
+        <!--Day Collection View Controller-->
         <scene sceneID="cxF-It-RBJ">
             <objects>
                 <collectionViewController id="D5h-ih-7KL" customClass="DayCollectionViewController" customModule="MobileJT" customModuleProvider="target" sceneMemberID="viewController">
@@ -246,13 +246,23 @@
                             <outlet property="delegate" destination="D5h-ih-7KL" id="V48-bt-dvf"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Calendar" id="lNW-gC-HY6">
+                    <navigationItem key="navigationItem" id="lNW-gC-HY6">
                         <barButtonItem key="backBarButtonItem" title="Back" id="ya9-8b-ibx"/>
+                        <barButtonItem key="leftBarButtonItem" title="Prev Month" id="Gdc-y8-FNP">
+                            <connections>
+                                <action selector="monthDown:" destination="D5h-ih-7KL" id="WXj-qx-g2b"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Next Month" id="4v0-rg-ty1">
+                            <connections>
+                                <action selector="monthUp:" destination="D5h-ih-7KL" id="WIC-im-sAt"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btj-bB-aJW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-194.40000000000001" y="15.742128935532236"/>
+            <point key="canvasLocation" x="-194.40000000000001" y="-8.5457271364317844"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Thl-o4-nfT">
@@ -268,7 +278,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vpg-Mc-cY5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1217" y="385"/>
+            <point key="canvasLocation" x="-1204" y="-8"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
