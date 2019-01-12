@@ -14,6 +14,7 @@ class EventTableViewController: UITableViewController {
     public var events = [Event]()
 
     override func viewDidLoad() {
+        self.navigationItem.backBarButtonItem = self.navigationItem.leftBarButtonItem
         super.viewDidLoad()
     }
 
@@ -91,7 +92,7 @@ class EventTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
         super.prepare(for: segue, sender: sender)
         switch(segue.identifier ?? "") {
-        case "b":
+        case "AddItem":
             os_log("Adding a new meal.", log: OSLog.default, type: .debug)
         case "ShowDetail":
             guard let eventDetailViewController = segue.destination as? EventViewController else {
