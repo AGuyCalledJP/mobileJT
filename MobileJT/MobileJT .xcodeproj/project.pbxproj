@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2D97CC1021E93D1F0019C4C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D97CC0E21E93D1F0019C4C1 /* Main.storyboard */; };
+		2DE531A521EA85B000BC0D5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DE531A421EA85B000BC0D5A /* Main.storyboard */; };
 		C551DC0621E447570041537D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C551DC0521E447570041537D /* AppDelegate.swift */; };
 		C551DC0821E447570041537D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C551DC0721E447570041537D /* ViewController.swift */; };
 		C551DC0D21E447580041537D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C551DC0C21E447580041537D /* Assets.xcassets */; };
@@ -42,7 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2D97CC0F21E93D1F0019C4C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ../../../WorkingBase/MobileJT/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2DE531A421EA85B000BC0D5A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C551DC0221E447570041537D /* MobileJT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileJT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C551DC0521E447570041537D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C551DC0721E447570041537D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -113,7 +113,7 @@
 		C551DC0421E447570041537D /* MobileJT */ = {
 			isa = PBXGroup;
 			children = (
-				2D97CC0E21E93D1F0019C4C1 /* Main.storyboard */,
+				2DE531A421EA85B000BC0D5A /* Main.storyboard */,
 				C551DC3421E447BC0041537D /* Day.swift */,
 				C551DC3321E447BC0041537D /* DayCollectionReusableCell.swift */,
 				C551DC3721E447BC0041537D /* DayCollectionViewCell.swift */,
@@ -228,7 +228,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C551DBFD21E447570041537D /* Build configuration list for PBXProject "MobileJT 2" */;
+			buildConfigurationList = C551DBFD21E447570041537D /* Build configuration list for PBXProject "MobileJT " */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -253,9 +253,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DE531A521EA85B000BC0D5A /* Main.storyboard in Resources */,
 				C551DC1021E447580041537D /* LaunchScreen.storyboard in Resources */,
 				C551DC0D21E447580041537D /* Assets.xcassets in Resources */,
-				2D97CC1021E93D1F0019C4C1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,14 +325,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2D97CC0E21E93D1F0019C4C1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2D97CC0F21E93D1F0019C4C1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C551DC0E21E447580041537D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -575,7 +567,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C551DBFD21E447570041537D /* Build configuration list for PBXProject "MobileJT 2" */ = {
+		C551DBFD21E447570041537D /* Build configuration list for PBXProject "MobileJT " */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C551DC2821E447580041537D /* Debug */,
