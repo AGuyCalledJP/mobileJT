@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C543009C21E68F3100475412 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C543009B21E68F3100475412 /* Main.storyboard */; };
+		2D97CC1021E93D1F0019C4C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D97CC0E21E93D1F0019C4C1 /* Main.storyboard */; };
 		C551DC0621E447570041537D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C551DC0521E447570041537D /* AppDelegate.swift */; };
 		C551DC0821E447570041537D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C551DC0721E447570041537D /* ViewController.swift */; };
 		C551DC0D21E447580041537D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C551DC0C21E447580041537D /* Assets.xcassets */; };
@@ -21,8 +21,6 @@
 		C551DC4421E447BC0041537D /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C551DC3821E447BC0041537D /* EventTableViewController.swift */; };
 		C551DC4521E447BC0041537D /* DayCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C551DC3921E447BC0041537D /* DayCollectionViewController.swift */; };
 		C551DC4721E447BC0041537D /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = C551DC3B21E447BC0041537D /* Event.swift */; };
-		C551DC4821E447BC0041537D /* EventTableViewControllerCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C551DC3C21E447BC0041537D /* EventTableViewControllerCollectionViewController.swift */; };
-		C551DC4921E447BC0041537D /* DayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C551DC3D21E447BC0041537D /* DayTableViewCell.swift */; };
 		C551DC4A21E447BC0041537D /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C551DC3E21E447BC0041537D /* EventViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,7 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C543009B21E68F3100475412 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		2D97CC0F21E93D1F0019C4C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ../../../WorkingBase/MobileJT/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C551DC0221E447570041537D /* MobileJT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileJT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C551DC0521E447570041537D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C551DC0721E447570041537D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,8 +62,6 @@
 		C551DC3821E447BC0041537D /* EventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewController.swift; sourceTree = "<group>"; };
 		C551DC3921E447BC0041537D /* DayCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayCollectionViewController.swift; sourceTree = "<group>"; };
 		C551DC3B21E447BC0041537D /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		C551DC3C21E447BC0041537D /* EventTableViewControllerCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewControllerCollectionViewController.swift; sourceTree = "<group>"; };
-		C551DC3D21E447BC0041537D /* DayTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayTableViewCell.swift; sourceTree = "<group>"; };
 		C551DC3E21E447BC0041537D /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,19 +113,17 @@
 		C551DC0421E447570041537D /* MobileJT */ = {
 			isa = PBXGroup;
 			children = (
+				2D97CC0E21E93D1F0019C4C1 /* Main.storyboard */,
 				C551DC3421E447BC0041537D /* Day.swift */,
 				C551DC3321E447BC0041537D /* DayCollectionReusableCell.swift */,
 				C551DC3721E447BC0041537D /* DayCollectionViewCell.swift */,
 				C551DC3921E447BC0041537D /* DayCollectionViewController.swift */,
-				C551DC3D21E447BC0041537D /* DayTableViewCell.swift */,
 				C551DC3B21E447BC0041537D /* Event.swift */,
 				C551DC3621E447BC0041537D /* EventTableViewCell.swift */,
 				C551DC3821E447BC0041537D /* EventTableViewController.swift */,
-				C551DC3C21E447BC0041537D /* EventTableViewControllerCollectionViewController.swift */,
 				C551DC3E21E447BC0041537D /* EventViewController.swift */,
 				C551DC0521E447570041537D /* AppDelegate.swift */,
 				C551DC0721E447570041537D /* ViewController.swift */,
-				C543009B21E68F3100475412 /* Main.storyboard */,
 				C551DC0C21E447580041537D /* Assets.xcassets */,
 				C551DC0E21E447580041537D /* LaunchScreen.storyboard */,
 				C551DC1121E447580041537D /* Info.plist */,
@@ -234,7 +228,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C551DBFD21E447570041537D /* Build configuration list for PBXProject "MobileJT" */;
+			buildConfigurationList = C551DBFD21E447570041537D /* Build configuration list for PBXProject "MobileJT 2" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -259,9 +253,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C543009C21E68F3100475412 /* Main.storyboard in Resources */,
 				C551DC1021E447580041537D /* LaunchScreen.storyboard in Resources */,
 				C551DC0D21E447580041537D /* Assets.xcassets in Resources */,
+				2D97CC1021E93D1F0019C4C1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,8 +288,6 @@
 				C551DC4321E447BC0041537D /* DayCollectionViewCell.swift in Sources */,
 				C551DC4021E447BC0041537D /* Day.swift in Sources */,
 				C551DC4A21E447BC0041537D /* EventViewController.swift in Sources */,
-				C551DC4921E447BC0041537D /* DayTableViewCell.swift in Sources */,
-				C551DC4821E447BC0041537D /* EventTableViewControllerCollectionViewController.swift in Sources */,
 				C551DC4521E447BC0041537D /* DayCollectionViewController.swift in Sources */,
 				C551DC0621E447570041537D /* AppDelegate.swift in Sources */,
 			);
@@ -333,6 +325,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		2D97CC0E21E93D1F0019C4C1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2D97CC0F21E93D1F0019C4C1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		C551DC0E21E447580041537D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -575,7 +575,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C551DBFD21E447570041537D /* Build configuration list for PBXProject "MobileJT" */ = {
+		C551DBFD21E447570041537D /* Build configuration list for PBXProject "MobileJT 2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C551DC2821E447580041537D /* Debug */,

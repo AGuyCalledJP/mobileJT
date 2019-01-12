@@ -24,7 +24,7 @@ class Day: NSObject, NSCoding {
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
     static let ArchiveURL = DocumentsDirectory.appendingPathComponent("events")
     
-    init?(_ dayNum: Int,_ dayInWeek:String,_ events: [Event?]) {
+    init?(_ dayNum: Int,_ dayInWeek:String, _ events: [Event?]) {
         guard dayNum > 0 else {
             return nil
         }
@@ -53,9 +53,9 @@ class Day: NSObject, NSCoding {
         
         let dayInWeek = aDecoder.decodeObject(forKey: PropertyKey.dayInWeek) as? String
         
-        let events = aDecoder.decodeObject(forKey: PropertyKey.events) as? [Event?]
+        let events = aDecoder.decodeObject(forKey: PropertyKey.events) as! [Event]
         
         // Must call designated initializer.
-        self.init(dayNum, dayInWeek!, events!)
+        self.init(dayNum, dayInWeek!, events)
     }
 }

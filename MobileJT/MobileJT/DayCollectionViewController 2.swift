@@ -18,38 +18,50 @@ class DayCollectionViewController: UICollectionViewController {
     }
     
     public func loadSampleDays() {
-        let e1 = Event("Optimization", 9, 10, true, "Thompson")
-        let e2 = Event("Capstone", 10, 11, true, "Thompson")
-        let e3 = Event("Operating Systems", 14, 15, true, "Thompson")
-        var m = [Event]()
-        m.append(e1!)
-        m.append(e2!)
-        m.append(e3!)
-        let day1 = Day(1,"Monday",m)
-        let e4 = Event("Optimization", 9, 10, true, "Thompson")
-        var t = [Event]()
-        t.append(e4!)
-        let day2 = Day(2,"Tuesday",t)
-        var w = [Event]()
-        w.append(e1!)
-        w.append(e2!)
-        w.append(e3!)
-        let day3 = Day(3,"Wednesday",w)
-        var th = [Event]()
-        th.append(e4!)
-        let day4 = Day(4,"Thursday",th)
-        var f = [Event]()
-        f.append(e1!)
-        f.append(e2!)
-        f.append(e3!)
-        let day5 = Day(5,"Friday",f)
-        let weekend = Event("Hand on Cock", 0, 23, true, "Couch")
-        var s = [Event]()
-        s.append(weekend!)
-        let day6 = Day(6,"Saturday",s)
-        var s2 = [Event]()
-        s2.append(weekend!)
-        let day7 = Day(7,"Sunday",s2)
+        let m1 = Event("Optimization", 9, 10, true, "Thompson 391")!
+        let m2 = Event("Capstone", 12, 13, true, "Thompson 409")!
+        let m3 = Event("Operating Systems", 12, 14, true, "Thompson 409")!
+        var ev1 = [Event?]()
+        ev1.append(m1)
+        ev1.append(m2)
+        ev1.append(m3)
+        let day1 = Day(1,"Monday",ev1 as! [Event])
+        let t1 = Event("Optimization", 10, 11, true, "Thompson 391")!
+        var ev2 = [Event?]()
+        ev2.append(t1)
+        let day2 = Day(2,"Tuesday", ev2 as! [Event])
+        let w1 = Event("Optimization", 9, 10, true, "Thompson 391")!
+        let w2 = Event("Capstone", 12, 13, true, "Thompson 409")!
+        let w3 = Event("Operating Systems", 12, 14, true, "Thompson 409")!
+        var ev3 = [Event?]()
+        ev3.append(w1)
+        ev3.append(w2)
+        ev3.append(w3)
+        let day3 = Day(3,"Wednesday", ev3 as! [Event])
+        let th1 = Event("Optimization", 10, 11, true, "Thompson 391")!
+        let th2 = Event("Optimization", 11, 13, true, "Thompson 391")!
+        let th3 = Event("Optimization", 13, 15, true, "Thompson 391")!
+        var ev4 = [Event?]()
+        ev4.append(th1)
+        ev4.append(th2)
+        ev4.append(th3)
+        let day4 = Day(4,"Thursday", ev4 as! [Event])
+        let f1 = Event("Optimization", 9, 10, true, "Thompson 391")!
+        let f2 = Event("Capstone", 12, 13, true, "Thompson 409")!
+        let f3 = Event("Operating Systems", 12, 14, true, "Thompson 409")!
+        var ev5 = [Event?]()
+        ev5.append(f1)
+        ev5.append(f2)
+        ev5.append(f3)
+        let day5 = Day(5,"Friday",ev5 as! [Event])
+        let s1 = Event("Hand on cock", 0, 23, true, "Couch")!
+        var ev6 = [Event?]()
+        ev6.append(s1)
+        let day6 = Day(6,"Saturday",ev6)
+        let s2 = Event("Hand on cock", 0, 23, true, "Couch")!
+        var ev7 = [Event?]()
+        ev7.append(s2)
+        let day7 = Day(7,"Sunday",ev7)
         days.append(day1)
         days.append(day2)
         days.append(day3)
@@ -122,6 +134,7 @@ class DayCollectionViewController: UICollectionViewController {
     }
     */
 
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -131,23 +144,22 @@ class DayCollectionViewController: UICollectionViewController {
         super.prepare(for: segue, sender: sender)
         switch(segue.identifier ?? "") {
         case "ShowDetail":
-            guard let dayDetailTableViewController = segue.destination as? EventTableViewController else {
-                fatalError("Unexpected destination: \(segue.destination)")
+            print("moving down a layer")
+            guard let eventsForTheDay = segue.destination as? EventTableViewController else {
+                fatalError("Shits wack yo")
             }
-            
             guard let selectedDayCell = sender as? DayCollectionViewCell else {
                 fatalError("Unexpected sender: \(sender!)")
             }
-            
             guard let indexPath = collectionView.indexPath(for: selectedDayCell) else {
                 fatalError("The selected cell is not being displayed by the table")
             }
-            
             let selectedDay = days[indexPath.row]
-            dayDetailTableViewController.events = selectedDay!.events as! [Event]
+            eventsForTheDay.events = (selectedDay?.events)! as! [Event]
         default:
             fatalError("Unexpected Segue Identifier; \(segue.identifier!)")
         }
+        
     }
 
 }

@@ -11,15 +11,18 @@ import os.log
 
 class EventTableViewController: UITableViewController {
     
-    public var events = [Event]()
+    var events = [Event]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.leftBarButtonItem = editButtonItem
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
+        
         return 1
     }
 
@@ -111,10 +114,6 @@ class EventTableViewController: UITableViewController {
         default:
             fatalError("Unexpected Segue Identifier; \(segue.identifier!)")
         }
-    }
-    
-    @IBAction func back(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
     }
     
     private func saveEvents() {
