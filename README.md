@@ -3,9 +3,8 @@ What is MobileJT
 The goal of mobileJT is to create a geolocation service to aide in assuring the attendance of players to classes. 
 
 TO DO:
-    - Get Framework off ground, establishing base means for a scheduling application with a working database that offers secure storage of informaiton
-        + Design 
-        + Implement
+    - Add event function which links events to specific dates of the year
+    - Allow spectified events to be recurring
 
 End Goal:
 We hope to make a task organizational application that helps a student athlete go about their day in an organized and focused manner. A student athlete using this application should be able to:

@@ -14,8 +14,8 @@ class EventTableViewController: UITableViewController {
     public var events = [Event]()
 
     override func viewDidLoad() {
-        self.navigationItem.backBarButtonItem = self.navigationItem.leftBarButtonItem
-        super.viewDidLoad()
+    
+    super.viewDidLoad()
     }
 
     // MARK: - Table view data source
