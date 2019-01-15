@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import os.log
 
 class DayCollectionViewController: UICollectionViewController {
     
@@ -14,6 +15,9 @@ class DayCollectionViewController: UICollectionViewController {
     var month = Month()
     var currentMonth = 0
     var currentYear = 2019
+    var allEvents = [Event?]()
+    @IBOutlet weak var addEvent: UIBarButtonItem!
+    //    static var eventManager = EventManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,12 +72,10 @@ class DayCollectionViewController: UICollectionViewController {
     }
     
     // MARK: - Table view data source
-
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    //2
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return days.count
     }
@@ -99,8 +101,6 @@ class DayCollectionViewController: UICollectionViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
         super.prepare(for: segue, sender: sender)
         switch(segue.identifier ?? "") {
         case "ShowDetail":
@@ -118,10 +118,38 @@ class DayCollectionViewController: UICollectionViewController {
             
             let selectedDay = days[indexPath.row]
             dayDetailTableViewController.events = selectedDay!.events as! [Event]
+        case "AddItem":
+            print("adding item")
         default:
             fatalError("Unexpected Segue Identifier; \(segue.identifier!)")
         }
     }
+    
+    @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.source as? AddEventViewController, let event = sourceViewController.event {
+            
+            allEvents.append(event)
+            // Save the meals.
+            saveEvents()
+        }
+    }
+    
+    
+    
+    private func saveEvents() {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(allEvents, toFile: Event.ArchiveURL.path)
+        if isSuccessfulSave {
+            os_log("Recurring events saved.", log: OSLog.default, type: .debug)
+        } else {
+            os_log("Failed to save events...", log: OSLog.default, type: .error)
+        }
+        print(allEvents)
+    }
+    
+    private func loadEvents() -> [Event]? {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: Event.ArchiveURL.path) as? [Event]
+    }
+
 
     /*
      // Override to support conditional editing of the table view.

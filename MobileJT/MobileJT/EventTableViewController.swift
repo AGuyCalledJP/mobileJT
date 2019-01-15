@@ -62,27 +62,27 @@ class EventTableViewController: UITableViewController {
                 events.append(event)
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
             }
-            saveEvents()
+//            saveEvents()
         }
     }
 
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            events.remove(at: indexPath.row)
-            saveEvents()
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
+//    // Override to support conditional editing of the table view.
+//    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+//        // Return false if you do not want the specified item to be editable.
+//        return true
+//    }
+//
+//    // Override to support editing the table view.
+//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//            // Delete the row from the data source
+//            events.remove(at: indexPath.row)
+//            saveEvents()
+//            tableView.deleteRows(at: [indexPath], with: .fade)
+//        } else if editingStyle == .insert {
+//            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+//        }
+//    }
 
     // MARK: - Navigation
 
@@ -92,8 +92,8 @@ class EventTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
         super.prepare(for: segue, sender: sender)
         switch(segue.identifier ?? "") {
-        case "AddItem":
-            os_log("Adding a new meal.", log: OSLog.default, type: .debug)
+//        case "AddItem":
+//            os_log("Adding a new meal.", log: OSLog.default, type: .debug)
         case "ShowDetail":
             guard let eventDetailViewController = segue.destination as? EventViewController else {
                 fatalError("Unexpected destination: \(segue.destination)")
@@ -116,18 +116,5 @@ class EventTableViewController: UITableViewController {
     
     @IBAction func back(_ sender: Any) {
         navigationController?.popViewController(animated: true)
-    }
-    
-    private func saveEvents() {
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(events, toFile: Event.ArchiveURL.path)
-        if isSuccessfulSave {
-            os_log("Meals successfully saved.", log: OSLog.default, type: .debug)
-        } else {
-            os_log("Failed to save meals...", log: OSLog.default, type: .error)
-        }
-    }
-    
-    private func loadEvents() -> [Event]? {
-        return NSKeyedUnarchiver.unarchiveObject(withFile: Event.ArchiveURL.path) as? [Event]
     }
 }
