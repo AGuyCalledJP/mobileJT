@@ -62,8 +62,6 @@ class Month {
         //Fill calendar
         for numDays in 0...numDays[month] - 1 {
             var events = [Event?]()
-            let e = Event("Holder", 9, 12, true, "Thompson", month, day)
-            events.append(e)
             let d = Day(numDays + 1, dayNames[day], events, monthName)
             if (day < 6) {
                 day += 1

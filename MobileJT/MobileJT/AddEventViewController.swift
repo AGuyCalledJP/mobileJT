@@ -18,7 +18,12 @@ class AddEventViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var repeatSwitch: UISwitch!
     @IBOutlet weak var cancel: UIBarButtonItem!
     @IBOutlet weak var save: UIBarButtonItem!
-
+    @IBOutlet weak var selectDate: UILabel!
+    @IBOutlet weak var startTimeLabel: UILabel!
+    @IBOutlet weak var endTimeLabel: UILabel!
+    @IBOutlet weak var startTime: UIDatePicker!
+    @IBOutlet weak var endTime: UIDatePicker!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         repeatLabel.text = "Repeat?"
@@ -73,9 +78,25 @@ class AddEventViewController: UIViewController, UITextFieldDelegate {
         let loc = location.text
         let ongoing = repeatSwitch.isOn
         let date = datePicker.date
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy"
+        let year: String = dateFormatter.string(from: date)
+        dateFormatter.dateFormat = "MM"
+        let month: String = dateFormatter.string(from: date)
+        dateFormatter.dateFormat = "dd"
+        let day: String = dateFormatter.string(from: date)
+        dateFormatter.dateFormat = "HH"
+        let start = startTime.date
+        let timeBegin: String = dateFormatter.string(from: start)
+        let end = endTime.date
+        let timeEnd: String = dateFormatter.string(from: end)
         print("date")
-        print(date)
+        let y = Int(year)
+        let m = Int(month)
+        let d = Int(day)
+        let tB = Int(timeBegin)
+        let tE = Int(timeEnd)
         
-        self.event = Event(name!, 0, 1, ongoing, loc!,0,1)
+        self.event = Event(name!, tB!, tE!, ongoing, loc!,m! , y!, d!)
     }
 }

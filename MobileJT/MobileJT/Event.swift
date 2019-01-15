@@ -19,6 +19,7 @@ class Event: NSObject, NSCoding {
     var location: String
     var month: Int
     var year: Int
+    var day: Int
     
     struct PropertyKey {
         static let name = "name"
@@ -28,12 +29,13 @@ class Event: NSObject, NSCoding {
         static let location = "location"
         static let month = "month"
         static let year = "year"
+        static let day = "day"
     }
     
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
     static let ArchiveURL = DocumentsDirectory.appendingPathComponent("events")
     
-    init?(_ name: String,_ startTime: Int,_ endTime: Int,_ ongoing: Bool,_ location: String,_ month:Int,_ year:Int) {
+    init?(_ name: String,_ startTime: Int,_ endTime: Int,_ ongoing: Bool,_ location: String,_ month:Int,_ year:Int, _ day:Int) {
         guard !name.isEmpty else {
             return nil
         }
@@ -69,6 +71,7 @@ class Event: NSObject, NSCoding {
             self.month = month
             self.year = year
         }
+        self.day = day
     }
     
     init?(_ name:String) {
@@ -82,6 +85,7 @@ class Event: NSObject, NSCoding {
             self.location = ""
             self.month = -1
             self.year = -1
+            self.day = 0
         }
         else {
             return nil
@@ -98,6 +102,7 @@ class Event: NSObject, NSCoding {
         aCoder.encode(location, forKey: PropertyKey.location)
         aCoder.encode(month, forKey: PropertyKey.month)
         aCoder.encode(year, forKey: PropertyKey.year)
+        aCoder.encode(day, forKey: PropertyKey.day)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
@@ -113,10 +118,11 @@ class Event: NSObject, NSCoding {
         let location = aDecoder.decodeObject(forKey: PropertyKey.location) as? String
         let month = aDecoder.decodeInteger(forKey: PropertyKey.month)
         let year = aDecoder.decodeInteger(forKey: PropertyKey.year)
+        let day = aDecoder.decodeInteger(forKey: PropertyKey.day)
 
 
         
         // Must call designated initializer.
-        self.init(name, startTime, endTime, ongoing, location!,month,year)
+        self.init(name, startTime, endTime, ongoing, location!, month, year, day)
     }
 }
