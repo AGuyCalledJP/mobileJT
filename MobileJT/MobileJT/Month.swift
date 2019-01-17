@@ -15,6 +15,7 @@ class Month {
     var daysInMonth:Int
     var days:[Day]
     var year:Int
+    var eventManager:EventManager
     
     let months = ["January","February","March","April","May","June",
                   "July","August","September","October","November", "December"]
@@ -25,12 +26,13 @@ class Month {
     
     let calcMVals = [11,12,1,2,3,4,5,6,7,8,9,10]
     
-    init?(_ month:Int, _ year:Int) {
+    init?(_ month:Int, _ year:Int,_ events:[Event?]) {
         //Set some values
         self.month = month
         self.monthName = months[month]
         self.daysInMonth = numDays[month]
         self.year = year
+        self.eventManager = EventManager(events)!
         //Find first day
         let k = 0
         let m = calcMVals[month]
@@ -57,21 +59,38 @@ class Month {
         else {
             day = ((f % 7) + 7) % 7
         }
-        print(day)
         var days = [Day]()
         //Fill calendar
+        let singles = eventManager.getSingleMonth(month + 1)
+        let repeats = eventManager.getRepeatingMonth(month + 1)
+        print(months[month])
+        print(singles)
+        print(repeats)
         for numDays in 0...numDays[month] - 1 {
-            var events = [Event?]()
-            let e = Event("Holder", 9, 12, true, "Thompson")
-            events.append(e)
-            let d = Day(numDays + 1, dayNames[day], events, monthName)
+            let d = Day(numDays + 1, dayNames[day], [Event](), monthName)
+            if !singles.isEmpty {
+                for s in singles {
+                    if s?.day ==  d?.dayNum && s!.month == month + 1 && (s?.year)! == year {
+                        d?.events.append(s)
+                    }
+                }
+            }
+            if !repeats.isEmpty {
+                for r in repeats {
+                    if (r?.ongoing.contains(day))! {
+                        if r!.day >=  d!.dayNum && r!.month >= month + 1 && (r?.year)! >= year {
+                            d?.events.append(r)
+                        }
+                    }
+                }
+            }
+            days.append(d!)
             if (day < 6) {
                 day += 1
             }
             else {
                 day = 0
             }
-            days.append(d!)
         }
         self.days = days
     }
@@ -82,6 +101,7 @@ class Month {
         self.daysInMonth = 0
         self.year = 0
         self.days = [Day]()
+        self.eventManager = EventManager([Event]())!
     }
     
     func prevMonth() -> String {

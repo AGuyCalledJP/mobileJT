@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import os.log
 
 class DayCollectionViewController: UICollectionViewController {
     
@@ -14,6 +15,9 @@ class DayCollectionViewController: UICollectionViewController {
     var month = Month()
     var currentMonth = 0
     var currentYear = 2019
+    var allEvents = [Event?]()
+    @IBOutlet weak var addEvent: UIBarButtonItem!
+    //    static var eventManager = EventManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,13 +26,14 @@ class DayCollectionViewController: UICollectionViewController {
         let year = String(currentYear)
         self.title = name! + " " + year
         self.days = (month?.days)!
+        print(allEvents)
         navigationItem.leftBarButtonItem?.title = (month?.prevMonth())!
         navigationItem.rightBarButtonItem?.title = (month?.nextMonth())!
     }
     
     //Change this from loading days to loading a month of days at a time
     func loadMonth() -> Month{
-        let month = Month(currentMonth, currentYear)
+        let month = Month(currentMonth, currentYear, allEvents)
         return month!
     }
     
@@ -68,12 +73,10 @@ class DayCollectionViewController: UICollectionViewController {
     }
     
     // MARK: - Table view data source
-
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    //2
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return days.count
     }
@@ -99,8 +102,6 @@ class DayCollectionViewController: UICollectionViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
         super.prepare(for: segue, sender: sender)
         switch(segue.identifier ?? "") {
         case "ShowDetail":
@@ -118,10 +119,40 @@ class DayCollectionViewController: UICollectionViewController {
             
             let selectedDay = days[indexPath.row]
             dayDetailTableViewController.events = selectedDay!.events as! [Event]
+        case "AddItem":
+            print("adding item")
         default:
             fatalError("Unexpected Segue Identifier; \(segue.identifier!)")
         }
     }
+    
+    @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.source as? AddEventViewController, let event = sourceViewController.event {
+            
+            allEvents.append(event)
+            reloadData()
+            // Save the meals.
+            saveEvents()
+            self.collectionView.reloadData()
+        }
+    }
+    
+    
+    
+    private func saveEvents() {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(allEvents, toFile: Event.ArchiveURL.path)
+        if isSuccessfulSave {
+            os_log("Recurring events saved.", log: OSLog.default, type: .debug)
+        } else {
+            os_log("Failed to save events...", log: OSLog.default, type: .error)
+        }
+        print(allEvents)
+    }
+    
+    private func loadEvents() -> [Event]? {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: Event.ArchiveURL.path) as? [Event]
+    }
+
 
     /*
      // Override to support conditional editing of the table view.
@@ -190,44 +221,4 @@ class DayCollectionViewController: UICollectionViewController {
      return true
      }
      */
-    
-    //        let e1 = Event("Optimization", 9, 10, true, "Thompson")
-    //        let e2 = Event("Capstone", 10, 11, true, "Thompson")
-    //        let e3 = Event("Operating Systems", 14, 15, true, "Thompson")
-    //        var m = [Event]()
-    //        m.append(e1!)
-    //        m.append(e2!)
-    //        m.append(e3!)
-    //        let day1 = Day(1,"Monday",m)
-    //        let e4 = Event("Optimization", 9, 10, true, "Thompson")
-    //        var t = [Event]()
-    //        t.append(e4!)
-    //        let day2 = Day(2,"Tuesday",t)
-    //        var w = [Event]()
-    //        w.append(e1!)
-    //        w.append(e2!)
-    //        w.append(e3!)
-    //        let day3 = Day(3,"Wednesday",w)
-    //        var th = [Event]()
-    //        th.append(e4!)
-    //        let day4 = Day(4,"Thursday",th)
-    //        var f = [Event]()
-    //        f.append(e1!)
-    //        f.append(e2!)
-    //        f.append(e3!)
-    //        let day5 = Day(5,"Friday",f)
-    //        let weekend = Event("Hand on Cock", 0, 23, true, "Couch")
-    //        var s = [Event]()
-    //        s.append(weekend!)
-    //        let day6 = Day(6,"Saturday",s)
-    //        var s2 = [Event]()
-    //        s2.append(weekend!)
-    //        let day7 = Day(7,"Sunday",s2)
-    //        days.append(day1)
-    //        days.append(day2)
-    //        days.append(day3)
-    //        days.append(day4)
-    //        days.append(day5)
-    //        days.append(day6)
-    //        days.append(day7)
 }

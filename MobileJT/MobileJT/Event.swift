@@ -15,8 +15,11 @@ class Event: NSObject, NSCoding {
     var dispStart: String
     var endTime: Int
     var dispEnd: String
-    var ongoing: Bool
+    var ongoing: [Int]
     var location: String
+    var month: Int
+    var year: Int
+    var day: Int
     
     struct PropertyKey {
         static let name = "name"
@@ -24,12 +27,15 @@ class Event: NSObject, NSCoding {
         static let endTime = "endTime"
         static let ongoing = "ongoing"
         static let location = "location"
+        static let month = "month"
+        static let year = "year"
+        static let day = "day"
     }
     
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
     static let ArchiveURL = DocumentsDirectory.appendingPathComponent("events")
     
-    init?(_ name: String,_ startTime: Int,_ endTime: Int,_ ongoing: Bool,_ location: String) {
+    init?(_ name: String,_ startTime: Int,_ endTime: Int,_ ongoing: [Int],_ location: String,_ month:Int,_ year:Int, _ day:Int) {
         guard !name.isEmpty else {
             return nil
         }
@@ -57,6 +63,28 @@ class Event: NSObject, NSCoding {
         self.dispEnd = String(endTime)
         self.ongoing = ongoing
         self.location = location
+        self.month = month
+        self.year = year
+        self.day = day
+    }
+    
+    init?(_ name:String) {
+        if !name.isEmpty {
+            self.name = name
+            self.startTime = 0
+            self.dispStart = ""
+            self.endTime = 1
+            self.dispEnd = ""
+            self.ongoing = [Int]()
+            self.location = ""
+            self.month = -1
+            self.year = -1
+            self.day = 0
+        }
+        else {
+            return nil
+        }
+        
     }
     
     //Encoding
@@ -66,6 +94,9 @@ class Event: NSObject, NSCoding {
         aCoder.encode(endTime, forKey: PropertyKey.endTime)
         aCoder.encode(ongoing, forKey: PropertyKey.ongoing)
         aCoder.encode(location, forKey: PropertyKey.location)
+        aCoder.encode(month, forKey: PropertyKey.month)
+        aCoder.encode(year, forKey: PropertyKey.year)
+        aCoder.encode(day, forKey: PropertyKey.day)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
@@ -77,12 +108,15 @@ class Event: NSObject, NSCoding {
         
         let startTime = aDecoder.decodeInteger(forKey: PropertyKey.startTime)
         let endTime = aDecoder.decodeInteger(forKey: PropertyKey.endTime)
-        let ongoing = aDecoder.decodeBool(forKey: PropertyKey.ongoing)
+        let ongoing = aDecoder.decodeObject(forKey: PropertyKey.ongoing) as? [Int]
         let location = aDecoder.decodeObject(forKey: PropertyKey.location) as? String
+        let month = aDecoder.decodeInteger(forKey: PropertyKey.month)
+        let year = aDecoder.decodeInteger(forKey: PropertyKey.year)
+        let day = aDecoder.decodeInteger(forKey: PropertyKey.day)
 
 
         
         // Must call designated initializer.
-        self.init(name, startTime, endTime, ongoing, location!)
+        self.init(name, startTime, endTime, ongoing!, location!, month, year, day)
     }
 }
