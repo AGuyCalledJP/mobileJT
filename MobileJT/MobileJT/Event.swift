@@ -15,7 +15,7 @@ class Event: NSObject, NSCoding {
     var dispStart: String
     var endTime: Int
     var dispEnd: String
-    var ongoing: Bool
+    var ongoing: [Int]
     var location: String
     var month: Int
     var year: Int
@@ -35,7 +35,7 @@ class Event: NSObject, NSCoding {
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
     static let ArchiveURL = DocumentsDirectory.appendingPathComponent("events")
     
-    init?(_ name: String,_ startTime: Int,_ endTime: Int,_ ongoing: Bool,_ location: String,_ month:Int,_ year:Int, _ day:Int) {
+    init?(_ name: String,_ startTime: Int,_ endTime: Int,_ ongoing: [Int],_ location: String,_ month:Int,_ year:Int, _ day:Int) {
         guard !name.isEmpty else {
             return nil
         }
@@ -63,14 +63,8 @@ class Event: NSObject, NSCoding {
         self.dispEnd = String(endTime)
         self.ongoing = ongoing
         self.location = location
-        if ongoing {
-            self.month = -1
-            self.year = -1
-        }
-        else {
-            self.month = month
-            self.year = year
-        }
+        self.month = month
+        self.year = year
         self.day = day
     }
     
@@ -81,7 +75,7 @@ class Event: NSObject, NSCoding {
             self.dispStart = ""
             self.endTime = 1
             self.dispEnd = ""
-            self.ongoing = false
+            self.ongoing = [Int]()
             self.location = ""
             self.month = -1
             self.year = -1
@@ -114,7 +108,7 @@ class Event: NSObject, NSCoding {
         
         let startTime = aDecoder.decodeInteger(forKey: PropertyKey.startTime)
         let endTime = aDecoder.decodeInteger(forKey: PropertyKey.endTime)
-        let ongoing = aDecoder.decodeBool(forKey: PropertyKey.ongoing)
+        let ongoing = aDecoder.decodeObject(forKey: PropertyKey.ongoing) as? [Int]
         let location = aDecoder.decodeObject(forKey: PropertyKey.location) as? String
         let month = aDecoder.decodeInteger(forKey: PropertyKey.month)
         let year = aDecoder.decodeInteger(forKey: PropertyKey.year)
@@ -123,6 +117,6 @@ class Event: NSObject, NSCoding {
 
         
         // Must call designated initializer.
-        self.init(name, startTime, endTime, ongoing, location!, month, year, day)
+        self.init(name, startTime, endTime, ongoing!, location!, month, year, day)
     }
 }

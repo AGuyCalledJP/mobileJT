@@ -26,13 +26,14 @@ class DayCollectionViewController: UICollectionViewController {
         let year = String(currentYear)
         self.title = name! + " " + year
         self.days = (month?.days)!
+        print(allEvents)
         navigationItem.leftBarButtonItem?.title = (month?.prevMonth())!
         navigationItem.rightBarButtonItem?.title = (month?.nextMonth())!
     }
     
     //Change this from loading days to loading a month of days at a time
     func loadMonth() -> Month{
-        let month = Month(currentMonth, currentYear)
+        let month = Month(currentMonth, currentYear, allEvents)
         return month!
     }
     
@@ -129,8 +130,10 @@ class DayCollectionViewController: UICollectionViewController {
         if let sourceViewController = sender.source as? AddEventViewController, let event = sourceViewController.event {
             
             allEvents.append(event)
+            reloadData()
             // Save the meals.
             saveEvents()
+            self.collectionView.reloadData()
         }
     }
     
@@ -218,44 +221,4 @@ class DayCollectionViewController: UICollectionViewController {
      return true
      }
      */
-    
-    //        let e1 = Event("Optimization", 9, 10, true, "Thompson")
-    //        let e2 = Event("Capstone", 10, 11, true, "Thompson")
-    //        let e3 = Event("Operating Systems", 14, 15, true, "Thompson")
-    //        var m = [Event]()
-    //        m.append(e1!)
-    //        m.append(e2!)
-    //        m.append(e3!)
-    //        let day1 = Day(1,"Monday",m)
-    //        let e4 = Event("Optimization", 9, 10, true, "Thompson")
-    //        var t = [Event]()
-    //        t.append(e4!)
-    //        let day2 = Day(2,"Tuesday",t)
-    //        var w = [Event]()
-    //        w.append(e1!)
-    //        w.append(e2!)
-    //        w.append(e3!)
-    //        let day3 = Day(3,"Wednesday",w)
-    //        var th = [Event]()
-    //        th.append(e4!)
-    //        let day4 = Day(4,"Thursday",th)
-    //        var f = [Event]()
-    //        f.append(e1!)
-    //        f.append(e2!)
-    //        f.append(e3!)
-    //        let day5 = Day(5,"Friday",f)
-    //        let weekend = Event("Hand on Cock", 0, 23, true, "Couch")
-    //        var s = [Event]()
-    //        s.append(weekend!)
-    //        let day6 = Day(6,"Saturday",s)
-    //        var s2 = [Event]()
-    //        s2.append(weekend!)
-    //        let day7 = Day(7,"Sunday",s2)
-    //        days.append(day1)
-    //        days.append(day2)
-    //        days.append(day3)
-    //        days.append(day4)
-    //        days.append(day5)
-    //        days.append(day6)
-    //        days.append(day7)
 }

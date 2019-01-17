@@ -7,15 +7,16 @@
 //
 
 import UIKit
+import MultiSelectSegmentedControl
 import os.log
 
 class AddEventViewController: UIViewController, UITextFieldDelegate {
+    
     var event : Event?
     @IBOutlet weak var eventName: UITextField!
     @IBOutlet weak var location: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var repeatLabel: UILabel!
-    @IBOutlet weak var repeatSwitch: UISwitch!
     @IBOutlet weak var cancel: UIBarButtonItem!
     @IBOutlet weak var save: UIBarButtonItem!
     @IBOutlet weak var selectDate: UILabel!
@@ -23,10 +24,14 @@ class AddEventViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var endTimeLabel: UILabel!
     @IBOutlet weak var startTime: UIDatePicker!
     @IBOutlet weak var endTime: UIDatePicker!
+    @IBOutlet weak var repeatSwitch: MultiSelectSegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         repeatLabel.text = "Repeat?"
+        selectDate.text = "Which day?"
+        startTimeLabel.text = "Start Time"
+        endTimeLabel.text = "End Time"
         eventName.delegate = self
         // Do any additional setup after loading the view.
     }
@@ -74,9 +79,14 @@ class AddEventViewController: UIViewController, UITextFieldDelegate {
             os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
             return
         }
+        //get the information from the user form
         let name = eventName.text
         let loc = location.text
-        let ongoing = repeatSwitch.isOn
+        let hold = repeatSwitch.selectedSegmentIndexes
+        var ongoing = [Int]()
+        for i in hold! {
+            ongoing.append(i)
+        }
         let date = datePicker.date
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy"
@@ -90,13 +100,13 @@ class AddEventViewController: UIViewController, UITextFieldDelegate {
         let timeBegin: String = dateFormatter.string(from: start)
         let end = endTime.date
         let timeEnd: String = dateFormatter.string(from: end)
-        print("date")
         let y = Int(year)
         let m = Int(month)
         let d = Int(day)
         let tB = Int(timeBegin)
         let tE = Int(timeEnd)
         
+        //Save the event and return back up 
         self.event = Event(name!, tB!, tE!, ongoing, loc!,m! , y!, d!)
     }
 }
