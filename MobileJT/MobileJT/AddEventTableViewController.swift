@@ -1,44 +1,46 @@
 //
-//  AddEventViewController.swift
+//  AddEventTableViewController.swift
 //  MobileJT
 //
-//  Created by Jared Polonitza on 1/14/19.
+//  Created by Jared Polonitza on 1/17/19.
 //  Copyright © 2019 Jared Polonitza. All rights reserved.
 //
 
+import Foundation
 import UIKit
-import MultiSelectSegmentedControl
 import os.log
+import MultiSelectSegmentedControl
 
-class AddEventViewController: UIViewController, UITextFieldDelegate {
-    
+class AddEventTableViewController: UITableViewController {
     var event : Event?
-    @IBOutlet weak var eventName: UITextField!
-    @IBOutlet weak var eventLoc: UITextField!
-    @IBOutlet weak var startLabel: UILabel!
-    @IBOutlet weak var startTime: UIDatePicker!
-    @IBOutlet weak var endLabel: UILabel!
-    @IBOutlet weak var endTime: UIDatePicker!
-    @IBOutlet weak var repeatLabel: UILabel!
-    @IBOutlet weak var repeatSwitch: MultiSelectSegmentedControl!
     @IBOutlet weak var cancel: UIBarButtonItem!
     @IBOutlet weak var save: UIBarButtonItem!
+    var indexPaths = [NSIndexPath]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        repeatLabel.text = "Repeat?"
-        startLabel.text = "Start Time"
-        endLabel.text = "End Time"
-        eventName.delegate = self
-        // Do any additional setup after loading the view.
+        for i in 0...4 {
+            let path = NSIndexPath(row: i, section: 0)
+            indexPaths.append(path)
+        }
+        print(indexPaths)
+        let c = tableView.cellForRow(at: indexPaths[0] as IndexPath) as! AddEventTableViewCell
+        print(c)
+        var cell = tableView.cellForRow(at: indexPaths[2] as IndexPath) as! AddEventTableViewCell
+        cell.startLabel.text = "Start Time"
+        cell = tableView.cellForRow(at: indexPaths[3] as IndexPath) as! AddEventTableViewCell
+        cell.endLabel.text = "End Time"
+        cell = tableView.cellForRow(at: indexPaths[3] as IndexPath) as! AddEventTableViewCell
+        cell.repeatLabel.text = "Repeat"
     }
-
+    
     private func updateSaveButtonState() {
         // Disable the Save button if the text field is empty.
-        let text = eventName.text ?? ""
+        let cell = tableView.cellForRow(at: indexPaths[0] as IndexPath) as! AddEventTableViewCell
+        let text = cell.eventName.text ?? ""
         save.isEnabled = !text.isEmpty
     }
-
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         // Disable the Save button while editing.
         save.isEnabled = false
@@ -53,6 +55,7 @@ class AddEventViewController: UIViewController, UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         updateSaveButtonState()
     }
+    
     @IBAction func cancel(_ sender: UIBarButtonItem) {
         // Depending on style of presentation (modal or push presentation), this view controller needs to be dismissed in two different ways.
         let isPresentingInAddItemMode = presentingViewController is UINavigationController
@@ -76,17 +79,22 @@ class AddEventViewController: UIViewController, UITextFieldDelegate {
             os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
             return
         }
-            //get the information from the user form
-        let name = eventName.text
-        let loc = eventLoc.text
-        let hold = repeatSwitch.selectedSegmentIndexes
+        //get the information from the user form
+        var cell = tableView.cellForRow(at: indexPaths[0] as IndexPath) as! AddEventTableViewCell
+        let name = cell.eventName.text
+        cell = tableView.cellForRow(at: indexPaths[1] as IndexPath) as! AddEventTableViewCell
+        let loc = cell.eventLoc.text
+        cell = tableView.cellForRow(at: indexPaths[4] as IndexPath) as! AddEventTableViewCell
+        let hold = cell.repeatPicker.selectedSegmentIndexes
         var ongoing = [Int]()
         for i in hold! {
-        ongoing.append(i)
+            ongoing.append(i)
         }
         let dateFormatter = DateFormatter()
-        let start = startTime.date
-        let end = endTime.date
+        cell = tableView.cellForRow(at: indexPaths[2] as IndexPath) as! AddEventTableViewCell
+        let start = cell.startDate.date
+        cell = tableView.cellForRow(at: indexPaths[3] as IndexPath) as! AddEventTableViewCell
+        let end = cell.endDate.date
         dateFormatter.dateFormat = "yyyy"
         let yearS: String = dateFormatter.string(from: start)
         let yearE: String = dateFormatter.string(from: end)

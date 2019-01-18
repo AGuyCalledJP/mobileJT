@@ -12,33 +12,36 @@ import os.log
 class DayCollectionViewController: UICollectionViewController {
     
     var days = [Day?]()
-    var month = Month()
+    var month : Month?
     var currentMonth = 0
     var currentYear = 2019
     var allEvents = [Event?]()
+    var daysFromSet : Int?
     @IBOutlet weak var addEvent: UIBarButtonItem!
     //    static var eventManager = EventManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.month = loadMonth()
+        self.daysFromSet = month?.firstDay()
         let name = month?.monthName
         let year = String(currentYear)
         self.title = name! + " " + year
         self.days = (month?.days)!
-        print(allEvents)
         navigationItem.leftBarButtonItem?.title = (month?.prevMonth())!
         navigationItem.rightBarButtonItem?.title = (month?.nextMonth())!
     }
     
     //Change this from loading days to loading a month of days at a time
     func loadMonth() -> Month{
+        print(allEvents)
         let month = Month(currentMonth, currentYear, allEvents)
         return month!
     }
     
     func reloadData() {
         self.month = loadMonth()
+        self.daysFromSet = month?.firstDay()
         let name = month?.monthName
         let year = String(currentYear)
         self.title = name! + " " + year
@@ -78,24 +81,34 @@ class DayCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return days.count
+        return days.count + daysFromSet!
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let reuseIdentifier = "DayCollectionViewCell"
-        
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? DayCollectionViewCell
-            else {
-                fatalError("Dammit")
+        if (indexPath.row < daysFromSet!) {
+            let reuseIdentifier = "SpaceCell"
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? SpaceCell
+                else {
+                    fatalError("Dammit")
             }
-
-        let day = days[indexPath.row]
-        
-        cell.dayNumber.text = String(day!.dayNum)
-        cell.dayName.text = day!.dayInWeek
-        
-        return cell
+            cell.backgroundColor = .white
+            
+            return cell
+        }
+        else {
+            let reuseIdentifier = "DayCollectionViewCell"
+            
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? DayCollectionViewCell
+                else {
+                    fatalError("Dammit")
+            }
+            
+            let day = days[indexPath.row - daysFromSet!]
+            
+            cell.dayNumber.text = String(day!.dayNum)
+            cell.dayName.text = day!.dayInWeek
+            return cell
+        }
     }
 
     // MARK: - Navigation
@@ -126,12 +139,10 @@ class DayCollectionViewController: UICollectionViewController {
         }
     }
     
-    @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
+    @IBAction func unwindToDays(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? AddEventViewController, let event = sourceViewController.event {
-            
             allEvents.append(event)
             reloadData()
-            // Save the meals.
             saveEvents()
             self.collectionView.reloadData()
         }

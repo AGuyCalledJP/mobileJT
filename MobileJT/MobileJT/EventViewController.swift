@@ -24,8 +24,8 @@ class EventViewController: UIViewController {
         if let event = event {
             navigationItem.title = event.name
             eventName.text = event.name
-            startTime.text = event.dispStart
-            endTime.text = event.dispEnd
+//            startTime.text = event.dispStart
+//            endTime.text = event.dispEnd
             location.text = event.location
         }
     }

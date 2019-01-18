@@ -16,6 +16,7 @@ class Month {
     var days:[Day]
     var year:Int
     var eventManager:EventManager
+    var dayOffset:Int
     
     let months = ["January","February","March","April","May","June",
                   "July","August","September","October","November", "December"]
@@ -59,6 +60,7 @@ class Month {
         else {
             day = ((f % 7) + 7) % 7
         }
+        dayOffset = abs(0 - day)
         var days = [Day]()
         //Fill calendar
         let singles = eventManager.getSingleMonth(month + 1)
@@ -70,7 +72,9 @@ class Month {
             let d = Day(numDays + 1, dayNames[day], [Event](), monthName)
             if !singles.isEmpty {
                 for s in singles {
-                    if s?.day ==  d?.dayNum && s!.month == month + 1 && (s?.year)! == year {
+                    if (s?.dayS)! <=  (d?.dayNum)! && (s?.dayE)! >=  (d?.dayNum)!
+                        && s!.monthS <= month + 1 && s!.monthE >= month + 1
+                        && (s?.yearS)! <= year  && (s?.yearE)! >= year {
                         d?.events.append(s)
                     }
                 }
@@ -78,7 +82,9 @@ class Month {
             if !repeats.isEmpty {
                 for r in repeats {
                     if (r?.ongoing.contains(day))! {
-                        if r!.day >=  d!.dayNum && r!.month >= month + 1 && (r?.year)! >= year {
+                        if (r?.dayS)! <=  (d?.dayNum)! && (r?.dayE)! >=  (d?.dayNum)!
+                            && r!.monthS <= month + 1 && r!.monthE >= month + 1
+                            && (r?.yearS)! <= year  && (r?.yearE)! >= year  {
                             d?.events.append(r)
                         }
                     }
@@ -93,15 +99,6 @@ class Month {
             }
         }
         self.days = days
-    }
-    
-    init?() {
-        self.month = 0
-        self.monthName = ""
-        self.daysInMonth = 0
-        self.year = 0
-        self.days = [Day]()
-        self.eventManager = EventManager([Event]())!
     }
     
     func prevMonth() -> String {
@@ -120,5 +117,9 @@ class Month {
         else {
             return months[0]
         }
+    }
+    
+    func firstDay() -> Int {
+        return dayOffset
     }
 }

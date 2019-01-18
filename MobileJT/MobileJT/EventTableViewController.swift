@@ -38,8 +38,7 @@ class EventTableViewController: UITableViewController {
         let event = events[indexPath.row]
         
         cell.eventLabel.text = event.name
-        cell.startTime.text = event.dispStart
-        cell.endTime.text = event.dispEnd
+
         cell.location.text = event.location
 
         // Configure the cell...
