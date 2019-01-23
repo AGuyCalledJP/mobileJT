@@ -16,7 +16,6 @@ class EventManager {
         oneOff = [Event?]()
         repeating = [Event?]()
         for e in events {
-            print(e)
             if (e?.ongoing.isEmpty)! {
                 oneOff.append(e)
             }
@@ -46,9 +45,6 @@ class EventManager {
         if !oneOff.isEmpty {
             var hold = [Event?]()
             for i in oneOff {
-                print(i?.monthS)
-                print(i?.monthE)
-                print(month)
                 if (i?.monthS)! <= month && (i?.monthE)! >= month {
                     hold.append(i)
                 }

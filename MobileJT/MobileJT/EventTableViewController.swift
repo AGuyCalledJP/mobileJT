@@ -15,6 +15,10 @@ class EventTableViewController: UITableViewController {
     var gone = [Event]()
     var edited = false
     @IBOutlet weak var done: UIBarButtonItem!
+    @IBOutlet weak var addEvent: UIBarButtonItem!
+    var day : Int?
+    var month : Int?
+    var year : Int?
     
     override func viewDidLoad() {
     
@@ -43,11 +47,14 @@ class EventTableViewController: UITableViewController {
         cell.eventLabel.text = event.name
 
         cell.location.text = event.location
+        
+        
 
         // Configure the cell...
 
         return cell
     }
+
     
     @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? EventViewController, let event = sourceViewController.event {
@@ -93,32 +100,44 @@ class EventTableViewController: UITableViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         super.prepare(for: segue, sender: sender)
-        guard let button = sender as? UIBarButtonItem, button === done else {
-            switch(segue.identifier ?? "") {
-            case "ShowDetail":
-                guard let eventDetailViewController = segue.destination as? EventViewController else {
-                    fatalError("Unexpected destination: \(segue.destination)")
+        guard let button = sender as? UIBarButtonItem, button === done || button === addEvent else {
+                switch(segue.identifier ?? "") {
+                case "ShowDetail":
+                    guard let eventDetailViewController = segue.destination as? EventViewController else {
+                        fatalError("Unexpected destination: \(segue.destination)")
+                    }
+                    
+                    guard let selectedEventCell = sender as? EventTableViewCell else {
+                        fatalError("Unexpected sender: \(sender!)")
+                    }
+                    
+                    guard let indexPath = tableView.indexPath(for: selectedEventCell) else {
+                        fatalError("The selected cell is not being displayed by the table")
+                    }
+                    
+                    let selectedEvent = events[indexPath.row]
+                    eventDetailViewController.event = selectedEvent
+                default:
+                    print("Unexpected Segue Identifier; \(segue.identifier!)")
+                    return
                 }
-                
-                guard let selectedEventCell = sender as? EventTableViewCell else {
-                    fatalError("Unexpected sender: \(sender!)")
-                }
-                
-                guard let indexPath = tableView.indexPath(for: selectedEventCell) else {
-                    fatalError("The selected cell is not being displayed by the table")
-                }
-                
-                let selectedEvent = events[indexPath.row]
-                eventDetailViewController.event = selectedEvent
-            default:
-                print("Unexpected Segue Identifier; \(segue.identifier!)")
-                return
-            }
             return
+            }
+        if (button === addEvent) {
+            guard let addItem = segue.destination as? UINavigationController
+                else {
+                    fatalError("Unexpected destination: \(segue.destination)")
+            }
+            let additemVC = addItem.viewControllers[0] as? AddEventViewController
+            var dateComponents = DateComponents()
+            dateComponents.year = self.year!
+            dateComponents.month = self.day!
+            dateComponents.day = self.day!
+            dateComponents.hour = 8
+            dateComponents.minute = 0
+            let userCalendar = Calendar.current // user calendar
+            let date = userCalendar.date(from: dateComponents)
+            additemVC!.date = date!
         }
     }
-    
-//    @IBAction func back(_ sender: Any) {
-//        navigationController?.popViewController(animated: true)
-//    }
 }

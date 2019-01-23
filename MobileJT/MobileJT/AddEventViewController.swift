@@ -23,9 +23,12 @@ class AddEventViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var repeatSwitch: MultiSelectSegmentedControl!
     @IBOutlet weak var cancel: UIBarButtonItem!
     @IBOutlet weak var save: UIBarButtonItem!
+    var date = Date()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        startTime.date = date
+        endTime.date = date
         repeatLabel.text = "Repeat?"
         startLabel.text = "Start Time"
         endLabel.text = "End Time"

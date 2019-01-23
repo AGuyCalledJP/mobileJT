@@ -37,7 +37,6 @@ class DayCollectionViewController: UICollectionViewController {
     
     //Change this from loading days to loading a month of days at a time
     func loadMonth() -> Month{
-        print(allEvents)
         let month = Month(currentMonth, currentYear, allEvents)
         return month!
     }
@@ -49,6 +48,7 @@ class DayCollectionViewController: UICollectionViewController {
         let year = String(currentYear)
         self.title = name! + " " + year
         self.days = (month?.days)!
+        print(allEvents.count)
         navigationItem.leftBarButtonItem?.title = (month?.prevMonth())!
         navigationItem.rightBarButtonItem?.title = (month?.nextMonth())!
     }
@@ -105,8 +105,13 @@ class DayCollectionViewController: UICollectionViewController {
                 else {
                     fatalError("Dammit")
             }
-            print(indexPath.row - daysFromSet!)
             let day = days[indexPath.row - daysFromSet!]
+            if !(day?.events.isEmpty)! {
+                cell.backgroundColor = .blue
+            }
+            else {
+                cell.backgroundColor = .white
+            }
             cell.dayNumber.text = String(day!.dayNum)
             cell.dayName.text = day!.dayInWeek
             return cell
@@ -134,6 +139,9 @@ class DayCollectionViewController: UICollectionViewController {
             
             let selectedDay = days[indexPath.row - daysFromSet!]
             dayDetailTableViewController.events = selectedDay!.events as! [Event]
+            dayDetailTableViewController.day = selectedDay?.dayNum
+            dayDetailTableViewController.month = currentMonth
+            dayDetailTableViewController.year = currentYear
         case "AddItem":
             print("adding item")
         default:
@@ -144,8 +152,8 @@ class DayCollectionViewController: UICollectionViewController {
     @IBAction func unwindToDays(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? AddEventViewController, let event = sourceViewController.event {
             allEvents.append(event)
-            reloadData()
             saveEvents()
+            reloadData()
             self.collectionView.reloadData()
         }
         else if let sourceViewController = sender.source as? EventTableViewController {
@@ -171,7 +179,6 @@ class DayCollectionViewController: UICollectionViewController {
         } else {
             os_log("Failed to save events...", log: OSLog.default, type: .error)
         }
-        print(allEvents)
     }
     
     private func loadEvents() -> [Event]? {
