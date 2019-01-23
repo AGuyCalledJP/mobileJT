@@ -22,6 +22,9 @@ class DayCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if (allEvents.isEmpty) {
+            allEvents = loadEvents()!
+        }
         self.month = loadMonth()
         self.daysFromSet = month?.firstDay()
         let name = month?.monthName
@@ -102,9 +105,8 @@ class DayCollectionViewController: UICollectionViewController {
                 else {
                     fatalError("Dammit")
             }
-            
+            print(indexPath.row - daysFromSet!)
             let day = days[indexPath.row - daysFromSet!]
-            
             cell.dayNumber.text = String(day!.dayNum)
             cell.dayName.text = day!.dayInWeek
             return cell
@@ -130,7 +132,7 @@ class DayCollectionViewController: UICollectionViewController {
                 fatalError("The selected cell is not being displayed by the table")
             }
             
-            let selectedDay = days[indexPath.row]
+            let selectedDay = days[indexPath.row - daysFromSet!]
             dayDetailTableViewController.events = selectedDay!.events as! [Event]
         case "AddItem":
             print("adding item")
@@ -145,6 +147,18 @@ class DayCollectionViewController: UICollectionViewController {
             reloadData()
             saveEvents()
             self.collectionView.reloadData()
+        }
+        else if let sourceViewController = sender.source as? EventTableViewController {
+            let check = sourceViewController.edited
+            if check {
+                let hold = sourceViewController.gone
+                for e in hold {
+                    let v = allEvents.index(of: e)
+                    allEvents.remove(at: v!)
+                }
+            }
+            saveEvents()
+            reloadData()
         }
     }
     
@@ -163,7 +177,6 @@ class DayCollectionViewController: UICollectionViewController {
     private func loadEvents() -> [Event]? {
         return NSKeyedUnarchiver.unarchiveObject(withFile: Event.ArchiveURL.path) as? [Event]
     }
-
 
     /*
      // Override to support conditional editing of the table view.

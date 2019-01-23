@@ -72,7 +72,7 @@ class Month {
             let d = Day(numDays + 1, dayNames[day], [Event](), monthName)
             if !singles.isEmpty {
                 for s in singles {
-                    if (s?.dayS)! <=  (d?.dayNum)! && (s?.dayE)! >=  (d?.dayNum)!
+                    if (s?.dayS)! <= (d?.dayNum)! && (s?.dayE)! >=  (d?.dayNum)!
                         && s!.monthS <= month + 1 && s!.monthE >= month + 1
                         && (s?.yearS)! <= year  && (s?.yearE)! >= year {
                         d?.events.append(s)
