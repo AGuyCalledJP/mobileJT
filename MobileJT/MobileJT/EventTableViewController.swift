@@ -131,12 +131,16 @@ class EventTableViewController: UITableViewController {
             let additemVC = addItem.viewControllers[0] as? AddEventViewController
             var dateComponents = DateComponents()
             dateComponents.year = self.year!
-            dateComponents.month = self.day!
+            dateComponents.month = self.month!
             dateComponents.day = self.day!
             dateComponents.hour = 8
             dateComponents.minute = 0
             let userCalendar = Calendar.current // user calendar
             let date = userCalendar.date(from: dateComponents)
+            print(self.year!)
+            print(self.month!)
+            print(self.day)
+            print(date)
             additemVC!.date = date!
         }
     }

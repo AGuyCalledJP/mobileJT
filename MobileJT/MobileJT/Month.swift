@@ -66,8 +66,12 @@ class Month {
         let singles = eventManager.getSingleMonth(month + 1)
         let repeats = eventManager.getRepeatingMonth(month + 1)
         print(months[month])
-        print(singles)
-        print(repeats)
+        for s in singles {
+            print(s?.monthS)
+        }
+        for r in singles {
+            print(r?.monthS)
+        }
         for numDays in 0...numDays[month] - 1 {
             let d = Day(numDays + 1, dayNames[day], [Event](), monthName)
             if !singles.isEmpty {
@@ -121,5 +125,9 @@ class Month {
     
     func firstDay() -> Int {
         return dayOffset
+    }
+    
+    func getMonth() -> Int {
+        return month
     }
 }

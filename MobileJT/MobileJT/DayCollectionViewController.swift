@@ -140,7 +140,8 @@ class DayCollectionViewController: UICollectionViewController {
             let selectedDay = days[indexPath.row - daysFromSet!]
             dayDetailTableViewController.events = selectedDay!.events as! [Event]
             dayDetailTableViewController.day = selectedDay?.dayNum
-            dayDetailTableViewController.month = currentMonth
+            print(month?.getMonth())
+            dayDetailTableViewController.month = (month?.getMonth())! + 1
             dayDetailTableViewController.year = currentYear
         case "AddItem":
             print("adding item")
