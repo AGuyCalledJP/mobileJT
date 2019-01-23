@@ -66,11 +66,9 @@ class Month {
         let singles = eventManager.getSingleMonth(month + 1)
         let repeats = eventManager.getRepeatingMonth(month + 1)
         print(months[month])
-        for s in singles {
-            print(s?.monthS)
-        }
-        for r in singles {
-            print(r?.monthS)
+        print(repeats)
+        for r in repeats {
+            print(r?.ongoing as! [Int])
         }
         for numDays in 0...numDays[month] - 1 {
             let d = Day(numDays + 1, dayNames[day], [Event](), monthName)
@@ -86,9 +84,10 @@ class Month {
             if !repeats.isEmpty {
                 for r in repeats {
                     if (r?.ongoing.contains(day))! {
-                        if (r?.dayS)! <=  (d?.dayNum)! && (r?.dayE)! >=  (d?.dayNum)!
-                            && r!.monthS <= month + 1 && r!.monthE >= month + 1
-                            && (r?.yearS)! <= year  && (r?.yearE)! >= year  {
+                        if r!.monthS == month + 1 && r!.dayS <= numDays + 1 {
+                            d?.events.append(r)
+                        }
+                        else if r!.monthS < month + 1 && r!.yearS <= year {
                             d?.events.append(r)
                         }
                     }

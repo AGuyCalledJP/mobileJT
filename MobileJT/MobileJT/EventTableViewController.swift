@@ -45,7 +45,8 @@ class EventTableViewController: UITableViewController {
         let event = events[indexPath.row]
         
         cell.eventLabel.text = event.name
-
+        cell.startTime.text = String(event.startTimeH)
+        cell.endTime.text = String(event.endTimeH)
         cell.location.text = event.location
         
         
@@ -137,10 +138,6 @@ class EventTableViewController: UITableViewController {
             dateComponents.minute = 0
             let userCalendar = Calendar.current // user calendar
             let date = userCalendar.date(from: dateComponents)
-            print(self.year!)
-            print(self.month!)
-            print(self.day)
-            print(date)
             additemVC!.date = date!
         }
     }
