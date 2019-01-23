@@ -17,11 +17,19 @@ class DayCollectionViewController: UICollectionViewController {
     var currentYear = 2019
     var allEvents = [Event?]()
     var daysFromSet : Int?
+    let curr = Date()
+    var date = [Int]()
     @IBOutlet weak var addEvent: UIBarButtonItem!
     //    static var eventManager = EventManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let newCurr = dateFormat("MM/dd/yyyy", curr)
+        date = [Int]()
+        var hold1 = newCurr.split(separator: "/")
+        for i in hold1 {
+            date.append((Int(i))!)
+        }
         if (allEvents.isEmpty) {
             allEvents = loadEvents()!
         }
@@ -106,8 +114,11 @@ class DayCollectionViewController: UICollectionViewController {
                     fatalError("Dammit")
             }
             let day = days[indexPath.row - daysFromSet!]
-            if !(day?.events.isEmpty)! {
+            if ((month?.getMonth())! + 1 == date[0]) && day?.dayNum == date[1] && currentYear == date[2] {
                 cell.backgroundColor = .blue
+            }
+            else if !(day?.events.isEmpty)! {
+                cell.backgroundColor = .red
             }
             else {
                 cell.backgroundColor = .white
@@ -116,6 +127,12 @@ class DayCollectionViewController: UICollectionViewController {
             cell.dayName.text = day!.dayInWeek
             return cell
         }
+    }
+    
+    func dateFormat(_ format:String, _ conv:Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        return dateFormatter.string(from: conv)
     }
 
     // MARK: - Navigation
@@ -140,7 +157,6 @@ class DayCollectionViewController: UICollectionViewController {
             let selectedDay = days[indexPath.row - daysFromSet!]
             dayDetailTableViewController.events = selectedDay!.events as! [Event]
             dayDetailTableViewController.day = selectedDay?.dayNum
-            print(month?.getMonth())
             dayDetailTableViewController.month = (month?.getMonth())! + 1
             dayDetailTableViewController.year = currentYear
         case "AddItem":

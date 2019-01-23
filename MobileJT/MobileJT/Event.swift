@@ -121,4 +121,12 @@ class Event: NSObject, NSCoding {
         // Must call designated initializer.
         self.init(name, ongoing!, location!, yearS, yearE, monthS, monthE, dayS, dayE, startTimeH, endTimeH, minS, minE)
     }
+    
+    static func < (_ ev1: Event, _ ev2: Event) -> Bool {
+        return ev1.startTimeH < ev2.startTimeH
+    }
+    
+    static func == (_ ev1: Event, _ ev2: Event) -> Bool {
+        return ev1.startTimeH == ev2.startTimeH
+    }
 }

@@ -43,10 +43,12 @@ class EventTableViewController: UITableViewController {
         }
         
         let event = events[indexPath.row]
-        
+        events.sort(by: <)
         cell.eventLabel.text = event.name
-        cell.startTime.text = String(event.startTimeH)
-        cell.endTime.text = String(event.endTimeH)
+        let dateS = Calendar.current.date(bySettingHour: event.startTimeH, minute: event.minS, second: 0, of: Date())!
+        let dateE = Calendar.current.date(bySettingHour: event.endTimeH, minute: event.minE, second: 0, of: Date())!
+        cell.startTime.text = dateFormat("h:mm a", dateS)
+        cell.endTime.text = dateFormat("h:mm a", dateE)
         cell.location.text = event.location
         
         
@@ -54,6 +56,20 @@ class EventTableViewController: UITableViewController {
         // Configure the cell...
 
         return cell
+    }
+    
+    func dateFormat(_ format:String, _ conv:Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        return dateFormatter.string(from: conv)
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let event = events[indexPath.row]
+        let s = event.startTimeH
+        let e = event.endTimeH
+        let f = e - s
+        return CGFloat(f * 70)
     }
 
     

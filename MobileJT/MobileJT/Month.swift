@@ -64,12 +64,7 @@ class Month {
         var days = [Day]()
         //Fill calendar
         let singles = eventManager.getSingleMonth(month + 1)
-        let repeats = eventManager.getRepeatingMonth(month + 1)
-        print(months[month])
-        print(repeats)
-        for r in repeats {
-            print(r?.ongoing as! [Int])
-        }
+        let repeats = eventManager.getRepeatingMonth(month + 1)     
         for numDays in 0...numDays[month] - 1 {
             let d = Day(numDays + 1, dayNames[day], [Event](), monthName)
             if !singles.isEmpty {
