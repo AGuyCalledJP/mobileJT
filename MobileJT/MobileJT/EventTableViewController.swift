@@ -11,7 +11,8 @@ import os.log
 
 class EventTableViewController: UITableViewController {
     
-    public var events = [Event]()
+    var events = [Event]()
+    var todos = [Event]()
     var gone = [Event]()
     var edited = false
     let hours = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
@@ -23,7 +24,13 @@ class EventTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        events.sort(by: <)
+        for i in 0...23 {
+            todos.append(Event(hours[i], hours[(i + 1) % 24])!)
+        }
+        for i in events {
+            todos.append(i)
+        }
+        todos.sort(by: <)
     }
 
     // MARK: - Table view data source
@@ -34,7 +41,7 @@ class EventTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return hours.count
+        return todos.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -43,29 +50,13 @@ class EventTableViewController: UITableViewController {
             fatalError("The dequeued cell is not an instance of EventTableViewCell.")
         }
         
-        if hours[indexPath.row] == events[0].startTimeH{
-            let event = events[0]
-            cell.eventLabel.text = event.name
-            let dateS = Calendar.current.date(bySettingHour: event.startTimeH, minute: event.minS, second: 0, of: Date())!
-            let dateE = Calendar.current.date(bySettingHour: event.endTimeH, minute: event.minE, second: 0, of: Date())!
-            cell.startTime.text = dateFormat("h:mm a", dateS)
-            cell.endTime.text = dateFormat("h:mm a", dateE)
-            cell.location.text = event.location
-        }
-        else {
-            cell.eventLabel.text = "Free"
-            print(indexPath.row % 24)
-            let dateS = Calendar.current.date(bySettingHour: hours[indexPath.row % 24], minute: 0, second: 0, of: Date())!
-            let dateE = Calendar.current.date(bySettingHour: hours[(indexPath.row + 1) % 24], minute: 0, second: 0, of: Date())!
-            cell.startTime.text = dateFormat("h:mm a", dateS)
-            cell.endTime.text = dateFormat("h:mm a", dateE)
-            
-        }
-        
-        
-
-        // Configure the cell...
-
+        let event = todos[indexPath.row]
+        cell.eventLabel.text = event.name
+        let dateS = Calendar.current.date(bySettingHour: event.startTimeH, minute: event.minS, second: 0, of: Date())!
+        let dateE = Calendar.current.date(bySettingHour: event.endTimeH, minute: event.minE, second: 0, of: Date())!
+        cell.startTime.text = dateFormat("h:mm a", dateS)
+        cell.endTime.text = dateFormat("h:mm a", dateE)
+        cell.location.text = event.location
         return cell
     }
     
@@ -75,13 +66,20 @@ class EventTableViewController: UITableViewController {
         return dateFormatter.string(from: conv)
     }
     
-//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        let event = events[indexPath.row]
-//        let s = event.startTimeH
-//        let e = event.endTimeH
-//        let f = e - s
-//        return CGFloat(f * 70)
-//    }
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let event = todos[indexPath.row]
+        let s = event.startTimeH
+        let e = event.endTimeH
+        if (e < s) {
+            let f = e + 24
+            let z = f - s
+            return CGFloat(z * 70)
+        }
+        else {
+            let f = e - s
+            return CGFloat(f * 70)
+        }
+    }
 
     
     @IBAction func unwindToMealList(sender: UIStoryboardSegue) {

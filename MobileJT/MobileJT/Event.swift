@@ -79,6 +79,23 @@ class Event: NSObject, NSCoding {
         self.dayE = dayE
     }
     
+    init?(_ startTimeH:Int,_ endTimeH:Int) {
+        name = "Free"
+        ongoing = [Int]()
+        location = ""
+        self.startTimeH = startTimeH
+        self.endTimeH = endTimeH
+        self.minS = 0
+        self.minE = 0
+        self.monthS = 0
+        self.monthE = 0
+        self.yearS = 0
+        self.yearE = 0
+        self.dayS = 0
+        self.dayE = 0
+        
+    }
+    
     //Encoding
     func encode(with aCoder: NSCoder) {
         aCoder.encode(name, forKey: PropertyKey.name)
