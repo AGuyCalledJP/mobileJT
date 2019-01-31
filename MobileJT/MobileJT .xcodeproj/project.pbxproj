@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0593D350B5A87D5E4E465668 /* Pods_MobileJTUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A358967CF66E04D751B662E8 /* Pods_MobileJTUITests.framework */; };
 		1AE1B53527C82918B89E09B9 /* Pods_MobileJTTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FC3716E18266E3815040E30 /* Pods_MobileJTTests.framework */; };
+		2D81C3B12202A4330087614E /* FreeHourTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D81C3B02202A4330087614E /* FreeHourTableViewCell.swift */; };
 		2DE531A521EA85B000BC0D5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DE531A421EA85B000BC0D5A /* Main.storyboard */; };
 		2DE531A721EA913E00BC0D5A /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE531A621EA913E00BC0D5A /* Month.swift */; };
 		2DE531AB21EA9CE000BC0D5A /* DayCollectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE531AA21EA9CE000BC0D5A /* DayCollectionHeader.swift */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		2B75B0EA8C38C94341C38DF2 /* Pods-MobileJTUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileJTUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MobileJTUITests/Pods-MobileJTUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2D81C3B02202A4330087614E /* FreeHourTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeHourTableViewCell.swift; sourceTree = "<group>"; };
 		2DE531A421EA85B000BC0D5A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2DE531A621EA913E00BC0D5A /* Month.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Month.swift; sourceTree = "<group>"; };
 		2DE531AA21EA9CE000BC0D5A /* DayCollectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCollectionHeader.swift; sourceTree = "<group>"; };
@@ -138,7 +140,6 @@
 			isa = PBXGroup;
 			children = (
 				C551DC0421E447570041537D /* MobileJT */,
-				C551DC1921E447580041537D /* MobileJTTests */,
 				C551DC2421E447580041537D /* MobileJTUITests */,
 				C551DC0321E447570041537D /* Products */,
 				2C79163FD3974700BCA113B1 /* Pods */,
@@ -169,6 +170,7 @@
 				C551DC3721E447BC0041537D /* DayCollectionViewCell.swift */,
 				C551DC3921E447BC0041537D /* DayCollectionViewController.swift */,
 				C551DC3621E447BC0041537D /* EventTableViewCell.swift */,
+				2D81C3B02202A4330087614E /* FreeHourTableViewCell.swift */,
 				C551DC3821E447BC0041537D /* EventTableViewController.swift */,
 				C551DC3E21E447BC0041537D /* EventViewController.swift */,
 				2DE531AE21ED564000BC0D5A /* AddEventViewController.swift */,
@@ -176,6 +178,7 @@
 				C551DC0C21E447580041537D /* Assets.xcassets */,
 				C551DC0E21E447580041537D /* LaunchScreen.storyboard */,
 				C551DC1121E447580041537D /* Info.plist */,
+				C551DC1921E447580041537D /* MobileJTTests */,
 			);
 			path = MobileJT;
 			sourceTree = "<group>";
@@ -433,6 +436,7 @@
 				C551DC4321E447BC0041537D /* DayCollectionViewCell.swift in Sources */,
 				C551DC4021E447BC0041537D /* Day.swift in Sources */,
 				C551DC4A21E447BC0041537D /* EventViewController.swift in Sources */,
+				2D81C3B12202A4330087614E /* FreeHourTableViewCell.swift in Sources */,
 				2DE531AB21EA9CE000BC0D5A /* DayCollectionHeader.swift in Sources */,
 				C52ECE7E21F16B7100979773 /* SpaceCell.swift in Sources */,
 				C551DC4521E447BC0041537D /* DayCollectionViewController.swift in Sources */,

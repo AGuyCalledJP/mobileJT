@@ -162,6 +162,7 @@ class DayCollectionViewController: UICollectionViewController {
             dayDetailTableViewController.day = selectedDay?.dayNum
             dayDetailTableViewController.month = (month?.getMonth())! + 1
             dayDetailTableViewController.year = currentYear
+            dayDetailTableViewController.dayInWeek = selectedDay?.dayInWeek
         case "AddItem":
             print("adding item")
         default:

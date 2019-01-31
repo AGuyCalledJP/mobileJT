@@ -20,18 +20,40 @@ class EventTableViewController: UITableViewController {
     @IBOutlet weak var done: UIBarButtonItem!
     @IBOutlet weak var addEvent: UIBarButtonItem!
     var day : Int?
+    var dayInWeek : String?
     var month : Int?
     var year : Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        for i in 0...23 {
-            todos.append(Event(hours[i], hours[(i + 1) % 24])!)
+        makeMyDay()
+    }
+    
+    func makeMyDay() {
+        todos = [Event]()
+        var interval = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
+        events.sort(by: <)
+        var ind = 1
+        var j = 0
+        todos.append(Event(hours[interval[0]], hours[(interval[0] + 1) % 24])!)
+        while (ind < interval.count || j < events.count) {
+            if (j < events.count) {
+                if (events[j].startTimeH >= interval[ind - 1] && events[j].startTimeH <= interval[ind]) {
+                    todos.append(events[j])
+                    link.append(ind)
+                    j += 1
+                    ind += 1
+                }
+                else {
+                    todos.append(Event(hours[interval[ind]], hours[(interval[ind] + 1) % 24])!)
+                    ind += 1
+                }
+            }
+            else {
+                todos.append(Event(hours[interval[ind]], hours[(interval[ind] + 1) % 24])!)
+                ind += 1
+            }
         }
-        for i in events {
-            todos.append(i)
-        }
-        todos.sort(by: <)
     }
 
     // MARK: - Table view data source
@@ -46,19 +68,31 @@ class EventTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "EventTableViewCell"
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? EventTableViewCell  else {
-            fatalError("The dequeued cell is not an instance of EventTableViewCell.")
+        if link.contains(indexPath.row) {
+            let cellIdentifier = "EventTableViewCell"
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? EventTableViewCell  else {
+                fatalError("The dequeued cell is not an instance of EventTableViewCell.")
+            }
+            let event = todos[indexPath.row]
+            print(event.name)
+            cell.eventLabel.text = event.name
+            let dateS = Calendar.current.date(bySettingHour: event.startTimeH, minute: event.minS, second: 0, of: Date())!
+            let dateE = Calendar.current.date(bySettingHour: event.endTimeH, minute: event.minE, second: 0, of: Date())!
+            cell.startTime.text = dateFormat("h:mm a", dateS)
+            cell.endTime.text = dateFormat("h:mm a", dateE)
+            cell.location.text = event.location
+            return cell
         }
-        
-        let event = todos[indexPath.row]
-        cell.eventLabel.text = event.name
-        let dateS = Calendar.current.date(bySettingHour: event.startTimeH, minute: event.minS, second: 0, of: Date())!
-        let dateE = Calendar.current.date(bySettingHour: event.endTimeH, minute: event.minE, second: 0, of: Date())!
-        cell.startTime.text = dateFormat("h:mm a", dateS)
-        cell.endTime.text = dateFormat("h:mm a", dateE)
-        cell.location.text = event.location
-        return cell
+        else {
+            let cellIdentifier = "FreeHourTableViewCell"
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? FreeHourTableViewCell  else {
+                fatalError("The dequeued cell is not an instance of FreeHourTableViewCell.")
+            }
+            let event = todos[indexPath.row]
+            let dateS = Calendar.current.date(bySettingHour: event.startTimeH, minute: event.minS, second: 0, of: Date())!
+            cell.hourLabel.text = dateFormat("h:mm a", dateS)
+            return cell
+        }
     }
     
     func dateFormat(_ format:String, _ conv:Date) -> String {
@@ -111,8 +145,11 @@ class EventTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            gone.append(events[indexPath.row])
-            events.remove(at: indexPath.row)
+            let bye = todos[indexPath.row]
+            gone.append(bye)
+            let byebye = events.firstIndex(of: bye)
+            events.remove(at: byebye!)
+            todos.remove(at: indexPath.row)
             edited = true
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
@@ -142,8 +179,12 @@ class EventTableViewController: UITableViewController {
                         fatalError("The selected cell is not being displayed by the table")
                     }
                     
-                    let selectedEvent = events[indexPath.row]
+                    let selectedEvent = todos[indexPath.row]
                     eventDetailViewController.event = selectedEvent
+                    eventDetailViewController.dayInWeek = dayInWeek!
+                    eventDetailViewController.dayInYear = day
+                    eventDetailViewController.month = month
+                    eventDetailViewController.year = year
                 default:
                     print("Unexpected Segue Identifier; \(segue.identifier!)")
                     return
