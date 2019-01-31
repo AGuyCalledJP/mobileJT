@@ -12,6 +12,7 @@ import os.log
 class EventTableViewController: UITableViewController {
     
     var events = [Event]()
+    var link = [Int]()
     var todos = [Event]()
     var gone = [Event]()
     var edited = false

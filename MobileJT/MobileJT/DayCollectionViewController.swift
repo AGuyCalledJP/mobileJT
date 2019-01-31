@@ -31,7 +31,10 @@ class DayCollectionViewController: UICollectionViewController {
             date.append((Int(i))!)
         }
         if (allEvents.isEmpty) {
-            allEvents = loadEvents()!
+            if (loadEvents() != nil) {
+                allEvents = loadEvents()!
+
+            }
         }
         self.month = loadMonth()
         self.daysFromSet = month?.firstDay()
