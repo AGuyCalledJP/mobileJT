@@ -74,7 +74,6 @@ class EventTableViewController: UITableViewController {
                 fatalError("The dequeued cell is not an instance of EventTableViewCell.")
             }
             let event = todos[indexPath.row]
-            print(event.name)
             cell.eventLabel.text = event.name
             let dateS = Calendar.current.date(bySettingHour: event.startTimeH, minute: event.minS, second: 0, of: Date())!
             let dateE = Calendar.current.date(bySettingHour: event.endTimeH, minute: event.minE, second: 0, of: Date())!

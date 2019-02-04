@@ -9,6 +9,16 @@
 /* Begin PBXBuildFile section */
 		0593D350B5A87D5E4E465668 /* Pods_MobileJTUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A358967CF66E04D751B662E8 /* Pods_MobileJTUITests.framework */; };
 		1AE1B53527C82918B89E09B9 /* Pods_MobileJTTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FC3716E18266E3815040E30 /* Pods_MobileJTTests.framework */; };
+		2D09B9D422080CDA005DCBCA /* BlankCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D09B9D322080CDA005DCBCA /* BlankCell.swift */; };
+		2D3127F62207F58500F168BC /* AddEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3127F52207F58500F168BC /* AddEventTableViewController.swift */; };
+		2D3127F82207F5D600F168BC /* EventNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3127F72207F5D600F168BC /* EventNameCell.swift */; };
+		2D3127FA2207F74700F168BC /* EventLocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3127F92207F74700F168BC /* EventLocationCell.swift */; };
+		2D3127FC2207F81C00F168BC /* AllDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3127FB2207F81C00F168BC /* AllDayCell.swift */; };
+		2D3127FE2207F90800F168BC /* StartDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3127FD2207F90800F168BC /* StartDateCell.swift */; };
+		2D3128002207F91200F168BC /* EndDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3127FF2207F91200F168BC /* EndDateCell.swift */; };
+		2D3128022207F92300F168BC /* RepeatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3128012207F92300F168BC /* RepeatCell.swift */; };
+		2D3128042207F93400F168BC /* EndRepeatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3128032207F93400F168BC /* EndRepeatCell.swift */; };
+		2D3128062207F94200F168BC /* IncorpCalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3128052207F94200F168BC /* IncorpCalCell.swift */; };
 		2D81C3B12202A4330087614E /* FreeHourTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D81C3B02202A4330087614E /* FreeHourTableViewCell.swift */; };
 		2DE531A521EA85B000BC0D5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DE531A421EA85B000BC0D5A /* Main.storyboard */; };
 		2DE531A721EA913E00BC0D5A /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE531A621EA913E00BC0D5A /* Month.swift */; };
@@ -50,6 +60,16 @@
 
 /* Begin PBXFileReference section */
 		2B75B0EA8C38C94341C38DF2 /* Pods-MobileJTUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileJTUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MobileJTUITests/Pods-MobileJTUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2D09B9D322080CDA005DCBCA /* BlankCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankCell.swift; sourceTree = "<group>"; };
+		2D3127F52207F58500F168BC /* AddEventTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventTableViewController.swift; sourceTree = "<group>"; };
+		2D3127F72207F5D600F168BC /* EventNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventNameCell.swift; sourceTree = "<group>"; };
+		2D3127F92207F74700F168BC /* EventLocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventLocationCell.swift; sourceTree = "<group>"; };
+		2D3127FB2207F81C00F168BC /* AllDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDayCell.swift; sourceTree = "<group>"; };
+		2D3127FD2207F90800F168BC /* StartDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartDateCell.swift; sourceTree = "<group>"; };
+		2D3127FF2207F91200F168BC /* EndDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndDateCell.swift; sourceTree = "<group>"; };
+		2D3128012207F92300F168BC /* RepeatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatCell.swift; sourceTree = "<group>"; };
+		2D3128032207F93400F168BC /* EndRepeatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndRepeatCell.swift; sourceTree = "<group>"; };
+		2D3128052207F94200F168BC /* IncorpCalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncorpCalCell.swift; sourceTree = "<group>"; };
 		2D81C3B02202A4330087614E /* FreeHourTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeHourTableViewCell.swift; sourceTree = "<group>"; };
 		2DE531A421EA85B000BC0D5A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2DE531A621EA913E00BC0D5A /* Month.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Month.swift; sourceTree = "<group>"; };
@@ -126,6 +146,64 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		2D3127F02207F45F00F168BC /* DataTypes */ = {
+			isa = PBXGroup;
+			children = (
+				C551DC3421E447BC0041537D /* Day.swift */,
+				2DE531A621EA913E00BC0D5A /* Month.swift */,
+				C551DC3B21E447BC0041537D /* Event.swift */,
+			);
+			path = DataTypes;
+			sourceTree = "<group>";
+		};
+		2D3127F12207F47900F168BC /* DayCollection */ = {
+			isa = PBXGroup;
+			children = (
+				C52ECE7D21F16B7100979773 /* SpaceCell.swift */,
+				2DE531AA21EA9CE000BC0D5A /* DayCollectionHeader.swift */,
+				C551DC3721E447BC0041537D /* DayCollectionViewCell.swift */,
+				C551DC3921E447BC0041537D /* DayCollectionViewController.swift */,
+			);
+			path = DayCollection;
+			sourceTree = "<group>";
+		};
+		2D3127F22207F49900F168BC /* HoursTableVIew */ = {
+			isa = PBXGroup;
+			children = (
+				C551DC3621E447BC0041537D /* EventTableViewCell.swift */,
+				2D81C3B02202A4330087614E /* FreeHourTableViewCell.swift */,
+				C551DC3821E447BC0041537D /* EventTableViewController.swift */,
+			);
+			path = HoursTableVIew;
+			sourceTree = "<group>";
+		};
+		2D3127F32207F4C100F168BC /* EventManagement */ = {
+			isa = PBXGroup;
+			children = (
+				2DE531AC21ED473000BC0D5A /* EventManager.swift */,
+				C551DC3E21E447BC0041537D /* EventViewController.swift */,
+			);
+			path = EventManagement;
+			sourceTree = "<group>";
+		};
+		2D3127F42207F51E00F168BC /* AddEvent */ = {
+			isa = PBXGroup;
+			children = (
+				2DE531AE21ED564000BC0D5A /* AddEventViewController.swift */,
+				2D3127F52207F58500F168BC /* AddEventTableViewController.swift */,
+				2D3127F72207F5D600F168BC /* EventNameCell.swift */,
+				2D3127F92207F74700F168BC /* EventLocationCell.swift */,
+				2D3127FB2207F81C00F168BC /* AllDayCell.swift */,
+				2D3127FD2207F90800F168BC /* StartDateCell.swift */,
+				2D3127FF2207F91200F168BC /* EndDateCell.swift */,
+				2D3128012207F92300F168BC /* RepeatCell.swift */,
+				2D3128032207F93400F168BC /* EndRepeatCell.swift */,
+				2D3128052207F94200F168BC /* IncorpCalCell.swift */,
+				2D09B9D322080CDA005DCBCA /* BlankCell.swift */,
+			);
+			path = AddEvent;
+			sourceTree = "<group>";
+		};
 		9170FD5E9A2B0E6561D07F8E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,19 +239,11 @@
 			isa = PBXGroup;
 			children = (
 				2DE531A421EA85B000BC0D5A /* Main.storyboard */,
-				C551DC3421E447BC0041537D /* Day.swift */,
-				2DE531A621EA913E00BC0D5A /* Month.swift */,
-				C551DC3B21E447BC0041537D /* Event.swift */,
-				2DE531AC21ED473000BC0D5A /* EventManager.swift */,
-				C52ECE7D21F16B7100979773 /* SpaceCell.swift */,
-				2DE531AA21EA9CE000BC0D5A /* DayCollectionHeader.swift */,
-				C551DC3721E447BC0041537D /* DayCollectionViewCell.swift */,
-				C551DC3921E447BC0041537D /* DayCollectionViewController.swift */,
-				C551DC3621E447BC0041537D /* EventTableViewCell.swift */,
-				2D81C3B02202A4330087614E /* FreeHourTableViewCell.swift */,
-				C551DC3821E447BC0041537D /* EventTableViewController.swift */,
-				C551DC3E21E447BC0041537D /* EventViewController.swift */,
-				2DE531AE21ED564000BC0D5A /* AddEventViewController.swift */,
+				2D3127F42207F51E00F168BC /* AddEvent */,
+				2D3127F02207F45F00F168BC /* DataTypes */,
+				2D3127F12207F47900F168BC /* DayCollection */,
+				2D3127F22207F49900F168BC /* HoursTableVIew */,
+				2D3127F32207F4C100F168BC /* EventManagement */,
 				C551DC0521E447570041537D /* AppDelegate.swift */,
 				C551DC0C21E447580041537D /* Assets.xcassets */,
 				C551DC0E21E447580041537D /* LaunchScreen.storyboard */,
@@ -429,17 +499,27 @@
 			files = (
 				C551DC4221E447BC0041537D /* EventTableViewCell.swift in Sources */,
 				2DE531AF21ED564000BC0D5A /* AddEventViewController.swift in Sources */,
+				2D09B9D422080CDA005DCBCA /* BlankCell.swift in Sources */,
 				C551DC4721E447BC0041537D /* Event.swift in Sources */,
 				2DE531AD21ED473000BC0D5A /* EventManager.swift in Sources */,
+				2D3127FC2207F81C00F168BC /* AllDayCell.swift in Sources */,
+				2D3127FA2207F74700F168BC /* EventLocationCell.swift in Sources */,
 				C551DC4421E447BC0041537D /* EventTableViewController.swift in Sources */,
+				2D3127FE2207F90800F168BC /* StartDateCell.swift in Sources */,
 				2DE531A721EA913E00BC0D5A /* Month.swift in Sources */,
+				2D3128022207F92300F168BC /* RepeatCell.swift in Sources */,
 				C551DC4321E447BC0041537D /* DayCollectionViewCell.swift in Sources */,
 				C551DC4021E447BC0041537D /* Day.swift in Sources */,
 				C551DC4A21E447BC0041537D /* EventViewController.swift in Sources */,
 				2D81C3B12202A4330087614E /* FreeHourTableViewCell.swift in Sources */,
+				2D3128042207F93400F168BC /* EndRepeatCell.swift in Sources */,
+				2D3128002207F91200F168BC /* EndDateCell.swift in Sources */,
+				2D3127F62207F58500F168BC /* AddEventTableViewController.swift in Sources */,
 				2DE531AB21EA9CE000BC0D5A /* DayCollectionHeader.swift in Sources */,
 				C52ECE7E21F16B7100979773 /* SpaceCell.swift in Sources */,
 				C551DC4521E447BC0041537D /* DayCollectionViewController.swift in Sources */,
+				2D3128062207F94200F168BC /* IncorpCalCell.swift in Sources */,
+				2D3127F82207F5D600F168BC /* EventNameCell.swift in Sources */,
 				C551DC0621E447570041537D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

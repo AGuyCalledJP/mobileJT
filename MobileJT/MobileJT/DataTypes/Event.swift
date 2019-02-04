@@ -96,6 +96,22 @@ class Event: NSObject, NSCoding {
         
     }
     
+    override init() {
+        name = ""
+        ongoing = [Int]()
+        location = ""
+        startTimeH = 0
+        endTimeH = 0
+        minS = 0
+        minE = 0
+        monthS = 0
+        monthE = 0
+        yearS = 0
+        yearE = 0
+        dayS = 0
+        dayE = 0
+    }
+    
     //Encoding
     func encode(with aCoder: NSCoder) {
         aCoder.encode(name, forKey: PropertyKey.name)
