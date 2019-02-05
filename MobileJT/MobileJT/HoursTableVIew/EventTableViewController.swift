@@ -26,6 +26,7 @@ class EventTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(events[0].startTimeH)
         makeMyDay()
     }
     

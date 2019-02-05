@@ -9,10 +9,11 @@
 import Foundation
 import UIKit
 
-class EventLocationCell: UITableViewCell {
+class EventLocationCell: UITableViewCell, UITextFieldDelegate {
     @IBOutlet weak var eventLocation: UITextField!
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
 }
+

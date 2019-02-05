@@ -36,6 +36,8 @@ class DayCollectionViewController: UICollectionViewController {
 
             }
         }
+        currentMonth = date[0] - 1
+        currentYear = date[2]
         self.month = loadMonth()
         self.daysFromSet = month?.firstDay()
         let name = month?.monthName
