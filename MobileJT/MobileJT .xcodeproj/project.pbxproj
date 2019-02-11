@@ -189,7 +189,6 @@
 		2D3127F42207F51E00F168BC /* AddEvent */ = {
 			isa = PBXGroup;
 			children = (
-				2DE531AE21ED564000BC0D5A /* AddEventViewController.swift */,
 				2D3127F52207F58500F168BC /* AddEventTableViewController.swift */,
 				2D3127F72207F5D600F168BC /* EventNameCell.swift */,
 				2D3127F92207F74700F168BC /* EventLocationCell.swift */,
@@ -202,6 +201,14 @@
 				2D09B9D322080CDA005DCBCA /* BlankCell.swift */,
 			);
 			path = AddEvent;
+			sourceTree = "<group>";
+		};
+		2D67EBFD22110F5B003A16DE /* Depreciated */ = {
+			isa = PBXGroup;
+			children = (
+				2DE531AE21ED564000BC0D5A /* AddEventViewController.swift */,
+			);
+			path = Depreciated;
 			sourceTree = "<group>";
 		};
 		9170FD5E9A2B0E6561D07F8E /* Frameworks */ = {
@@ -239,15 +246,16 @@
 			isa = PBXGroup;
 			children = (
 				2DE531A421EA85B000BC0D5A /* Main.storyboard */,
+				C551DC0521E447570041537D /* AppDelegate.swift */,
+				C551DC0C21E447580041537D /* Assets.xcassets */,
+				C551DC0E21E447580041537D /* LaunchScreen.storyboard */,
+				C551DC1121E447580041537D /* Info.plist */,
+				2D67EBFD22110F5B003A16DE /* Depreciated */,
 				2D3127F42207F51E00F168BC /* AddEvent */,
 				2D3127F02207F45F00F168BC /* DataTypes */,
 				2D3127F12207F47900F168BC /* DayCollection */,
 				2D3127F22207F49900F168BC /* HoursTableVIew */,
 				2D3127F32207F4C100F168BC /* EventManagement */,
-				C551DC0521E447570041537D /* AppDelegate.swift */,
-				C551DC0C21E447580041537D /* Assets.xcassets */,
-				C551DC0E21E447580041537D /* LaunchScreen.storyboard */,
-				C551DC1121E447580041537D /* Info.plist */,
 				C551DC1921E447580041537D /* MobileJTTests */,
 			);
 			path = MobileJT;

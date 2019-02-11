@@ -61,7 +61,6 @@ class DayCollectionViewController: UICollectionViewController {
         let year = String(currentYear)
         self.title = name! + " " + year
         self.days = (month?.days)!
-        print(allEvents.count)
         navigationItem.leftBarButtonItem?.title = (month?.prevMonth())!
         navigationItem.rightBarButtonItem?.title = (month?.nextMonth())!
     }
@@ -119,7 +118,8 @@ class DayCollectionViewController: UICollectionViewController {
                     fatalError("Dammit")
             }
             let day = days[indexPath.row - daysFromSet!]
-            if ((month?.getMonth())! + 1 == date[0]) && day?.dayNum == date[1] && currentYear == date[2] {
+            print(date)
+            if ((month?.getMonth())! + 1 == date[0]) && (day?.dayNum)! == date[1] && currentYear == date[2] {
                 cell.backgroundColor = .blue
             }
             else if !(day?.events.isEmpty)! {
@@ -165,6 +165,8 @@ class DayCollectionViewController: UICollectionViewController {
             dayDetailTableViewController.month = (month?.getMonth())! + 1
             dayDetailTableViewController.year = currentYear
             dayDetailTableViewController.dayInWeek = selectedDay?.dayInWeek
+            dayDetailTableViewController.monthString = selectedDay?.month
+            dayDetailTableViewController.setDay()
         case "AddItem":
             print("adding item")
         default:
@@ -174,6 +176,12 @@ class DayCollectionViewController: UICollectionViewController {
     
     @IBAction func unwindToDays(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? AddEventViewController, let event = sourceViewController.event {
+            allEvents.append(event)
+            saveEvents()
+            reloadData()
+            self.collectionView.reloadData()
+        }
+        else if let sourceViewController = sender.source as? AddEventTableViewController, let event = sourceViewController.event {
             allEvents.append(event)
             saveEvents()
             reloadData()

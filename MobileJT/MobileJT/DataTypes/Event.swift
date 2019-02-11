@@ -96,6 +96,23 @@ class Event: NSObject, NSCoding {
         
     }
     
+    init?(_ startTimeH:Int, _ mS:Int,_ endTimeH:Int,_ mE:Int) {
+        name = "Free"
+        ongoing = [Int]()
+        location = ""
+        self.startTimeH = startTimeH
+        self.endTimeH = endTimeH
+        self.minS = mS
+        self.minE = mE
+        self.monthS = 0
+        self.monthE = 0
+        self.yearS = 0
+        self.yearE = 0
+        self.dayS = 0
+        self.dayE = 0
+        
+    }
+    
     override init() {
         name = ""
         ongoing = [Int]()

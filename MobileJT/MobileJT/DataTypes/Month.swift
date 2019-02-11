@@ -23,7 +23,7 @@ class Month {
     
     let numDays = [31,28,31,30,31,30,31,31,30,31,30,31,29]
     
-    let dayNames = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    let dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
     
     let calcMVals = [11,12,1,2,3,4,5,6,7,8,9,10]
     
@@ -60,13 +60,15 @@ class Month {
         else {
             day = ((f % 7) + 7) % 7
         }
+        day += 1
+        day = day % 7
         dayOffset = abs(0 - day)
         var days = [Day]()
         //Fill calendar
         let singles = eventManager.getSingleMonth(month + 1)
         let repeats = eventManager.getRepeatingMonth(month + 1)     
-        for numDays in 0...numDays[month] - 1 {
-            let d = Day(numDays + 1, dayNames[day], [Event](), monthName)
+        for numDays in 1...numDays[month] {
+            let d = Day(numDays, dayNames[day], [Event](), monthName)
             if !singles.isEmpty {
                 for s in singles {
                     if (s?.dayS)! <= (d?.dayNum)! && (s?.dayE)! >=  (d?.dayNum)!
@@ -79,11 +81,21 @@ class Month {
             if !repeats.isEmpty {
                 for r in repeats {
                     if (r?.ongoing.contains(day))! {
-                        if r!.monthS == month + 1 && r!.dayS <= numDays + 1 {
-                            d?.events.append(r)
+                        if ((r?.monthE)! > month + 1) {
+                            if r!.monthS == month + 1 && r!.dayS <= numDays + 1 {
+                                d?.events.append(r)
+                            }
+                            else if r!.monthS < month + 1 && r!.yearS <= year {
+                                d?.events.append(r)
+                            }
                         }
-                        else if r!.monthS < month + 1 && r!.yearS <= year {
-                            d?.events.append(r)
+                        else if ((r?.monthE)! == month + 1 && r!.dayE >= numDays + 1) {
+                            if r!.monthS == month + 1 && r!.dayS <= numDays + 1 {
+                                d?.events.append(r)
+                            }
+                            else if r!.monthS < month + 1 && r!.yearS <= year {
+                                d?.events.append(r)
+                            }
                         }
                     }
                 }

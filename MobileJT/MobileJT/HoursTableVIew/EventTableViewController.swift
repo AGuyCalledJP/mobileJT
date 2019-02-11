@@ -22,39 +22,131 @@ class EventTableViewController: UITableViewController {
     var day : Int?
     var dayInWeek : String?
     var month : Int?
+    var monthString : String?
     var year : Int?
+    var lastTouch = 0;
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(events[0].startTimeH)
         makeMyDay()
     }
     
+    public func setDay() {
+        var ending = findTerm(day!)
+        let string1 = dayInWeek! + ", " + monthString!
+        let string2 = " " + String(day!) + ending
+        let string = string1 + string2
+        self.navigationItem.title = string
+    }
+    
+    func findTerm(_ day: Int)  -> String {
+        if day == 1 || day == 2 {
+            return "st"
+        }
+        else if day == 3 {
+            return "rd"
+        }
+        else if day >= 4 && day <= 20 {
+            return "th"
+        }
+        else if day >= 21 && day <= 22 {
+            return "st"
+        }
+        else if day >= 23 {
+            return "rd"
+        }
+        else if day >= 24 && day <= 30 {
+            return "th"
+        }
+        else {
+            return "st"
+        }
+    }
     func makeMyDay() {
         todos = [Event]()
-        var interval = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
+        var interval = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
+        var totalMins = 0
         events.sort(by: <)
-        var ind = 1
         var j = 0
-        todos.append(Event(hours[interval[0]], hours[(interval[0] + 1) % 24])!)
-        while (ind < interval.count || j < events.count) {
-            if (j < events.count) {
-                if (events[j].startTimeH >= interval[ind - 1] && events[j].startTimeH <= interval[ind]) {
-                    todos.append(events[j])
-                    link.append(ind)
-                    j += 1
-                    ind += 1
+        var totalSlots = 0
+        while (totalMins < 1440) {
+            if j < events.count {
+                let event = events[j]
+                if event.startTimeH * 60 >= totalMins  && event.startTimeH * 60 < totalMins + 60 {
+                    let time = event.startTimeH * 60 + event.minS
+                    let diff = time - totalMins
+                    if diff > 0 {
+                        var hrS : Int?
+                        var minS : Int?
+                        var hrE : Int?
+                        var minE : Int?
+                        if totalMins >= 60 {
+                            hrS = Int(totalMins / 60)
+                            minS = totalMins - (interval[hrS!] * 60)
+                            hrE = event.startTimeH
+                            minE = event.minS - 1
+                        }
+                        else {
+                            hrS = Int(totalMins / 60)
+                            minS = 0 - totalMins
+                            hrE = event.startTimeH
+                            minE = event.minS - 1
+                        }
+                        todos.append(Event(hrS!, minS!, hrE!, minE!)!)
+                        totalMins += diff
+                        totalSlots += 1
+                        todos.append(event)
+                        link.append(totalSlots)
+                        totalSlots += 1
+                        j += 1
+                        totalMins += (event.endTimeH * 60 + event.minE) - (event.startTimeH * 60 + event.minS)
+                    }
+                    else {
+                        todos.append(event)
+                        link.append(totalSlots)
+                        totalSlots += 1
+                        totalMins = diff + (event.endTimeH * 60 + event.minE)
+                        j += 1
+                    }
                 }
                 else {
-                    todos.append(Event(hours[interval[ind]], hours[(interval[ind] + 1) % 24])!)
-                    ind += 1
+                    let currentHr = (totalMins) / 60
+                    let nextHr = interval[currentHr + 1]
+                    let getThere = currentHr * 60
+                    let nextStop = nextHr * 60
+                    let diff = nextStop - totalMins
+                    let useThis = totalMins - getThere
+                    let finDif = getThere - totalMins
+                    if finDif >= 0 {
+                        todos.append(Event(currentHr, finDif, nextHr, 0)!)
+                    }
+                    else {
+                        todos.append(Event(currentHr, useThis, nextHr, 0)!)
+                    }
+                    totalSlots += 1
+                    totalMins += diff
                 }
             }
             else {
-                todos.append(Event(hours[interval[ind]], hours[(interval[ind] + 1) % 24])!)
-                ind += 1
+                let currentHr = (totalMins) / 60
+                let nextHr = interval[currentHr + 1]
+                let getThere = currentHr * 60
+                let nextStop = nextHr * 60
+                let diff = nextStop - totalMins
+                let useThis = totalMins - getThere
+                let fin = getThere - totalMins
+                if fin >= 0{
+                    todos.append(Event(currentHr, fin, nextHr, 0)!)
+                }
+                else {
+                    todos.append(Event(currentHr, useThis, nextHr, 0)!)
+                }
+                totalSlots += 1
+                totalMins += diff
             }
         }
+ 
+            
     }
 
     // MARK: - Table view data source
@@ -66,6 +158,10 @@ class EventTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return todos.count
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        lastTouch = indexPath.row
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -79,7 +175,7 @@ class EventTableViewController: UITableViewController {
             let dateS = Calendar.current.date(bySettingHour: event.startTimeH, minute: event.minS, second: 0, of: Date())!
             let dateE = Calendar.current.date(bySettingHour: event.endTimeH, minute: event.minE, second: 0, of: Date())!
             cell.startTime.text = dateFormat("h:mm a", dateS)
-            cell.endTime.text = dateFormat("h:mm a", dateE)
+//            cell.endTime.text = dateFormat("h:mm a", dateE)
             cell.location.text = event.location
             return cell
         }
@@ -89,6 +185,9 @@ class EventTableViewController: UITableViewController {
                 fatalError("The dequeued cell is not an instance of FreeHourTableViewCell.")
             }
             let event = todos[indexPath.row]
+            print("Path " + String(indexPath.row))
+            print(event.minS)
+            print (event.startTimeH)
             let dateS = Calendar.current.date(bySettingHour: event.startTimeH, minute: event.minS, second: 0, of: Date())!
             cell.hourLabel.text = dateFormat("h:mm a", dateS)
             return cell
@@ -101,20 +200,29 @@ class EventTableViewController: UITableViewController {
         return dateFormatter.string(from: conv)
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let event = todos[indexPath.row]
-        let s = event.startTimeH
-        let e = event.endTimeH
-        if (e < s) {
-            let f = e + 24
-            let z = f - s
-            return CGFloat(z * 70)
-        }
-        else {
-            let f = e - s
-            return CGFloat(f * 70)
-        }
-    }
+//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        let event = todos[indexPath.row]
+//        let s = event.startTimeH
+//        let ms = event.minS
+//        let e = event.endTimeH
+//        let me = event.minE
+//        let chunk = 100.0
+//        if (e < s) {
+//            let f = e + 24
+//            let begin = Double(s + (ms / 100))
+//            let end = Double(f + (me / 100))
+//            let z = (end - begin)
+//            print(z)
+//            return CGFloat(z * chunk)
+//        }
+//        else {
+//            let begin = Double(s + (ms / 100))
+//            let end = Double(e + (me / 100))
+//            let z = (end - begin)
+//            print(z)
+//            return CGFloat(z * chunk)
+//        }
+//    }
 
     
     @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
@@ -185,27 +293,96 @@ class EventTableViewController: UITableViewController {
                     eventDetailViewController.dayInYear = day
                     eventDetailViewController.month = month
                     eventDetailViewController.year = year
+                case "AddHere":
+                    guard let addItem = segue.destination as? UINavigationController
+                        else {
+                            fatalError("Unexpected destination: \(segue.destination)")
+                    }
+                    let additemVC = addItem.viewControllers[0] as? AddEventTableViewController
+                    let chosen = todos[lastTouch]
+                    var dateComponents = DateComponents()
+                    dateComponents.year = self.year!
+                    dateComponents.month = self.month!
+                    dateComponents.day = self.day
+                    dateComponents.hour = chosen.startTimeH
+                    dateComponents.minute = chosen.minS
+                    let userCalendar = Calendar.current // user calendar
+                    let date = userCalendar.date(from: dateComponents)
+                    additemVC!.date = date!
                 default:
                     print("Unexpected Segue Identifier; \(segue.identifier!)")
                     return
                 }
             return
             }
-        if (button === addEvent) {
-            guard let addItem = segue.destination as? UINavigationController
-                else {
-                    fatalError("Unexpected destination: \(segue.destination)")
-            }
-            let additemVC = addItem.viewControllers[0] as? AddEventViewController
-            var dateComponents = DateComponents()
-            dateComponents.year = self.year!
-            dateComponents.month = self.month!
-            dateComponents.day = self.day!
-            dateComponents.hour = 8
-            dateComponents.minute = 0
-            let userCalendar = Calendar.current // user calendar
-            let date = userCalendar.date(from: dateComponents)
-            additemVC!.date = date!
-        }
+//        if (button === addEvent) {
+//            guard let addItem = segue.destination as? UINavigationController
+//                else {
+//                    fatalError("Unexpected destination: \(segue.destination)")
+//            }
+//            let additemVC = addItem.viewControllers[0] as? AddEventTableViewController
+//            var dateComponents = DateComponents()
+//            dateComponents.year = self.year!
+//            dateComponents.month = self.month!
+//            dateComponents.day = self.day!
+//            dateComponents.hour = 8
+//            dateComponents.minute = 0
+//            let userCalendar = Calendar.current // user calendar
+//            let date = userCalendar.date(from: dateComponents)
+//            additemVC!.date = date!
+//        }
     }
 }
+
+//    if (j < events.count) {
+//    if (totalMins % 60 != 0) {
+//    if (events[j].startTimeH >= interval[ind - 1] && events[j].startTimeH <= interval[ind]) {
+//    let s = events[j].startTimeH
+//    let e = events[j].endTimeH
+//    let a = events[j].minS
+//    let b = events[j].minE
+//    if (a > 0) {
+//    let nextLoc = a
+//    let currentLoc = interval[ind]
+//    todos.append(Event(currentLoc, totalMins - (60 * currentLoc) , currentLoc, mE: nextLoc )!)
+//    totalMins -= a
+//    todos.append(events[j])
+//    link.append(ind)
+//    j += 1
+//    let tHrs = (e - s) * 60
+//    let tMins = (b - a)
+//    let tDist = tHrs + tMins
+//    totalMins -= tDist
+//    }
+//    else {
+//    todos.append(events[j])
+//    link.append(ind)
+//    j += 1
+//    let tHrs = (e - s) * 60
+//    let tMins = (b - a)
+//    let tDist = tHrs + tMins
+//    totalMins -= tDist
+//    }
+//    }
+//    else {
+//    let nextLoc = interval[ind+1]
+//    let currentLoc = interval[ind]
+//    let nextDiv = 1440/nextLoc
+//    let diff = nextDiv - totalMins
+//    todos.append(Event(currentLoc, totalMins - (60 * currentLoc) , nextLoc % 24, mE: 0 )!)
+//    ind += 1
+//    totalMins -= diff
+//    }
+//    }
+//    else {
+//    todos.append(Event(hours[interval[ind]], hours[(interval[ind] + 1) % 24])!)
+//    ind += 1
+//    totalMins -= 60
+//    }
+//    }
+//    else {
+//    todos.append(Event(hours[interval[ind]], hours[(interval[ind] + 1) % 24])!)
+//    ind += 1
+//    totalMins -= 60
+//    }
+//}

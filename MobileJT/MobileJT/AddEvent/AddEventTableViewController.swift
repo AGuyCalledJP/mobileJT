@@ -12,7 +12,14 @@ import MultiSelectSegmentedControl
 
 class AddEventTableViewController: UITableViewController, UITextFieldDelegate {
     var event : Event?
-    var cellText = [String]()
+    var name = ""
+    var location = ""
+    var startDate = Date()
+    var endDate = Date()
+    var finalDate = Date()
+    var continuous = [Int]()
+    var date = Date()
+    
     @IBOutlet weak var cancel: UIBarButtonItem!
     @IBOutlet weak var save: UIBarButtonItem!
     
@@ -63,12 +70,16 @@ class AddEventTableViewController: UITableViewController, UITextFieldDelegate {
         }
         else if indexPath.row == 4 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "StartDateCell", for: indexPath) as? StartDateCell
-            cell?.startDate.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
+            cell?.startDate.addTarget(self, action: #selector(startDateChange), for: .valueChanged)
+            cell?.startDate.date = self.date
+            self.startDate = self.date
             return cell!
         }
         else if indexPath.row == 5 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "EndDateCell", for: indexPath) as? EndDateCell
-            cell?.endDate.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
+            cell?.endDate.addTarget(self, action: #selector(endDateChange), for: .valueChanged)
+            cell?.endDate.date = self.date
+            self.endDate = self.date
             return cell!
         }
         else if indexPath.row == 6 {
@@ -78,7 +89,9 @@ class AddEventTableViewController: UITableViewController, UITextFieldDelegate {
         }
         else if indexPath.row == 7 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "EndRepeatCell", for: indexPath) as? EndRepeatCell
-            cell?.endRepeatDate.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
+            cell?.endRepeatDate.addTarget(self, action: #selector(finalDayChange), for: .valueChanged)
+            cell?.endRepeatDate.date = self.date
+            finalDate = self.date
             return cell!
         }
         else if indexPath.row == 9 {
@@ -103,27 +116,71 @@ class AddEventTableViewController: UITableViewController, UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        if (!cellText.contains(textField.text!)) {
-            cellText.append(textField.text!)
+        if textField.placeholder == "Title" {
+            name = textField.text!
+            
         }
-        print(cellText)
+        else {
+            location = textField.text!
+        }
     }
+    
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         updateSaveButtonState(textField)
-        if (!cellText.contains(textField.text!)) {
-            cellText.append(textField.text!)
+        if textField.placeholder == "Title" {
+            name = textField.text!
+            
+        }
+        else {
+            location = textField.text!
         }
         textField.resignFirstResponder()
         return true
     }
     
-    @objc func dateChanged(_ datePicker: UIDatePicker) {
-        print(datePicker)
+    @objc func startDateChange(_ datePicker: UIDatePicker) {
+        print("startDate Change ")
+        if startDate != datePicker.date {
+            startDate = datePicker.date
+        }
+    }
+    
+    @objc func endDateChange(_ datePicker: UIDatePicker) {
+        print("endDate Change " )
+        if endDate != datePicker.date {
+            endDate = datePicker.date
+        }
+    }
+    
+    @objc func finalDayChange(_ datePicker: UIDatePicker) {
+        print("finalDate Change ")
+        if finalDate != datePicker.date {
+            finalDate = datePicker.date
+        }
     }
     
     @objc func daysChange(_ seg: MultiSelectSegmentedControl) {
-        print(seg)
+        print("repeat Change ")
+        var vals = seg.selectedSegmentIndexes!
+        for i in vals {
+            print(i)
+        }
+        for i in 0...6 {
+            print(i)
+            if vals.contains(i) {
+                if !continuous.contains(i) {
+                    continuous.append(i)
+                }
+            }
+            else {
+                if continuous.contains(i) {
+                    var b = continuous.index(of: i)
+                    continuous.remove(at: b!)
+                }
+            }
+        }
+       print(continuous)
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -157,96 +214,54 @@ class AddEventTableViewController: UITableViewController, UITextFieldDelegate {
         guard let button = sender as? UIBarButtonItem, button === save else {
             return
         }
-        for i in 0...9 {
-            let indexPath = IndexPath(row: i, section: 0)
-            print(indexPath.row)
-            let dateFormatter = DateFormatter()
-            if indexPath.row == 0 {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "EventNameCell", for: indexPath) as? EventNameCell
-                print("Yo Dude")
-                print(cell?.eventTitle.text!)
-                event?.name = ((cell?.eventTitle.text!)!)
-                print(event?.name)
-                print("REally")
-            }
-            else if indexPath.row == 1 {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "EventLocationCell", for: indexPath) as? EventLocationCell
-                event?.location = (cell?.eventLocation.text)!
-                print(event?.location)
-            }
-            else if indexPath.row == 3 {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "AllDayCell", for: indexPath) as? AllDayCell
-                //Add some stuff here when all day is working
-            }
-            else if indexPath.row == 4 {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "StartDateCell", for: indexPath) as? StartDateCell
-                let start = cell!.startDate.date
-                dateFormatter.dateFormat = "yyyy"
-                let yearS: String = dateFormatter.string(from: start)
-                dateFormatter.dateFormat = "MM"
-                let monthS: String = dateFormatter.string(from: start)
-                dateFormatter.dateFormat = "dd"
-                let dayS: String = dateFormatter.string(from: start)
-                dateFormatter.dateFormat = "HH"
-                let hourS: String = dateFormatter.string(from: start)
-                dateFormatter.dateFormat = "mm"
-                let minS: String = dateFormatter.string(from: start)
-                event?.yearS = Int(yearS)!
-                event?.monthS = Int(monthS)!
-                event?.dayS = Int(dayS)!
-                event?.startTimeH = Int(hourS)!
-                event?.minS = Int(minS)!
-            }
-            else if indexPath.row == 5 {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "EndDateCell", for: indexPath) as? EndDateCell
-                let end = cell!.endDate.date
-                dateFormatter.dateFormat = "yyyy"
-                let yearE: String = dateFormatter.string(from: end)
-                dateFormatter.dateFormat = "MM"
-                let monthE: String = dateFormatter.string(from: end)
-                dateFormatter.dateFormat = "dd"
-                let dayE: String = dateFormatter.string(from: end)
-                dateFormatter.dateFormat = "HH"
-                let hourE: String = dateFormatter.string(from: end)
-                dateFormatter.dateFormat = "mm"
-                let minE: String = dateFormatter.string(from: end)
-                event?.yearE = Int(yearE)!
-                event?.monthE = Int(monthE)!
-                event?.dayE = Int(dayE)!
-                event?.endTimeH = Int(hourE)!
-                event?.minE = Int(minE)!
-                print(yearE)
-            }
-            else if indexPath.row == 6 {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "RepeatCell", for: indexPath) as? RepeatCell
-                let hold = cell?.repeatWhen.selectedSegmentIndexes
-                var ongoing = [Int]()
-                for i in hold! {
-                    ongoing.append(i)
-                }
-                event?.ongoing = ongoing
-            }
-            else if indexPath.row == 7 {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "EndRepeatCell", for: indexPath) as? EndRepeatCell
-                let hardEnd = cell!.endRepeatDate.date
-                dateFormatter.dateFormat = "yyyy"
-                let yearE: String = dateFormatter.string(from: hardEnd)
-                dateFormatter.dateFormat = "MM"
-                let monthE: String = dateFormatter.string(from: hardEnd)
-                dateFormatter.dateFormat = "dd"
-                let dayE: String = dateFormatter.string(from: hardEnd)
-                event?.yearE = Int(yearE)!
-                event?.monthE = Int(monthE)!
-                event?.dayE = Int(dayE)!
-            }
-            else if indexPath.row == 9 {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "IncorpCalCell", for: indexPath) as? IncorpCalCell
-                //Do stuff when fucntioning later
-            }
-            else {
-                print("wrong choice")
-            }
-        }
-        print(event!)
+        let dateFormatter = DateFormatter()
+        event!.name = self.name
+        print(self.name)
+        event!.location = self.location
+        print(self.location)
+        let start = startDate
+        dateFormatter.dateFormat = "yyyy"
+        let yearS: String = dateFormatter.string(from: start)
+        dateFormatter.dateFormat = "MM"
+        let monthS: String = dateFormatter.string(from: start)
+        dateFormatter.dateFormat = "dd"
+        let dayS: String = dateFormatter.string(from: start)
+        dateFormatter.dateFormat = "HH"
+        let hourS: String = dateFormatter.string(from: start)
+        dateFormatter.dateFormat = "mm"
+        let minS: String = dateFormatter.string(from: start)
+        event?.yearS = Int(yearS)!
+        event?.monthS = Int(monthS)!
+        event?.dayS = Int(dayS)!
+        event?.startTimeH = Int(hourS)!
+        event?.minS = Int(minS)!
+        let end = endDate
+        dateFormatter.dateFormat = "yyyy"
+        let yearE: String = dateFormatter.string(from: end)
+        dateFormatter.dateFormat = "MM"
+        let monthE: String = dateFormatter.string(from: end)
+        dateFormatter.dateFormat = "dd"
+        let dayE: String = dateFormatter.string(from: end)
+        dateFormatter.dateFormat = "HH"
+        let hourE: String = dateFormatter.string(from: end)
+        dateFormatter.dateFormat = "mm"
+        let minE: String = dateFormatter.string(from: end)
+        event?.yearE = Int(yearE)!
+        event?.monthE = Int(monthE)!
+        event?.dayE = Int(dayE)!
+        event?.endTimeH = Int(hourE)!
+        event?.minE = Int(minE)!
+        let hardEnd = finalDate
+        dateFormatter.dateFormat = "yyyy"
+        let yearHE: String = dateFormatter.string(from: hardEnd)
+        dateFormatter.dateFormat = "MM"
+        let monthHE: String = dateFormatter.string(from: hardEnd)
+        dateFormatter.dateFormat = "dd"
+        let dayHE: String = dateFormatter.string(from: hardEnd)
+        event?.yearE = Int(yearHE)!
+        event?.monthE = Int(monthHE)!
+        event?.dayE = Int(dayHE)!
+        event?.ongoing = continuous
     }
 }
+
