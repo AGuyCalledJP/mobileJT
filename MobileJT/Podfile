@@ -9,6 +9,10 @@ target 'MobileJT' do
 
   pod 'MultiSelectSegmentedControl'
 
+  pod 'MongoSwift'
+
+  pod 'SideMenu'
+
   target 'MobileJTTests' do
     inherit! :search_paths
     # Pods for testing

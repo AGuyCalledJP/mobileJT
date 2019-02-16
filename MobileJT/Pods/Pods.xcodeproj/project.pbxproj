@@ -7,24 +7,69 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00E3A3F78D7FF48866AFA09B65067323 /* Overwritable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A4E307326CF620F97D33F18C8F2E30 /* Overwritable.swift */; };
 		04C5629E11A4EFFBF7F007893F991142 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
-		1B478F8411A72AB63472E9E25D56378F /* MultiSelectSegmentedControl-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 08D6316546C21B62B79B889D56FB29A7 /* MultiSelectSegmentedControl-dummy.m */; };
+		06241A156C4375A8789B47DD9E51EC06 /* MongoCollection+Read.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A909F58C38CC566A9A25A2E3D6A228D /* MongoCollection+Read.swift */; };
+		083CE4EF8345D888FEFB69656F119A62 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
+		0A224C0EA2F2B550A693FBDA6285C9CC /* Document+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9E3B456A2EAA80086CA8987F51437B /* Document+Collection.swift */; };
+		0B810A266A872B1092340C3662A39487 /* UISideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3050D0E2F5BF6F25D7F197AF9DC74C /* UISideMenuNavigationController.swift */; };
+		0FB8E1EC9C1C83CF25325248F6620977 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
+		15A145A874976CD154B45836AEAE8812 /* MongoSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292E76DC298B52E6D85A8D4E4F6E8FDF /* MongoSwift.swift */; };
+		1AEF0D953DE55353E254C3CF66EA2698 /* SideMenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C122E0FEFF03422C0169965F8C5197 /* SideMenuManager.swift */; };
+		1B478F8411A72AB63472E9E25D56378F /* MultiSelectSegmentedControl-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CF571FFDD84F7323A5432D1776A9DC01 /* MultiSelectSegmentedControl-dummy.m */; };
+		1FAFCF178D4E4100EE6EE8BDEE157D27 /* Document+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E70A02ECE0380DC7712BA34F57BD16 /* Document+Codable.swift */; };
+		1FD37239E7EEC30653DBDC11780FFDD2 /* CodableNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509438C5CEC2FAF6BFE3701AA4677C3C /* CodableNumber.swift */; };
+		2DF36BE38827865C0A67CEB15A21D798 /* Pods-MobileJT-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7138CBE39459320F3F6B04B64A820A9E /* Pods-MobileJT-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2F4B6BA1D8A6A545ADBD28E985292F9D /* Pods-MobileJTTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A9450A6C0D5A9BEE0194EDD0B8027CAF /* Pods-MobileJTTests-dummy.m */; };
+		34A42C1EF67AC2A5DD3C6CD88462F315 /* MongoCursor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13686234E3842B86F61CFBA041DA375 /* MongoCursor.swift */; };
+		3553CF79DD1E70EC6FC36C973B42C3A5 /* Document+Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE3BDADA9FB0A0AB61EA52BA6D83272 /* Document+Sequence.swift */; };
+		46D790326106F636C04BD0D62FBFC197 /* AnyBSONValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C287F0ACAD4E7B28C610299561D63413 /* AnyBSONValue.swift */; };
+		4864F040DD1CD11BDF0378D6E7BDCC1B /* BSONEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5460C2727B4D65A3FCE4C563EDF09A /* BSONEncoder.swift */; };
+		48C558FF29BC86C5DAB83C62BAA47A53 /* MongoSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6203E442218B8F63655D4DAD16F8C430 /* MongoSwift-dummy.m */; };
+		5A631114D31B51B37C03C8F6D7EE4C98 /* WriteConcern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF8C7B765FF103F18A74373BD6964AB /* WriteConcern.swift */; };
+		5E2934CD6C2549C10FF850052645C229 /* BSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE22FB705631A4B30FE0C481A4242172 /* BSONDecoder.swift */; };
+		5ECFB670E1B3F350977E3E3342B430B9 /* MongoClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33E93E0DD6C313757E8E50F2A564339 /* MongoClient.swift */; };
+		5F08D7E42AEBD579214B53824611CF58 /* MongoDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E73FCE3CA6374731F515DA105EA7CF /* MongoDatabase.swift */; };
+		652B184A8F1CFD5F02CFE5FFE688C14D /* MongoCollection+BulkWrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9FCE7FB561345B72476A844E5DE8EE /* MongoCollection+BulkWrite.swift */; };
 		6BA608A6BA0FC043C4ED243971654E08 /* Pods-MobileJTTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E247312073939817075FFB023095C747 /* Pods-MobileJTTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6EC4AD9487E37DF9BAD424DAC41F08EE /* MultiSelectSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = E2ACC0E1A2CEF6FC7222D7B72A9516E8 /* MultiSelectSegmentedControl.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		8C4FDB6E2BE02B212D2A3CEF09584D1D /* Pods-MobileJT-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 98547356356DDD54E8B380F41CB38AB0 /* Pods-MobileJT-dummy.m */; };
-		939470F9073829C6131B86D73B90E3AD /* MultiSelectSegmentedControl.h in Headers */ = {isa = PBXBuildFile; fileRef = E86DE436551CFE83CC38B9B446091552 /* MultiSelectSegmentedControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B0DF74ED0835F3742E845791F70C7805 /* Pods-MobileJT-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7138CBE39459320F3F6B04B64A820A9E /* Pods-MobileJT-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BF5EC1D81C46B2E699B9D94D45FC7FB2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
-		C128CAA4EE8B32048D95DCCEA0A09BF7 /* MultiSelectSegmentedControl-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EDD05BC3883DD47FF9BA8CCC6406B13B /* MultiSelectSegmentedControl-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6CBF6A29935AFD88BCC58A3DE9DF6405 /* MongoCollection+FindAndModify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B312F4E47E77C25463F1D09754655 /* MongoCollection+FindAndModify.swift */; };
+		6EC4AD9487E37DF9BAD424DAC41F08EE /* MultiSelectSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = D4003ED790B242C650824B087824BDFD /* MultiSelectSegmentedControl.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		6EF646AC2E52C37D0337C343AC82CC47 /* SideMenu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD8D6A106239D73B87BF82047A3F97F /* SideMenu-dummy.m */; };
+		72B55E178B021A7CC375CC8E8D5C3D25 /* UITableViewVibrantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B132A82E5C87BB21A3F2E80F01E9A1 /* UITableViewVibrantCell.swift */; };
+		7DDD79FA293844CC2ABD22D07AB733C0 /* MongoError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1122E422BBC7933AF1DFE7536B341B3A /* MongoError.swift */; };
+		7E6F230F35689011C40F8F4EBC9F8F2E /* Pods-MobileJT-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 98547356356DDD54E8B380F41CB38AB0 /* Pods-MobileJT-dummy.m */; };
+		854E625314A30EB47C68CCF795A82FEE /* ReadConcern.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E0BE79C407DAD2DC7DE26DEDB467F4 /* ReadConcern.swift */; };
+		8FD8DE30749A7CE2A78799294B4DCC20 /* APM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0D385EDC939440AB6641D4ECC57809 /* APM.swift */; };
+		92A06B73E7C9FCF4AB12F1A1FFC26566 /* MongoCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B70937C872E2BFDFE6495A5E4CF2AE3 /* MongoCollection.swift */; };
+		939470F9073829C6131B86D73B90E3AD /* MultiSelectSegmentedControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DA28F9884F0FF9C203817609893C8E9 /* MultiSelectSegmentedControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9B33B95CB394F08A3C20F72B90966724 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = C402269A6838880C8F9242B5CB9899BD /* Document.swift */; };
+		9C07CB3B65E18DC555A0B93314C0E42F /* MongoCollection+Indexes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE85CAE16E3B17C65CDC62D03A64D98A /* MongoCollection+Indexes.swift */; };
+		A6827C39267A1F49A9AF71CE37EF5864 /* Polyfills.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0EBFF72130C463815C72E6B624530B /* Polyfills.swift */; };
+		C128CAA4EE8B32048D95DCCEA0A09BF7 /* MultiSelectSegmentedControl-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 49CA93BDA77283C029DDD0CFAD873F75 /* MultiSelectSegmentedControl-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C3FD2B5792063F0B0EB24DBB692EC848 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
+		C9757FAE472AEDFDF6196720674DE2A1 /* MongoSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 58235986F7D0ED2A40840CAA03536548 /* MongoSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CDCF4004C916812FF8B41892FA4B1F6A /* ReadPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1848003874BED67F920D401629013A /* ReadPreference.swift */; };
+		CFD592AA1198606CCB4D0A790EE53D7F /* SideMenuTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78181703BC486E6DC2487DB55A5FA2C1 /* SideMenuTransition.swift */; };
+		D1E0F993BEC9F08EF9AA0894EBD15BB8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
+		D5E721869F057D75F340EF6C2612FF57 /* MongoCollection+Write.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDABCD076C25EEE51DFD3E7754B1B8E /* MongoCollection+Write.swift */; };
+		D980E19CFC860B17866CCD5C39784EDC /* ClientSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C00615E9982767D3710D22689D377C /* ClientSession.swift */; };
 		E29EE368BA89EF5C936C5EAECE9C3465 /* Pods-MobileJTUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D9C83DAEB02B6F90A32FE65271EE5B5F /* Pods-MobileJTUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E2B855B97EC99FB3E9D0665325CE2A73 /* SDAM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F66BC7766CFA6FEBE03D2A931FAEED0 /* SDAM.swift */; };
 		EE8D2F04D24D9BB86B33CA1EB31FA166 /* Pods-MobileJTUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E944E75A3FDA02C560F509766246150 /* Pods-MobileJTUITests-dummy.m */; };
+		F3CBB95C4BA4F67F232F8572A31AE2F4 /* SideMenu-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E76CC0C01E8BDD9448D975A8B29843 /* SideMenu-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F561D7A830D6B8E69279D6F7491DE449 /* BSONValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA504F19F42DF5DFF4EA101A45C31732 /* BSONValue.swift */; };
 		F9514CDF76E017EF35C5B45D2E2DC072 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		BDE8DCF083A8C3E07099F6773FCA33F9 /* PBXContainerItemProxy */ = {
+		25BEA4396ECC60DF321C300E70BDB6CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 59684BB481DB89AFE9E3A400FD44981D;
+			remoteInfo = SideMenu;
+		};
+		CFE686A24F1E96BEAA5CBA63E652380A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
@@ -35,63 +80,118 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = E2F40A71D7A704A872B5F260018FE2E2;
+			remoteGlobalIDString = EA2C80414779D4359D1F73BD0B4A8EB6;
 			remoteInfo = "Pods-MobileJT";
 		};
 		D6C0E84ECB3D864130BA7A2E981BEC69 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = E2F40A71D7A704A872B5F260018FE2E2;
+			remoteGlobalIDString = EA2C80414779D4359D1F73BD0B4A8EB6;
 			remoteInfo = "Pods-MobileJT";
+		};
+		FB5E84899C07D6E06ACFCCC878B21305 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E3C4A687108486DF417B933D8552A3ED;
+			remoteInfo = MongoSwift;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		081902FCA7AF3A0496361740117230CE /* Pods-MobileJTTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MobileJTTests.debug.xcconfig"; sourceTree = "<group>"; };
-		08D6316546C21B62B79B889D56FB29A7 /* MultiSelectSegmentedControl-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MultiSelectSegmentedControl-dummy.m"; sourceTree = "<group>"; };
+		0A909F58C38CC566A9A25A2E3D6A228D /* MongoCollection+Read.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MongoCollection+Read.swift"; path = "Sources/MongoSwift/MongoCollection+Read.swift"; sourceTree = "<group>"; };
+		0B70937C872E2BFDFE6495A5E4CF2AE3 /* MongoCollection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MongoCollection.swift; path = Sources/MongoSwift/MongoCollection.swift; sourceTree = "<group>"; };
 		0E944E75A3FDA02C560F509766246150 /* Pods-MobileJTUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MobileJTUITests-dummy.m"; sourceTree = "<group>"; };
 		0EDA2E5227FF667AD29E1FA7BF96A0C6 /* Pods-MobileJTUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MobileJTUITests.modulemap"; sourceTree = "<group>"; };
-		186696328F482728BBED97E3A4A59689 /* MultiSelectSegmentedControl-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MultiSelectSegmentedControl-prefix.pch"; sourceTree = "<group>"; };
-		23DFC362E65C4C69F41B0CDDFA51DAED /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1122E422BBC7933AF1DFE7536B341B3A /* MongoError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MongoError.swift; path = Sources/MongoSwift/MongoError.swift; sourceTree = "<group>"; };
+		15A0579265EDA56A88979F159CE64E8C /* MultiSelectSegmentedControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MultiSelectSegmentedControl.framework; path = MultiSelectSegmentedControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		15E03D5216570E3A740FF3D11103E096 /* MongoSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MongoSwift-prefix.pch"; sourceTree = "<group>"; };
+		1684ACAC8229F008A78E5AE982BA6E5E /* MongoSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MongoSwift.framework; path = MongoSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DA28F9884F0FF9C203817609893C8E9 /* MultiSelectSegmentedControl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MultiSelectSegmentedControl.h; sourceTree = "<group>"; };
+		236B7A0D03CDAF595EBFCEF1FF8963AD /* bson.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = bson.framework; path = iPhoneOS/Frameworks/bson.framework; sourceTree = "<group>"; };
+		292E76DC298B52E6D85A8D4E4F6E8FDF /* MongoSwift.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MongoSwift.swift; path = Sources/MongoSwift/MongoSwift.swift; sourceTree = "<group>"; };
+		2B1781365DC761289F13260B9F9BB99B /* MultiSelectSegmentedControl.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MultiSelectSegmentedControl.xcconfig; sourceTree = "<group>"; };
+		315A288122273AD302B7CB26401189C0 /* SideMenu.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SideMenu.xcconfig; sourceTree = "<group>"; };
 		32BDBAE88283EA3B29BDB2FB73F1B6E5 /* Pods-MobileJTTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MobileJTTests.modulemap"; sourceTree = "<group>"; };
-		3A042E98F0824CD817EB6B4B87D0D5F0 /* Pods_MobileJT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MobileJT.framework; path = "Pods-MobileJT.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C785B65C3A9127A856F7AA9FA340F4E /* Pods-MobileJTTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MobileJTTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		3EF8C7B765FF103F18A74373BD6964AB /* WriteConcern.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WriteConcern.swift; path = Sources/MongoSwift/WriteConcern.swift; sourceTree = "<group>"; };
 		480FA86136CD6C50AE7B5BC6C7B72251 /* Pods-MobileJTUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MobileJTUITests-frameworks.sh"; sourceTree = "<group>"; };
-		4D8E63957D306EACEAD983071C2278E5 /* MultiSelectSegmentedControl.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MultiSelectSegmentedControl.modulemap; sourceTree = "<group>"; };
+		49CA93BDA77283C029DDD0CFAD873F75 /* MultiSelectSegmentedControl-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MultiSelectSegmentedControl-umbrella.h"; sourceTree = "<group>"; };
+		509438C5CEC2FAF6BFE3701AA4677C3C /* CodableNumber.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CodableNumber.swift; path = Sources/MongoSwift/BSON/CodableNumber.swift; sourceTree = "<group>"; };
 		5192AB4CFE909B7B75592D070E0E2E52 /* Pods-MobileJTUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MobileJTUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		52FD5E85C55ADF1E8EB9F48790DB9901 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56DE184FB7CE1D7C6048BBBB49C01813 /* SideMenu.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SideMenu.modulemap; sourceTree = "<group>"; };
+		58235986F7D0ED2A40840CAA03536548 /* MongoSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MongoSwift-umbrella.h"; sourceTree = "<group>"; };
 		58643C9CD458697AFC93891208371455 /* Pods-MobileJTTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MobileJTTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		5C45C1F11D78AE8C26D077596B182F5F /* MultiSelectSegmentedControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MultiSelectSegmentedControl.framework; path = MultiSelectSegmentedControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6CCC97C05FE9E338FF4ED9243DF39050 /* Pods_MobileJTTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MobileJTTests.framework; path = "Pods-MobileJTTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6011B38D39573E59008C82DA7CE1BCCD /* MultiSelectSegmentedControl.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MultiSelectSegmentedControl.modulemap; sourceTree = "<group>"; };
+		61E70A02ECE0380DC7712BA34F57BD16 /* Document+Codable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Document+Codable.swift"; path = "Sources/MongoSwift/BSON/Document+Codable.swift"; sourceTree = "<group>"; };
+		6203E442218B8F63655D4DAD16F8C430 /* MongoSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MongoSwift-dummy.m"; sourceTree = "<group>"; };
+		64C00615E9982767D3710D22689D377C /* ClientSession.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ClientSession.swift; path = Sources/MongoSwift/ClientSession.swift; sourceTree = "<group>"; };
+		67E76CC0C01E8BDD9448D975A8B29843 /* SideMenu-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SideMenu-umbrella.h"; sourceTree = "<group>"; };
+		6964EB5388D93908B87C59E396791684 /* MultiSelectSegmentedControl-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MultiSelectSegmentedControl-prefix.pch"; sourceTree = "<group>"; };
+		70F2ED482B3F663E4474DBC6478F56C3 /* Pods_MobileJTUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MobileJTUITests.framework; path = "Pods-MobileJTUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7138CBE39459320F3F6B04B64A820A9E /* Pods-MobileJT-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MobileJT-umbrella.h"; sourceTree = "<group>"; };
 		728EB1B58C7DE5AE115FB8233A3F3623 /* Pods-MobileJTUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MobileJTUITests-resources.sh"; sourceTree = "<group>"; };
+		78181703BC486E6DC2487DB55A5FA2C1 /* SideMenuTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuTransition.swift; path = Pod/Classes/SideMenuTransition.swift; sourceTree = "<group>"; };
+		7A9E3B456A2EAA80086CA8987F51437B /* Document+Collection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Document+Collection.swift"; path = "Sources/MongoSwift/BSON/Document+Collection.swift"; sourceTree = "<group>"; };
+		7C0D385EDC939440AB6641D4ECC57809 /* APM.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = APM.swift; path = Sources/MongoSwift/APM.swift; sourceTree = "<group>"; };
 		7C93E43F4141AF958F2CE09874507A11 /* Pods-MobileJT-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MobileJT-resources.sh"; sourceTree = "<group>"; };
+		7F66BC7766CFA6FEBE03D2A931FAEED0 /* SDAM.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SDAM.swift; path = Sources/MongoSwift/SDAM.swift; sourceTree = "<group>"; };
 		83BB3EB3FF89A947078084DCDDD6BBCA /* Pods-MobileJT-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MobileJT-acknowledgements.plist"; sourceTree = "<group>"; };
-		8ED75D963665253DA4B12F361D7D86CC /* MultiSelectSegmentedControl.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MultiSelectSegmentedControl.xcconfig; sourceTree = "<group>"; };
+		87E73FCE3CA6374731F515DA105EA7CF /* MongoDatabase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MongoDatabase.swift; path = Sources/MongoSwift/MongoDatabase.swift; sourceTree = "<group>"; };
 		8FC3C8D8FD24851DCA1F49592405AC88 /* Pods-MobileJT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MobileJT.release.xcconfig"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		98547356356DDD54E8B380F41CB38AB0 /* Pods-MobileJT-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MobileJT-dummy.m"; sourceTree = "<group>"; };
-		9A67FDA725C6706D13971C54F14CCD97 /* Pods_MobileJTUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MobileJTUITests.framework; path = "Pods-MobileJTUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B6B312F4E47E77C25463F1D09754655 /* MongoCollection+FindAndModify.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MongoCollection+FindAndModify.swift"; path = "Sources/MongoSwift/MongoCollection+FindAndModify.swift"; sourceTree = "<group>"; };
 		9BA96E484C58C2BAAC5DA9AA403C863C /* Pods-MobileJTUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MobileJTUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A4E6352EA577B4419DE7DF6B95FF14FF /* Pods-MobileJTTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MobileJTTests-frameworks.sh"; sourceTree = "<group>"; };
+		A5AAD633B14DC844FF2F44B65DFB3039 /* MongoSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MongoSwift.xcconfig; sourceTree = "<group>"; };
+		A6B132A82E5C87BB21A3F2E80F01E9A1 /* UITableViewVibrantCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UITableViewVibrantCell.swift; path = Pod/Classes/UITableViewVibrantCell.swift; sourceTree = "<group>"; };
 		A9450A6C0D5A9BEE0194EDD0B8027CAF /* Pods-MobileJTTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MobileJTTests-dummy.m"; sourceTree = "<group>"; };
+		AA86002ED4BB994C76E8882E71B4208C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AAC34AAD3BAA3683014076C69FA7B1F3 /* Pods-MobileJTUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MobileJTUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		AD5460C2727B4D65A3FCE4C563EDF09A /* BSONEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BSONEncoder.swift; path = Sources/MongoSwift/BSON/BSONEncoder.swift; sourceTree = "<group>"; };
+		ADE3BDADA9FB0A0AB61EA52BA6D83272 /* Document+Sequence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Document+Sequence.swift"; path = "Sources/MongoSwift/BSON/Document+Sequence.swift"; sourceTree = "<group>"; };
 		ADF29C9571224BD1D80F88BE5E6E9D9A /* Pods-MobileJTTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MobileJTTests-resources.sh"; sourceTree = "<group>"; };
 		B214C0BCAAF8922952B24BE871E5469A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2E2E1815E08944B43B9017AFB39BEEA /* Pods_MobileJT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MobileJT.framework; path = "Pods-MobileJT.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B30083E90A1FB1E175C241B94F5B2B5E /* Pods-MobileJT-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MobileJT-acknowledgements.markdown"; sourceTree = "<group>"; };
 		BC2DCD657C6BA694D084A3CA000B4FD7 /* Pods-MobileJT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MobileJT.debug.xcconfig"; sourceTree = "<group>"; };
+		BD1848003874BED67F920D401629013A /* ReadPreference.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReadPreference.swift; path = Sources/MongoSwift/ReadPreference.swift; sourceTree = "<group>"; };
+		BDE763794FFB93E73DB2BA81B62B19B7 /* MongoSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MongoSwift.modulemap; sourceTree = "<group>"; };
 		BE7BD1F25957CD943C22623D4D3F3787 /* Pods-MobileJT.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MobileJT.modulemap"; sourceTree = "<group>"; };
+		BE85CAE16E3B17C65CDC62D03A64D98A /* MongoCollection+Indexes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MongoCollection+Indexes.swift"; path = "Sources/MongoSwift/MongoCollection+Indexes.swift"; sourceTree = "<group>"; };
+		BFD8D6A106239D73B87BF82047A3F97F /* SideMenu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SideMenu-dummy.m"; sourceTree = "<group>"; };
 		BFEF988F5AE2D00A0C734182C3749CAB /* Pods-MobileJTTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MobileJTTests.release.xcconfig"; sourceTree = "<group>"; };
+		C13686234E3842B86F61CFBA041DA375 /* MongoCursor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MongoCursor.swift; path = Sources/MongoSwift/MongoCursor.swift; sourceTree = "<group>"; };
+		C210C3F69312727D0F499E229D4E95D1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C287F0ACAD4E7B28C610299561D63413 /* AnyBSONValue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnyBSONValue.swift; path = Sources/MongoSwift/BSON/AnyBSONValue.swift; sourceTree = "<group>"; };
+		C38FADC8641F52D7F558B67245906B6E /* Pods_MobileJTTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MobileJTTests.framework; path = "Pods-MobileJTTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C402269A6838880C8F9242B5CB9899BD /* Document.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Document.swift; path = Sources/MongoSwift/BSON/Document.swift; sourceTree = "<group>"; };
+		C8A4E307326CF620F97D33F18C8F2E30 /* Overwritable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Overwritable.swift; path = Sources/MongoSwift/BSON/Overwritable.swift; sourceTree = "<group>"; };
+		CA0EBFF72130C463815C72E6B624530B /* Polyfills.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Polyfills.swift; path = Sources/MongoSwift/Polyfills.swift; sourceTree = "<group>"; };
+		CC9FCE7FB561345B72476A844E5DE8EE /* MongoCollection+BulkWrite.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MongoCollection+BulkWrite.swift"; path = "Sources/MongoSwift/MongoCollection+BulkWrite.swift"; sourceTree = "<group>"; };
+		CE73F6A11C30773F4B6711656B6C1DC3 /* SideMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SideMenu.framework; path = SideMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF3050D0E2F5BF6F25D7F197AF9DC74C /* UISideMenuNavigationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UISideMenuNavigationController.swift; path = Pod/Classes/UISideMenuNavigationController.swift; sourceTree = "<group>"; };
+		CF571FFDD84F7323A5432D1776A9DC01 /* MultiSelectSegmentedControl-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MultiSelectSegmentedControl-dummy.m"; sourceTree = "<group>"; };
+		D4003ED790B242C650824B087824BDFD /* MultiSelectSegmentedControl.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MultiSelectSegmentedControl.m; sourceTree = "<group>"; };
+		D5E0BE79C407DAD2DC7DE26DEDB467F4 /* ReadConcern.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReadConcern.swift; path = Sources/MongoSwift/ReadConcern.swift; sourceTree = "<group>"; };
 		D60DB17B1DEBBC4D81BBC95AD626EDD3 /* Pods-MobileJTUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MobileJTUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D8C122E0FEFF03422C0169965F8C5197 /* SideMenuManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuManager.swift; path = Pod/Classes/SideMenuManager.swift; sourceTree = "<group>"; };
 		D9C83DAEB02B6F90A32FE65271EE5B5F /* Pods-MobileJTUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MobileJTUITests-umbrella.h"; sourceTree = "<group>"; };
 		DAD4DA173287D3BD39DD4E8EE1F0E4AC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E247312073939817075FFB023095C747 /* Pods-MobileJTTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MobileJTTests-umbrella.h"; sourceTree = "<group>"; };
-		E2ACC0E1A2CEF6FC7222D7B72A9516E8 /* MultiSelectSegmentedControl.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MultiSelectSegmentedControl.m; sourceTree = "<group>"; };
+		E33E93E0DD6C313757E8E50F2A564339 /* MongoClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MongoClient.swift; path = Sources/MongoSwift/MongoClient.swift; sourceTree = "<group>"; };
 		E5EF530BB7C09A852C67F1EE9BA8F80A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E86DE436551CFE83CC38B9B446091552 /* MultiSelectSegmentedControl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MultiSelectSegmentedControl.h; sourceTree = "<group>"; };
-		EDD05BC3883DD47FF9BA8CCC6406B13B /* MultiSelectSegmentedControl-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MultiSelectSegmentedControl-umbrella.h"; sourceTree = "<group>"; };
+		EA504F19F42DF5DFF4EA101A45C31732 /* BSONValue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BSONValue.swift; path = Sources/MongoSwift/BSON/BSONValue.swift; sourceTree = "<group>"; };
+		EE22FB705631A4B30FE0C481A4242172 /* BSONDecoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BSONDecoder.swift; path = Sources/MongoSwift/BSON/BSONDecoder.swift; sourceTree = "<group>"; };
+		EFDABCD076C25EEE51DFD3E7754B1B8E /* MongoCollection+Write.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MongoCollection+Write.swift"; path = "Sources/MongoSwift/MongoCollection+Write.swift"; sourceTree = "<group>"; };
 		F1193A5099BA4670A471F003944A835F /* Pods-MobileJT-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MobileJT-frameworks.sh"; sourceTree = "<group>"; };
+		F4BAE582A21059523D09091D1DF63AE4 /* mongoc.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = mongoc.framework; path = iPhoneOS/Frameworks/mongoc.framework; sourceTree = "<group>"; };
+		F7557AFFEA8E6C2C260DC7C3DE3066CE /* SideMenu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SideMenu-prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +200,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3FD2B5792063F0B0EB24DBB692EC848 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		160A034E3948DAFD5DA1364E3C2AD802 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1E0F993BEC9F08EF9AA0894EBD15BB8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3264019AD57B10A0A46A2DA03F825F44 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FB8E1EC9C1C83CF25325248F6620977 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,23 +235,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B55F3C6394C9DBECF42AE2155F59501B /* Frameworks */ = {
+		A636111DCFFEFBF1C3D66AFDA6D5AB1F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF5EC1D81C46B2E699B9D94D45FC7FB2 /* Foundation.framework in Frameworks */,
+				083CE4EF8345D888FEFB69656F119A62 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		06A527C1AC30D7F473621472165ADFFF /* Pods */ = {
+		22339227C8BF4FE72DCC74ACDAA7B985 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B0903408192FCF2B71D75C3AA3A47A06 /* MultiSelectSegmentedControl */,
+				236B7A0D03CDAF595EBFCEF1FF8963AD /* bson.framework */,
+				F4BAE582A21059523D09091D1DF63AE4 /* mongoc.framework */,
 			);
-			name = Pods;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		2C8ED0E93F5D81F65FB82F48B27EDEC3 /* Pods-MobileJT */ = {
@@ -156,6 +273,31 @@
 			path = "Target Support Files/Pods-MobileJT";
 			sourceTree = "<group>";
 		};
+		39DCF7241BC39E61DFB67BCA05AD0ED5 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				AA86002ED4BB994C76E8882E71B4208C /* Info.plist */,
+				56DE184FB7CE1D7C6048BBBB49C01813 /* SideMenu.modulemap */,
+				315A288122273AD302B7CB26401189C0 /* SideMenu.xcconfig */,
+				BFD8D6A106239D73B87BF82047A3F97F /* SideMenu-dummy.m */,
+				F7557AFFEA8E6C2C260DC7C3DE3066CE /* SideMenu-prefix.pch */,
+				67E76CC0C01E8BDD9448D975A8B29843 /* SideMenu-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SideMenu";
+			sourceTree = "<group>";
+		};
+		40248C26E982D679610A31D616E14B0F /* MultiSelectSegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				1DA28F9884F0FF9C203817609893C8E9 /* MultiSelectSegmentedControl.h */,
+				D4003ED790B242C650824B087824BDFD /* MultiSelectSegmentedControl.m */,
+				FF2E288D80DA9A40AF7B1D5D37457E23 /* Support Files */,
+			);
+			name = MultiSelectSegmentedControl;
+			path = MultiSelectSegmentedControl;
+			sourceTree = "<group>";
+		};
 		44D5347904CF754D6785B84253F2574A /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,13 +306,63 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		49BB300A294862F188ED516007361E32 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1684ACAC8229F008A78E5AE982BA6E5E /* MongoSwift.framework */,
+				15A0579265EDA56A88979F159CE64E8C /* MultiSelectSegmentedControl.framework */,
+				B2E2E1815E08944B43B9017AFB39BEEA /* Pods_MobileJT.framework */,
+				C38FADC8641F52D7F558B67245906B6E /* Pods_MobileJTTests.framework */,
+				70F2ED482B3F663E4474DBC6478F56C3 /* Pods_MobileJTUITests.framework */,
+				CE73F6A11C30773F4B6711656B6C1DC3 /* SideMenu.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7ABA247EF365602361B68EF3A548E334 /* MongoSwift */ = {
+			isa = PBXGroup;
+			children = (
+				C287F0ACAD4E7B28C610299561D63413 /* AnyBSONValue.swift */,
+				7C0D385EDC939440AB6641D4ECC57809 /* APM.swift */,
+				EE22FB705631A4B30FE0C481A4242172 /* BSONDecoder.swift */,
+				AD5460C2727B4D65A3FCE4C563EDF09A /* BSONEncoder.swift */,
+				EA504F19F42DF5DFF4EA101A45C31732 /* BSONValue.swift */,
+				64C00615E9982767D3710D22689D377C /* ClientSession.swift */,
+				509438C5CEC2FAF6BFE3701AA4677C3C /* CodableNumber.swift */,
+				C402269A6838880C8F9242B5CB9899BD /* Document.swift */,
+				61E70A02ECE0380DC7712BA34F57BD16 /* Document+Codable.swift */,
+				7A9E3B456A2EAA80086CA8987F51437B /* Document+Collection.swift */,
+				ADE3BDADA9FB0A0AB61EA52BA6D83272 /* Document+Sequence.swift */,
+				E33E93E0DD6C313757E8E50F2A564339 /* MongoClient.swift */,
+				0B70937C872E2BFDFE6495A5E4CF2AE3 /* MongoCollection.swift */,
+				CC9FCE7FB561345B72476A844E5DE8EE /* MongoCollection+BulkWrite.swift */,
+				9B6B312F4E47E77C25463F1D09754655 /* MongoCollection+FindAndModify.swift */,
+				BE85CAE16E3B17C65CDC62D03A64D98A /* MongoCollection+Indexes.swift */,
+				0A909F58C38CC566A9A25A2E3D6A228D /* MongoCollection+Read.swift */,
+				EFDABCD076C25EEE51DFD3E7754B1B8E /* MongoCollection+Write.swift */,
+				C13686234E3842B86F61CFBA041DA375 /* MongoCursor.swift */,
+				87E73FCE3CA6374731F515DA105EA7CF /* MongoDatabase.swift */,
+				1122E422BBC7933AF1DFE7536B341B3A /* MongoError.swift */,
+				292E76DC298B52E6D85A8D4E4F6E8FDF /* MongoSwift.swift */,
+				C8A4E307326CF620F97D33F18C8F2E30 /* Overwritable.swift */,
+				CA0EBFF72130C463815C72E6B624530B /* Polyfills.swift */,
+				D5E0BE79C407DAD2DC7DE26DEDB467F4 /* ReadConcern.swift */,
+				BD1848003874BED67F920D401629013A /* ReadPreference.swift */,
+				7F66BC7766CFA6FEBE03D2A931FAEED0 /* SDAM.swift */,
+				3EF8C7B765FF103F18A74373BD6964AB /* WriteConcern.swift */,
+				F1DA08C704B53E4308360D6021D41E0E /* Support Files */,
+			);
+			name = MongoSwift;
+			path = MongoSwift;
+			sourceTree = "<group>";
+		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				06A527C1AC30D7F473621472165ADFFF /* Pods */,
-				D600ADC9B996C9A9C76CCB057D9799DF /* Products */,
+				9C2C7E1377CD7FC6BCF7D14457147EA9 /* Pods */,
+				49BB300A294862F188ED516007361E32 /* Products */,
 				FD0D5D180E2A1236EFC0753C520FBE3F /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -193,6 +385,17 @@
 			path = "Target Support Files/Pods-MobileJTTests";
 			sourceTree = "<group>";
 		};
+		9C2C7E1377CD7FC6BCF7D14457147EA9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D2B9D7C855A1EE41E97394428D9429F0 /* mongo-embedded-c-driver */,
+				7ABA247EF365602361B68EF3A548E334 /* MongoSwift */,
+				40248C26E982D679610A31D616E14B0F /* MultiSelectSegmentedControl */,
+				D01C575B8071C28613DBF004D017FF65 /* SideMenu */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		ABD2028A065C9C7023DC08625BBF7C10 /* Pods-MobileJTUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,17 +414,6 @@
 			path = "Target Support Files/Pods-MobileJTUITests";
 			sourceTree = "<group>";
 		};
-		B0903408192FCF2B71D75C3AA3A47A06 /* MultiSelectSegmentedControl */ = {
-			isa = PBXGroup;
-			children = (
-				E86DE436551CFE83CC38B9B446091552 /* MultiSelectSegmentedControl.h */,
-				E2ACC0E1A2CEF6FC7222D7B72A9516E8 /* MultiSelectSegmentedControl.m */,
-				C80DC69583EB1C62AEBCFEA3BC29CF17 /* Support Files */,
-			);
-			name = MultiSelectSegmentedControl;
-			path = MultiSelectSegmentedControl;
-			sourceTree = "<group>";
-		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,29 +422,40 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C80DC69583EB1C62AEBCFEA3BC29CF17 /* Support Files */ = {
+		D01C575B8071C28613DBF004D017FF65 /* SideMenu */ = {
 			isa = PBXGroup;
 			children = (
-				23DFC362E65C4C69F41B0CDDFA51DAED /* Info.plist */,
-				4D8E63957D306EACEAD983071C2278E5 /* MultiSelectSegmentedControl.modulemap */,
-				8ED75D963665253DA4B12F361D7D86CC /* MultiSelectSegmentedControl.xcconfig */,
-				08D6316546C21B62B79B889D56FB29A7 /* MultiSelectSegmentedControl-dummy.m */,
-				186696328F482728BBED97E3A4A59689 /* MultiSelectSegmentedControl-prefix.pch */,
-				EDD05BC3883DD47FF9BA8CCC6406B13B /* MultiSelectSegmentedControl-umbrella.h */,
+				D8C122E0FEFF03422C0169965F8C5197 /* SideMenuManager.swift */,
+				78181703BC486E6DC2487DB55A5FA2C1 /* SideMenuTransition.swift */,
+				CF3050D0E2F5BF6F25D7F197AF9DC74C /* UISideMenuNavigationController.swift */,
+				A6B132A82E5C87BB21A3F2E80F01E9A1 /* UITableViewVibrantCell.swift */,
+				39DCF7241BC39E61DFB67BCA05AD0ED5 /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/MultiSelectSegmentedControl";
+			name = SideMenu;
+			path = SideMenu;
 			sourceTree = "<group>";
 		};
-		D600ADC9B996C9A9C76CCB057D9799DF /* Products */ = {
+		D2B9D7C855A1EE41E97394428D9429F0 /* mongo-embedded-c-driver */ = {
 			isa = PBXGroup;
 			children = (
-				5C45C1F11D78AE8C26D077596B182F5F /* MultiSelectSegmentedControl.framework */,
-				3A042E98F0824CD817EB6B4B87D0D5F0 /* Pods_MobileJT.framework */,
-				6CCC97C05FE9E338FF4ED9243DF39050 /* Pods_MobileJTTests.framework */,
-				9A67FDA725C6706D13971C54F14CCD97 /* Pods_MobileJTUITests.framework */,
+				22339227C8BF4FE72DCC74ACDAA7B985 /* Frameworks */,
 			);
-			name = Products;
+			name = "mongo-embedded-c-driver";
+			path = "mongo-embedded-c-driver";
+			sourceTree = "<group>";
+		};
+		F1DA08C704B53E4308360D6021D41E0E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				52FD5E85C55ADF1E8EB9F48790DB9901 /* Info.plist */,
+				BDE763794FFB93E73DB2BA81B62B19B7 /* MongoSwift.modulemap */,
+				A5AAD633B14DC844FF2F44B65DFB3039 /* MongoSwift.xcconfig */,
+				6203E442218B8F63655D4DAD16F8C430 /* MongoSwift-dummy.m */,
+				15E03D5216570E3A740FF3D11103E096 /* MongoSwift-prefix.pch */,
+				58235986F7D0ED2A40840CAA03536548 /* MongoSwift-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MongoSwift";
 			sourceTree = "<group>";
 		};
 		FD0D5D180E2A1236EFC0753C520FBE3F /* Targets Support Files */ = {
@@ -265,14 +468,44 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		FF2E288D80DA9A40AF7B1D5D37457E23 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C210C3F69312727D0F499E229D4E95D1 /* Info.plist */,
+				6011B38D39573E59008C82DA7CE1BCCD /* MultiSelectSegmentedControl.modulemap */,
+				2B1781365DC761289F13260B9F9BB99B /* MultiSelectSegmentedControl.xcconfig */,
+				CF571FFDD84F7323A5432D1776A9DC01 /* MultiSelectSegmentedControl-dummy.m */,
+				6964EB5388D93908B87C59E396791684 /* MultiSelectSegmentedControl-prefix.pch */,
+				49CA93BDA77283C029DDD0CFAD873F75 /* MultiSelectSegmentedControl-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MultiSelectSegmentedControl";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		098B24DF941BB74FFDDDF866E9C4D457 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DF36BE38827865C0A67CEB15A21D798 /* Pods-MobileJT-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3FEB1E100C0757567B97AF624859377A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E29EE368BA89EF5C936C5EAECE9C3465 /* Pods-MobileJTUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D1945BEF40431019148836E464639F6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3CBB95C4BA4F67F232F8572A31AE2F4 /* SideMenu-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,19 +518,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7A6664257C5A2A184F08AF42721E69CF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9757FAE472AEDFDF6196720674DE2A1 /* MongoSwift-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DFEC4FB2FDBC7C65FF1A1C17CAD23F1E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				6BA608A6BA0FC043C4ED243971654E08 /* Pods-MobileJTTests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F4BB9975710614324DED7FE37A5A4DBA /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B0DF74ED0835F3742E845791F70C7805 /* Pods-MobileJT-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,7 +552,25 @@
 			);
 			name = MultiSelectSegmentedControl;
 			productName = MultiSelectSegmentedControl;
-			productReference = 5C45C1F11D78AE8C26D077596B182F5F /* MultiSelectSegmentedControl.framework */;
+			productReference = 15A0579265EDA56A88979F159CE64E8C /* MultiSelectSegmentedControl.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		59684BB481DB89AFE9E3A400FD44981D /* SideMenu */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 59AD4D8F85263EC9394F0DC62D3D3D17 /* Build configuration list for PBXNativeTarget "SideMenu" */;
+			buildPhases = (
+				4D1945BEF40431019148836E464639F6 /* Headers */,
+				1BECE2927C3D664EFB213264BFE07E40 /* Sources */,
+				A636111DCFFEFBF1C3D66AFDA6D5AB1F /* Frameworks */,
+				43AFD112C3A1D7DAA1A61A655351A415 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SideMenu;
+			productName = SideMenu;
+			productReference = CE73F6A11C30773F4B6711656B6C1DC3 /* SideMenu.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		71A80D9C2B7CF91824005C709F15E011 /* Pods-MobileJTTests */ = {
@@ -338,7 +589,7 @@
 			);
 			name = "Pods-MobileJTTests";
 			productName = "Pods-MobileJTTests";
-			productReference = 6CCC97C05FE9E338FF4ED9243DF39050 /* Pods_MobileJTTests.framework */;
+			productReference = C38FADC8641F52D7F558B67245906B6E /* Pods_MobileJTTests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		763740B80370661B15037FD9EFBAA919 /* Pods-MobileJTUITests */ = {
@@ -357,26 +608,46 @@
 			);
 			name = "Pods-MobileJTUITests";
 			productName = "Pods-MobileJTUITests";
-			productReference = 9A67FDA725C6706D13971C54F14CCD97 /* Pods_MobileJTUITests.framework */;
+			productReference = 70F2ED482B3F663E4474DBC6478F56C3 /* Pods_MobileJTUITests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		E2F40A71D7A704A872B5F260018FE2E2 /* Pods-MobileJT */ = {
+		E3C4A687108486DF417B933D8552A3ED /* MongoSwift */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 88EBAF7872E8746C2A956FF6FAD7737E /* Build configuration list for PBXNativeTarget "Pods-MobileJT" */;
+			buildConfigurationList = 46E3A691CF1E1EDD4388792A111CDD59 /* Build configuration list for PBXNativeTarget "MongoSwift" */;
 			buildPhases = (
-				F4BB9975710614324DED7FE37A5A4DBA /* Headers */,
-				F90F3B6FB04F6E46ABDF18BB752C5C28 /* Sources */,
-				B55F3C6394C9DBECF42AE2155F59501B /* Frameworks */,
-				98C5D730A1C97B5E3114600352D39AAF /* Resources */,
+				7A6664257C5A2A184F08AF42721E69CF /* Headers */,
+				10D29CB3BC5E218426F0B0EAF66D1682 /* Sources */,
+				160A034E3948DAFD5DA1364E3C2AD802 /* Frameworks */,
+				ACA7EC49D830FCE15387D68F969B85FA /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				377E46A3D2B5748171B5FC97C58CF03D /* PBXTargetDependency */,
+			);
+			name = MongoSwift;
+			productName = MongoSwift;
+			productReference = 1684ACAC8229F008A78E5AE982BA6E5E /* MongoSwift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		EA2C80414779D4359D1F73BD0B4A8EB6 /* Pods-MobileJT */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF1162C33036EBB9AF339EE86DA24DE3 /* Build configuration list for PBXNativeTarget "Pods-MobileJT" */;
+			buildPhases = (
+				098B24DF941BB74FFDDDF866E9C4D457 /* Headers */,
+				346AB28818E177ACBDBA4AD1A696A892 /* Sources */,
+				3264019AD57B10A0A46A2DA03F825F44 /* Frameworks */,
+				0CB92C0BB3EFB1DC42F28FF8FDD4493D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4A6258AE9E10C75DB5FCE70288234F74 /* PBXTargetDependency */,
+				A7955F589C158DE7F6F7E970EDB4F7E4 /* PBXTargetDependency */,
+				C2662FBAA025A7FA2F2D8A3B7F8A78E5 /* PBXTargetDependency */,
 			);
 			name = "Pods-MobileJT";
 			productName = "Pods-MobileJT";
-			productReference = 3A042E98F0824CD817EB6B4B87D0D5F0 /* Pods_MobileJT.framework */;
+			productReference = B2E2E1815E08944B43B9017AFB39BEEA /* Pods_MobileJT.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -396,19 +667,35 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = D600ADC9B996C9A9C76CCB057D9799DF /* Products */;
+			productRefGroup = 49BB300A294862F188ED516007361E32 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				E3C4A687108486DF417B933D8552A3ED /* MongoSwift */,
 				1487C1015E0DED9EB590F7F62483B83A /* MultiSelectSegmentedControl */,
-				E2F40A71D7A704A872B5F260018FE2E2 /* Pods-MobileJT */,
+				EA2C80414779D4359D1F73BD0B4A8EB6 /* Pods-MobileJT */,
 				71A80D9C2B7CF91824005C709F15E011 /* Pods-MobileJTTests */,
 				763740B80370661B15037FD9EFBAA919 /* Pods-MobileJTUITests */,
+				59684BB481DB89AFE9E3A400FD44981D /* SideMenu */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0CB92C0BB3EFB1DC42F28FF8FDD4493D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43AFD112C3A1D7DAA1A61A655351A415 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		711B9481C1CA8478CA5CE9209C716E13 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -416,7 +703,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		98C5D730A1C97B5E3114600352D39AAF /* Resources */ = {
+		ACA7EC49D830FCE15387D68F969B85FA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -440,6 +727,62 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		10D29CB3BC5E218426F0B0EAF66D1682 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46D790326106F636C04BD0D62FBFC197 /* AnyBSONValue.swift in Sources */,
+				8FD8DE30749A7CE2A78799294B4DCC20 /* APM.swift in Sources */,
+				5E2934CD6C2549C10FF850052645C229 /* BSONDecoder.swift in Sources */,
+				4864F040DD1CD11BDF0378D6E7BDCC1B /* BSONEncoder.swift in Sources */,
+				F561D7A830D6B8E69279D6F7491DE449 /* BSONValue.swift in Sources */,
+				D980E19CFC860B17866CCD5C39784EDC /* ClientSession.swift in Sources */,
+				1FD37239E7EEC30653DBDC11780FFDD2 /* CodableNumber.swift in Sources */,
+				1FAFCF178D4E4100EE6EE8BDEE157D27 /* Document+Codable.swift in Sources */,
+				0A224C0EA2F2B550A693FBDA6285C9CC /* Document+Collection.swift in Sources */,
+				3553CF79DD1E70EC6FC36C973B42C3A5 /* Document+Sequence.swift in Sources */,
+				9B33B95CB394F08A3C20F72B90966724 /* Document.swift in Sources */,
+				5ECFB670E1B3F350977E3E3342B430B9 /* MongoClient.swift in Sources */,
+				652B184A8F1CFD5F02CFE5FFE688C14D /* MongoCollection+BulkWrite.swift in Sources */,
+				6CBF6A29935AFD88BCC58A3DE9DF6405 /* MongoCollection+FindAndModify.swift in Sources */,
+				9C07CB3B65E18DC555A0B93314C0E42F /* MongoCollection+Indexes.swift in Sources */,
+				06241A156C4375A8789B47DD9E51EC06 /* MongoCollection+Read.swift in Sources */,
+				D5E721869F057D75F340EF6C2612FF57 /* MongoCollection+Write.swift in Sources */,
+				92A06B73E7C9FCF4AB12F1A1FFC26566 /* MongoCollection.swift in Sources */,
+				34A42C1EF67AC2A5DD3C6CD88462F315 /* MongoCursor.swift in Sources */,
+				5F08D7E42AEBD579214B53824611CF58 /* MongoDatabase.swift in Sources */,
+				7DDD79FA293844CC2ABD22D07AB733C0 /* MongoError.swift in Sources */,
+				48C558FF29BC86C5DAB83C62BAA47A53 /* MongoSwift-dummy.m in Sources */,
+				15A145A874976CD154B45836AEAE8812 /* MongoSwift.swift in Sources */,
+				00E3A3F78D7FF48866AFA09B65067323 /* Overwritable.swift in Sources */,
+				A6827C39267A1F49A9AF71CE37EF5864 /* Polyfills.swift in Sources */,
+				854E625314A30EB47C68CCF795A82FEE /* ReadConcern.swift in Sources */,
+				CDCF4004C916812FF8B41892FA4B1F6A /* ReadPreference.swift in Sources */,
+				E2B855B97EC99FB3E9D0665325CE2A73 /* SDAM.swift in Sources */,
+				5A631114D31B51B37C03C8F6D7EE4C98 /* WriteConcern.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BECE2927C3D664EFB213264BFE07E40 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6EF646AC2E52C37D0337C343AC82CC47 /* SideMenu-dummy.m in Sources */,
+				1AEF0D953DE55353E254C3CF66EA2698 /* SideMenuManager.swift in Sources */,
+				CFD592AA1198606CCB4D0A790EE53D7F /* SideMenuTransition.swift in Sources */,
+				0B810A266A872B1092340C3662A39487 /* UISideMenuNavigationController.swift in Sources */,
+				72B55E178B021A7CC375CC8E8D5C3D25 /* UITableViewVibrantCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		346AB28818E177ACBDBA4AD1A696A892 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E6F230F35689011C40F8F4EBC9F8F2E /* Pods-MobileJT-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5B0F14CC276B9CD87D02DF018B8549A2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -465,76 +808,42 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F90F3B6FB04F6E46ABDF18BB752C5C28 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8C4FDB6E2BE02B212D2A3CEF09584D1D /* Pods-MobileJT-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		377E46A3D2B5748171B5FC97C58CF03D /* PBXTargetDependency */ = {
+		4A6258AE9E10C75DB5FCE70288234F74 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = MultiSelectSegmentedControl;
-			target = 1487C1015E0DED9EB590F7F62483B83A /* MultiSelectSegmentedControl */;
-			targetProxy = BDE8DCF083A8C3E07099F6773FCA33F9 /* PBXContainerItemProxy */;
+			name = MongoSwift;
+			target = E3C4A687108486DF417B933D8552A3ED /* MongoSwift */;
+			targetProxy = FB5E84899C07D6E06ACFCCC878B21305 /* PBXContainerItemProxy */;
 		};
 		82638A66A6E9C3E3B40085C23C3A61DC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-MobileJT";
-			target = E2F40A71D7A704A872B5F260018FE2E2 /* Pods-MobileJT */;
+			target = EA2C80414779D4359D1F73BD0B4A8EB6 /* Pods-MobileJT */;
 			targetProxy = D1386FDF39C9D07809823F3612CA3F33 /* PBXContainerItemProxy */;
+		};
+		A7955F589C158DE7F6F7E970EDB4F7E4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MultiSelectSegmentedControl;
+			target = 1487C1015E0DED9EB590F7F62483B83A /* MultiSelectSegmentedControl */;
+			targetProxy = CFE686A24F1E96BEAA5CBA63E652380A /* PBXContainerItemProxy */;
+		};
+		C2662FBAA025A7FA2F2D8A3B7F8A78E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SideMenu;
+			target = 59684BB481DB89AFE9E3A400FD44981D /* SideMenu */;
+			targetProxy = 25BEA4396ECC60DF321C300E70BDB6CF /* PBXContainerItemProxy */;
 		};
 		EE999FDECAB8D527063EB24F314832F1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-MobileJT";
-			target = E2F40A71D7A704A872B5F260018FE2E2 /* Pods-MobileJT */;
+			target = EA2C80414779D4359D1F73BD0B4A8EB6 /* Pods-MobileJT */;
 			targetProxy = D6C0E84ECB3D864130BA7A2E981BEC69 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		09B2EAF4BD8927DF35E52760A0E890AF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BC2DCD657C6BA694D084A3CA000B4FD7 /* Pods-MobileJT.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-MobileJT/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-MobileJT/Pods-MobileJT.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		0AA3B91655AF95B1F49159CD8085CD89 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -640,6 +949,79 @@
 			};
 			name = Release;
 		};
+		31670ADB9F46E7BABDC5E98517DFB56F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5AAD633B14DC844FF2F44B65DFB3039 /* MongoSwift.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MongoSwift/MongoSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MongoSwift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/MongoSwift/MongoSwift.modulemap";
+				PRODUCT_MODULE_NAME = MongoSwift;
+				PRODUCT_NAME = MongoSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		330298F62F6055E11B7B48F3C7DAA102 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 315A288122273AD302B7CB26401189C0 /* SideMenu.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SideMenu/SideMenu-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SideMenu/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SideMenu/SideMenu.modulemap";
+				PRODUCT_MODULE_NAME = SideMenu;
+				PRODUCT_NAME = SideMenu;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		36E7B4D8417308E2B21D606CB1F2FB0A /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BFEF988F5AE2D00A0C734182C3749CAB /* Pods-MobileJTTests.release.xcconfig */;
@@ -681,7 +1063,7 @@
 		};
 		373D71CAFF98F74408FE811E59021B64 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8ED75D963665253DA4B12F361D7D86CC /* MultiSelectSegmentedControl.xcconfig */;
+			baseConfigurationReference = 2B1781365DC761289F13260B9F9BB99B /* MultiSelectSegmentedControl.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -815,42 +1197,7 @@
 			};
 			name = Release;
 		};
-		A2E558DF99BED8023732131CF16AF3EE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8ED75D963665253DA4B12F361D7D86CC /* MultiSelectSegmentedControl.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/MultiSelectSegmentedControl/MultiSelectSegmentedControl-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/MultiSelectSegmentedControl/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/MultiSelectSegmentedControl/MultiSelectSegmentedControl.modulemap";
-				PRODUCT_MODULE_NAME = MultiSelectSegmentedControl;
-				PRODUCT_NAME = MultiSelectSegmentedControl;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		D36E91D7227AF67946A1EB805EB9C756 /* Release */ = {
+		9E6B3FFD4BD93DD4561DB2BFA2B46349 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8FC3C8D8FD24851DCA1F49592405AC88 /* Pods-MobileJT.release.xcconfig */;
 			buildSettings = {
@@ -888,6 +1235,152 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
+		};
+		A2E558DF99BED8023732131CF16AF3EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B1781365DC761289F13260B9F9BB99B /* MultiSelectSegmentedControl.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MultiSelectSegmentedControl/MultiSelectSegmentedControl-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MultiSelectSegmentedControl/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/MultiSelectSegmentedControl/MultiSelectSegmentedControl.modulemap";
+				PRODUCT_MODULE_NAME = MultiSelectSegmentedControl;
+				PRODUCT_NAME = MultiSelectSegmentedControl;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A5C618873C7AAC960571C3949A24E596 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC2DCD657C6BA694D084A3CA000B4FD7 /* Pods-MobileJT.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-MobileJT/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MobileJT/Pods-MobileJT.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CC3B0DC1EAC37DF58C30F57DBCBA918B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5AAD633B14DC844FF2F44B65DFB3039 /* MongoSwift.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MongoSwift/MongoSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MongoSwift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/MongoSwift/MongoSwift.modulemap";
+				PRODUCT_MODULE_NAME = MongoSwift;
+				PRODUCT_NAME = MongoSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E4240F80908E890A6103FF82A4CDEE2F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 315A288122273AD302B7CB26401189C0 /* SideMenu.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SideMenu/SideMenu-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SideMenu/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SideMenu/SideMenu.modulemap";
+				PRODUCT_MODULE_NAME = SideMenu;
+				PRODUCT_NAME = SideMenu;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		F469D79EA3379A1E406F9B180E51795A /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -948,6 +1441,24 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		46E3A691CF1E1EDD4388792A111CDD59 /* Build configuration list for PBXNativeTarget "MongoSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				31670ADB9F46E7BABDC5E98517DFB56F /* Debug */,
+				CC3B0DC1EAC37DF58C30F57DBCBA918B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		59AD4D8F85263EC9394F0DC62D3D3D17 /* Build configuration list for PBXNativeTarget "SideMenu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4240F80908E890A6103FF82A4CDEE2F /* Debug */,
+				330298F62F6055E11B7B48F3C7DAA102 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		7F93245B23EC1334B414EE989F971E12 /* Build configuration list for PBXNativeTarget "Pods-MobileJTUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -957,11 +1468,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		88EBAF7872E8746C2A956FF6FAD7737E /* Build configuration list for PBXNativeTarget "Pods-MobileJT" */ = {
+		AF1162C33036EBB9AF339EE86DA24DE3 /* Build configuration list for PBXNativeTarget "Pods-MobileJT" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				09B2EAF4BD8927DF35E52760A0E890AF /* Debug */,
-				D36E91D7227AF67946A1EB805EB9C756 /* Release */,
+				A5C618873C7AAC960571C3949A24E596 /* Debug */,
+				9E6B3FFD4BD93DD4561DB2BFA2B46349 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -8,6 +8,7 @@
 
 import UIKit
 import os.log
+import SideMenu
 
 class DayCollectionViewController: UICollectionViewController {
     
@@ -21,6 +22,7 @@ class DayCollectionViewController: UICollectionViewController {
     var date = [Int]()
     @IBOutlet weak var addEvent: UIBarButtonItem!
     //    static var eventManager = EventManager()
+    @IBOutlet weak var menu: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -169,6 +171,8 @@ class DayCollectionViewController: UICollectionViewController {
             dayDetailTableViewController.setDay()
         case "AddItem":
             print("adding item")
+        case "SideBar":
+            print("displaying sidebar")
         default:
             fatalError("Unexpected Segue Identifier; \(segue.identifier!)")
         }
@@ -201,6 +205,9 @@ class DayCollectionViewController: UICollectionViewController {
         }
     }
     
+    @IBAction func sideBar(_ sender: Any) {
+        present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
+    }
     
     
     private func saveEvents() {
