@@ -8,13 +8,26 @@
 
 import Foundation
 import UIKit
+import SideMenu
 
 class PathController: UITableViewController {
     
     var locations = ["Profile", "Calendar"]
+    var user = User()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // refresh cell blur effect in case it changed
+        tableView.reloadData()
+        
+        guard SideMenuManager.default.menuBlurEffectStyle == nil else {
+            return
+        }
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
