@@ -10,9 +10,20 @@ import UIKit
 import SideMenu
 
 class ProfileViewController: UIViewController {
-
+    
+    var user = User()
+    @IBOutlet weak var UserNameLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var height: UILabel!
+    @IBOutlet weak var weight: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.UserNameLabel.text = user?.userName
+        self.nameLabel.text = (user?.fName)! + " " + (user?.lName)!
+        self.height.text = String(user!.height!)
+        self.weight.text = String(user!.weight!
+        )
 
         // Do any additional setup after loading the view.
     }
@@ -20,6 +31,8 @@ class ProfileViewController: UIViewController {
     @IBAction func sideBar(_ sender: Any) {
         present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
     }
+    
+    
     
     /*
     // MARK: - Navigation

@@ -93,11 +93,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 //Need to make this error handling more specific
                 print("Error with Mongodb: \(error)")
             }
-            segue.destination as! PathController
-            PathController.user = self.user!
+            
+            let navVC = segue.destination as! UINavigationController
+            
+            let VC = navVC.viewControllers.first as! PathController
+            VC.user = self.user
         case "NewUser":
             print("Adding User")
         default:
+            print(segue.destination)
             fatalError("Unexpected destination: \(segue.destination)")
         }
     }

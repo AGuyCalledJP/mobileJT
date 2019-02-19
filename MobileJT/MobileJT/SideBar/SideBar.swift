@@ -10,7 +10,10 @@ import Foundation
 import UIKit
 import SideMenu
 
-class SideBar: UINavigationController {
+class SideBar: UISideMenuNavigationController {
+    
+    var user = User()
+    
     
     open var menuPushStyle: MenuPushStyle = .popWhenPossible
     open var menuPresentMode: MenuPresentMode = .menuDissolveIn
@@ -27,4 +30,5 @@ class SideBar: UINavigationController {
         // (Optional) Prevent status bar area from turning black when menu appears:
         SideMenuManager.default.menuFadeStatusBar = false
     }
+
 }

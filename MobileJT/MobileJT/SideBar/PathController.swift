@@ -60,4 +60,17 @@ class PathController: UITableViewController {
             return cell
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        switch(segue.identifier ?? "") {
+            case "Profile":
+                let s = segue.destination as! ProfileViewController
+                s.user = self.user
+            case "Calendar":
+                print("MJ gone")
+            default:
+                print("A nibba dead")
+        }
+    }
 }
