@@ -13,9 +13,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var submit: UIButton!
-    var client : MongoClient?
-    var db : MongoDatabase?
+    static var client : MongoClient?
+    static var db : MongoDatabase?
     var user = User()
+    var uid : ObjectId?
     var use : String?
     var pass : String?
     
@@ -69,8 +70,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         // initialize global state
         MongoSwift.initialize()
         
-        client = try MongoClient(connectionString: "mongodb://localhost:27017")
-        db = try client?.db("mobileJT")
+        LoginViewController.client = try MongoClient(connectionString: "mongodb://localhost:27017")
+        LoginViewController.db = try LoginViewController.client?.db("mobileJT")
+//
+//        do {
+//            try LoginViewController.db?.createCollection("Ongoing")
+//        }
+//        catch {
+//            print("nice")
+//        }
         
         // free all resources
         MongoSwift.cleanup()
@@ -97,6 +105,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             let navVC = segue.destination as! UINavigationController
             
             let VC = navVC.viewControllers.first as! PathController
+            VC.uid = self.uid
             VC.user = self.user
         case "NewUser":
             print("Adding User")
@@ -108,11 +117,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     //Update this once events are saving to make it load events for the user
     func login() throws {
-        let collection = try? db?.collection("Users")
+        let collection = try? LoginViewController.db?.collection("Users")
         let query : Document = ["Username": use!, "Password": pass!]
         do {
             let document = try collection?!.find(query)
             let doc = document!.next()!
+            self.uid = doc["_id"] as! ObjectId
             let fName = doc["fName"] as! String
             let lName = doc["lName"] as! String
             let height = doc["Height"] as! Int
@@ -121,7 +131,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             let username = doc["Username"] as! String
             let password = doc["Password"] as! String
             //Update in the future
-            let events = [Event]()
+            let events = getEvents()
             user = User(fName, lName, height, weight, events, username, password, email)
         }
         catch {
@@ -129,24 +139,82 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    private func getEvents() -> [Event] {
+        var events = [Event]()
+        let collection = try? LoginViewController.db?.collection("Events")
+        let query : Document = ["UserId": self.uid!]
+        do {
+            let document = try collection?!.find(query)
+            for d in document! {
+                let id = d["_id"] as! ObjectId
+                let name = d["Name"] as! String
+                let location = d["Location"] as! String
+                let startTimeH = d["StartTimeH"] as! Int
+                let endTimeH = d["EndTimeH"] as! Int
+                let minS = d["MinS"] as! Int
+                let minE = d["MinE"] as! Int
+                let monthS = d["MonthS"] as! Int
+                let monthE = d["MonthE"] as! Int
+                let yearS = d["YearS"] as! Int
+                let yearE = d["YearE"] as! Int
+                let dayS = d["DayS"] as! Int
+                let dayE = d["DayE"] as! Int
+                //Update in the future
+                let ongoing = makeOngoing(id)
+                print(ongoing)
+                let e = Event(name, ongoing, location, yearS, yearE, monthS, monthE, dayS, dayE, startTimeH, endTimeH, minS, minE)
+                events.append(e!)
+                print("Event")
+                print(e)
+            }
+        }
+        catch {
+            print("Error with Mongodb: \(error)")
+        }
+        return events
+    }
+    
+    
+    private func makeOngoing(_ id:ObjectId) -> [Int]{
+        var ongoing = [Int]()
+        let collection = try? LoginViewController.db?.collection("Ongoing")
+        let query : Document = ["Parent": id]
+        do {
+            let document = try collection?!.find(query)
+            let doc = document?.next()
+            if doc!["Sunday"] as! Int == 1 {
+                ongoing.append(0)
+            }
+            if doc!["Monday"] as! Int == 1 {
+                ongoing.append(1)
+            }
+            if doc!["Tuesday"] as! Int == 1 {
+                ongoing.append(2)
+            }
+            if doc!["Wednesday"] as! Int == 1 {
+                ongoing.append(3)
+            }
+            if doc!["Thursday"] as! Int == 1 {
+                ongoing.append(4)
+            }
+            if doc!["Friday"] as! Int == 1 {
+                ongoing.append(5)
+            }
+            if doc!["Saturday"] as! Int == 1 {
+                ongoing.append(6)
+            }
+        }
+        catch {
+            print("Error with Mongodb: \(error)")
+        }
+        return ongoing
+    }
+    
     @IBAction func unwindToLogin(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? NewMemberTableViewController, let user = sourceViewController.user {
-            let collection = try? db?.collection("Users")
-            let query : Document = ["_id"]
-            var id : Int?
-            do {
-                let documents = try collection?!.find(query)
-                var total = 0
-                for _ in documents! {
-                    total += 1
-                }
-                id = total + 1
-            }
-            catch {
-                print("Error with Mongodb: \(error)")
-            }
-            if !(user.userName?.isEmpty)!, let realId = id {
-                let doc: Document = ["_id": realId, "fName": user.fName!, "lName": user.lName!, "Height": user.height!, "Weight": user.weight!, "Email": user.email!, "Username": user.userName!, "Password": user.password!, "Events" : realId]
+            let collection = try? LoginViewController.db?.collection("Users")
+            if !(user.userName?.isEmpty)! {
+                let doc: Document = ["fName": user.fName!, "lName": user.lName!, "Height": user.height!, "Weight": user.weight!, "Email": user.email!, "Username": user.userName!, "Password": user.password!]
                 do {
                     try collection!!.insertOne(doc)
                 }
@@ -157,6 +225,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             else {
                 print("Some errors here my dude")
             }
+        }
+        if let sourceViewController = sender.source as? PathController {
+            username.text = ""
+            password.text = ""
         }
     }
 }

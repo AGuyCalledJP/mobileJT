@@ -8,10 +8,12 @@
 
 import UIKit
 import SideMenu
+import MongoSwift
 
 class ProfileViewController: UIViewController {
     
     var user = User()
+    var uid : ObjectId?
     @IBOutlet weak var UserNameLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var height: UILabel!

@@ -9,11 +9,13 @@
 import Foundation
 import UIKit
 import SideMenu
+import MongoSwift
 
 class PathController: UITableViewController {
     
-    var locations = ["Profile", "Calendar"]
+    var locations = ["Profile", "Calendar", "Sign Out"]
     var user = User()
+    var uid : ObjectId?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +42,7 @@ class PathController: UITableViewController {
     }
     
     
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cellIdentifier = "SideBarProfileCell"
@@ -50,10 +53,19 @@ class PathController: UITableViewController {
             
             return cell
         }
-        else {
+        else if indexPath.row == 1{
             let cellIdentifier = "SideBarCalCell"
             guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? SideBarCalCell  else {
                 fatalError("The dequeued cell is not an instance of SideBarCalCell.")
+            }
+            cell.label.text = locations[indexPath.row]
+            
+            return cell
+        }
+        else {
+            let cellIdentifier = "SideBarSignOutCell"
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? SideBarSignOutCell  else {
+                fatalError("The dequeued cell is not an instance of SideBarSignOutCell.")
             }
             cell.label.text = locations[indexPath.row]
             
@@ -67,7 +79,12 @@ class PathController: UITableViewController {
             case "Profile":
                 let s = segue.destination as! ProfileViewController
                 s.user = self.user
+                s.uid = self.uid
             case "Calendar":
+                let s = segue.destination as! DayCollectionViewController
+                s.user = self.user
+                s.uid = self.uid
+                s.allEvents = (self.user?.events)!
                 print("MJ gone")
             default:
                 print("A nibba dead")

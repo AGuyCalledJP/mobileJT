@@ -48,14 +48,6 @@ class Event: NSObject, NSCoding {
             return nil
         }
         
-        guard dayS <= dayE else {
-            return nil
-        }
-        
-        guard monthS <= monthE else {
-            return nil
-        }
-        
         guard yearS <= yearE else {
             return nil
         }

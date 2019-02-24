@@ -698,6 +698,27 @@
                                     <segue destination="D5h-ih-7KL" kind="show" identifier="Calendar" id="XLN-H5-ECB"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SideBarSignOutCell" id="aTT-rn-0ig" customClass="SideBarSignOutCell" customModule="MobileJT" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="116" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aTT-rn-0ig" id="ihB-rV-7Af" customClass="SideBarSignOutCell" customModule="MobileJT" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sign Out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZv-ft-1x5">
+                                            <rect key="frame" x="20" y="11" width="374" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="label" destination="KZv-ft-1x5" id="h1l-kg-CMw"/>
+                                    <segue destination="znE-fa-QSI" kind="unwind" unwindAction="unwindToLoginWithSender:" id="s0o-iJ-IIJ"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="PHb-9N-FKc" id="asn-xU-515"/>
@@ -707,6 +728,7 @@
                     <navigationItem key="navigationItem" id="PcP-Mf-n7S"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tAQ-SZ-Otf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="znE-fa-QSI" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-275" y="-2764"/>
         </scene>
@@ -724,7 +746,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dhd-fC-KCe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4290" y="-2764"/>
+            <point key="canvasLocation" x="-4091" y="-2764"/>
         </scene>
         <!--Profile-->
         <scene sceneID="fmB-zv-WEq">
@@ -808,7 +830,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mhG-rs-0or" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1430" y="-2231"/>
+            <point key="canvasLocation" x="-1575" y="-2764"/>
         </scene>
         <!--Event-->
         <scene sceneID="0PZ-v0-Cw2">
@@ -940,7 +962,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zkg-3m-bnl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3075" y="-2764"/>
+            <point key="canvasLocation" x="-3077" y="-2764"/>
         </scene>
         <!--Add Event-->
         <scene sceneID="ngT-4v-FhX">
@@ -1159,7 +1181,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ktc-9I-rrR" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="9eO-V4-Ocv" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-3075.36231884058" y="-3573.2142857142853"/>
+            <point key="canvasLocation" x="-3077" y="-3573"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CTt-gt-GN2">
@@ -1175,7 +1197,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HvJ-YX-FqR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4291" y="-3573"/>
+            <point key="canvasLocation" x="-4293" y="-3573"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
