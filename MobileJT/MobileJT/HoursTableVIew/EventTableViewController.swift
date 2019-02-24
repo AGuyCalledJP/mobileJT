@@ -225,23 +225,23 @@ class EventTableViewController: UITableViewController {
 //    }
 
     
-    @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
-        if let sourceViewController = sender.source as? EventViewController, let event = sourceViewController.event {
-            
-            if let selectedIndexPath = tableView.indexPathForSelectedRow {
-                // Update an existing meal.
-                events[selectedIndexPath.row] = event
-                tableView.reloadRows(at: [selectedIndexPath], with: .none)
-            }
-            else {
-                // Add a new meal.
-                let newIndexPath = IndexPath(row: events.count, section: 0)
-                
-                events.append(event)
-                tableView.insertRows(at: [newIndexPath], with: .automatic)
-            }
-        }
-    }
+//    @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
+//        if let sourceViewController = sender.source as? EventViewController, let event = sourceViewController.event {
+//            
+//            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+//                // Update an existing meal.
+//                events[selectedIndexPath.row] = event
+//                tableView.reloadRows(at: [selectedIndexPath], with: .none)
+//            }
+//            else {
+//                // Add a new meal.
+//                let newIndexPath = IndexPath(row: events.count, section: 0)
+//                
+//                events.append(event)
+//                tableView.insertRows(at: [newIndexPath], with: .automatic)
+//            }
+//        }
+//    }
 
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

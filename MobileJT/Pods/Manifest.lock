@@ -1,16 +1,28 @@
 PODS:
+  - mongo-embedded-c-driver (1.13.0-4.0.4)
+  - MongoSwift (0.0.9):
+    - mongo-embedded-c-driver (~> 1.13.0-4.0.0)
   - MultiSelectSegmentedControl (1.2.1)
+  - SideMenu (5.0.3)
 
 DEPENDENCIES:
+  - MongoSwift
   - MultiSelectSegmentedControl
+  - SideMenu
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - mongo-embedded-c-driver
+    - MongoSwift
     - MultiSelectSegmentedControl
+    - SideMenu
 
 SPEC CHECKSUMS:
+  mongo-embedded-c-driver: b46360baa15fc142baae80628822f26663220bde
+  MongoSwift: c7420b38a7e223439667f8c50aefada29c270df8
   MultiSelectSegmentedControl: 495230a5a5fbb6edb03d541f173433922ef0c592
+  SideMenu: 1dcaabce84538c53325c287f7fe62999379a641c
 
-PODFILE CHECKSUM: 37c46d3a82b7ade3a8ec8237dfa7aae62ac1a7cd
+PODFILE CHECKSUM: 9c90b5ea64b96bc9dc2d1421dc0aec85b043e720
 
 COCOAPODS: 1.5.3

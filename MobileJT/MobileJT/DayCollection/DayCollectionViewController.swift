@@ -8,34 +8,40 @@
 
 import UIKit
 import os.log
+import SideMenu
+import MongoSwift
 
 class DayCollectionViewController: UICollectionViewController {
+    
+    var allEvents = [Event?]()
+    var user = User()
+    var uid : ObjectId?
     
     var days = [Day?]()
     var month : Month?
     var currentMonth = 0
     var currentYear = 2019
-    var allEvents = [Event?]()
     var daysFromSet : Int?
     let curr = Date()
     var date = [Int]()
+    
     @IBOutlet weak var addEvent: UIBarButtonItem!
-    //    static var eventManager = EventManager()
+    @IBOutlet weak var menu: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let newCurr = dateFormat("MM/dd/yyyy", curr)
         date = [Int]()
-        var hold1 = newCurr.split(separator: "/")
+        let hold1 = newCurr.split(separator: "/")
         for i in hold1 {
             date.append((Int(i))!)
         }
-        if (allEvents.isEmpty) {
-            if (loadEvents() != nil) {
-                allEvents = loadEvents()!
-
-            }
-        }
+//        if (allEvents.isEmpty) {
+//            if (loadEvents() != nil) {
+//                allEvents = loadEvents()!
+//
+//            }
+//        }
         currentMonth = date[0] - 1
         currentYear = date[2]
         self.month = loadMonth()
@@ -169,21 +175,18 @@ class DayCollectionViewController: UICollectionViewController {
             dayDetailTableViewController.setDay()
         case "AddItem":
             print("adding item")
+        case "SideBar":
+            print("displaying sidebar")
         default:
             fatalError("Unexpected Segue Identifier; \(segue.identifier!)")
         }
     }
     
     @IBAction func unwindToDays(sender: UIStoryboardSegue) {
-        if let sourceViewController = sender.source as? AddEventViewController, let event = sourceViewController.event {
+        if let sourceViewController = sender.source as? AddEventTableViewController, let event = sourceViewController.event {
             allEvents.append(event)
-            saveEvents()
-            reloadData()
-            self.collectionView.reloadData()
-        }
-        else if let sourceViewController = sender.source as? AddEventTableViewController, let event = sourceViewController.event {
-            allEvents.append(event)
-            saveEvents()
+            saveEvent(event)
+            user?.events = allEvents as! [Event]
             reloadData()
             self.collectionView.reloadData()
         }
@@ -194,27 +197,93 @@ class DayCollectionViewController: UICollectionViewController {
                 for e in hold {
                     let v = allEvents.index(of: e)
                     allEvents.remove(at: v!)
+                    removeEvent(e)
+                    user?.events = allEvents as! [Event]
                 }
             }
-            saveEvents()
             reloadData()
         }
     }
     
+    @IBAction func sideBar(_ sender: Any) {
+        present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
+    }
     
-    
-    private func saveEvents() {
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(allEvents, toFile: Event.ArchiveURL.path)
-        if isSuccessfulSave {
-            os_log("Recurring events saved.", log: OSLog.default, type: .debug)
-        } else {
-            os_log("Failed to save events...", log: OSLog.default, type: .error)
+    private func saveEvent(_ event:Event) {
+        let collection = try? LoginViewController.db?.collection("Events")
+        let doc: Document = ["UserId": self.uid!, "Name": event.name, "Location": event.location, "StartTimeH": event.startTimeH, "EndTimeH": event.endTimeH, "MinS": event.minS, "MinE": event.minE, "MonthS": event.monthS, "MonthE": event.monthE, "YearS": event.yearS, "YearE": event.yearE, "DayS": event.dayS, "DayE": event.dayE]
+        do {
+            try collection!!.insertOne(doc)
+            
+        }
+        catch {
+            print("Error with Mongodb: \(error)")
+        }
+        var id : ObjectId?
+        do {
+            let document = try collection?!.find(doc)
+            let res = document!.next()!
+            id = res["_id"] as! ObjectId
+
+        }
+        catch {
+            print("Somehow that document you just made doesnt exits \(error)")
+        }
+        let collection2 = try? LoginViewController.db?.collection("Ongoing")
+        var collec = [0,0,0,0,0,0,0]
+        for i in 1...collec.count {
+            if event.ongoing.contains(i) {
+                collec[i] = 1
+            }
+        }
+        let doc2: Document = ["Parent": id!, "Sunday": collec[0], "Monday": collec[1], "Tuesday": collec[2], "Wednesday": collec[3], "Thursday": collec[4], "Friday": collec[5], "Saturday": collec[6]]
+        do {
+            try collection2!!.insertOne(doc2)
+        }
+        catch {
+            print("Error with Mongodb: \(error)")
         }
     }
     
-    private func loadEvents() -> [Event]? {
-        return NSKeyedUnarchiver.unarchiveObject(withFile: Event.ArchiveURL.path) as? [Event]
+    private func removeEvent(_ event:Event) {
+        let collection = try? LoginViewController.db?.collection("Events")
+        let doc: Document = ["UserId": self.uid!, "Name": event.name, "Location": event.location, "StartTimeH": event.startTimeH, "EndTimeH": event.endTimeH, "MinS": event.minS, "MinE": event.minE, "MonthS": event.monthS, "MonthE": event.monthE, "YearS": event.yearS, "YearE": event.yearE, "DayS": event.dayS, "DayE": event.dayE]
+        var id : ObjectId?
+        //delete the event and keep the id around
+        do {
+            let query = try collection!!.find(doc)
+            let res = query.next()
+            id = res!["_id"] as! ObjectId
+            try collection!!.deleteOne(doc)
+        }
+        catch {
+            print("Error with Mongodb: \(error)")
+        }
+        
+        let collection2 = try? LoginViewController.db?.collection("Ongoing")
+        let find: Document = ["Parent": id!]
+        do {
+            let res = try collection!!.find(find)
+            try collection!!.deleteOne(res.next()!)
+        }
+        catch {
+            print("Error with Mongodb: \(error)")
+        }
+        
     }
+    
+//    private func saveEvents() {
+//        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(allEvents, toFile: Event.ArchiveURL.path)
+//        if isSuccessfulSave {
+//            os_log("Recurring events saved.", log: OSLog.default, type: .debug)
+//        } else {
+//            os_log("Failed to save events...", log: OSLog.default, type: .error)
+//        }
+//    }
+//
+//    private func loadEvents() -> [Event]? {
+//        return NSKeyedUnarchiver.unarchiveObject(withFile: Event.ArchiveURL.path) as? [Event]
+//    }
 
     /*
      // Override to support conditional editing of the table view.
