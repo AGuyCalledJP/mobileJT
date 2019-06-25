@@ -95,20 +95,20 @@
 		2D650B3C222230E0003B9F6C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D650B672222350C003B9F6C /* AddEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventTableViewCell.swift; sourceTree = "<group>"; };
 		2D650B682222350C003B9F6C /* AddEventTableViewController?.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AddEventTableViewController?.swift"; sourceTree = "<group>"; };
-		2D650B6D222235BA003B9F6C /* EndDateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EndDateCell.swift; path = AddEvent/EndDateCell.swift; sourceTree = "<group>"; };
-		2D650B6E222235BA003B9F6C /* EventNameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventNameCell.swift; path = AddEvent/EventNameCell.swift; sourceTree = "<group>"; };
-		2D650B6F222235BA003B9F6C /* RepeatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepeatCell.swift; path = AddEvent/RepeatCell.swift; sourceTree = "<group>"; };
-		2D650B70222235BA003B9F6C /* StartDateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartDateCell.swift; path = AddEvent/StartDateCell.swift; sourceTree = "<group>"; };
-		2D650B71222235BA003B9F6C /* AllDayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AllDayCell.swift; path = AddEvent/AllDayCell.swift; sourceTree = "<group>"; };
-		2D650B72222235BB003B9F6C /* EventLocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventLocationCell.swift; path = AddEvent/EventLocationCell.swift; sourceTree = "<group>"; };
-		2D650B73222235BB003B9F6C /* BlankCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlankCell.swift; path = AddEvent/BlankCell.swift; sourceTree = "<group>"; };
-		2D650B74222235BB003B9F6C /* EndRepeatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EndRepeatCell.swift; path = AddEvent/EndRepeatCell.swift; sourceTree = "<group>"; };
-		2D650B75222235BB003B9F6C /* AddEventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddEventTableViewController.swift; path = AddEvent/AddEventTableViewController.swift; sourceTree = "<group>"; };
-		2D650B76222235BB003B9F6C /* IncorpCalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IncorpCalCell.swift; path = AddEvent/IncorpCalCell.swift; sourceTree = "<group>"; };
-		2D650B8222223612003B9F6C /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Day.swift; path = DataTypes/Day.swift; sourceTree = "<group>"; };
-		2D650B8322223612003B9F6C /* Month.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Month.swift; path = DataTypes/Month.swift; sourceTree = "<group>"; };
-		2D650B8422223613003B9F6C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = DataTypes/User.swift; sourceTree = "<group>"; };
-		2D650B8522223613003B9F6C /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Event.swift; path = DataTypes/Event.swift; sourceTree = "<group>"; };
+		2D650B6D222235BA003B9F6C /* EndDateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndDateCell.swift; sourceTree = "<group>"; };
+		2D650B6E222235BA003B9F6C /* EventNameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventNameCell.swift; sourceTree = "<group>"; };
+		2D650B6F222235BA003B9F6C /* RepeatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepeatCell.swift; sourceTree = "<group>"; };
+		2D650B70222235BA003B9F6C /* StartDateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartDateCell.swift; sourceTree = "<group>"; };
+		2D650B71222235BA003B9F6C /* AllDayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllDayCell.swift; sourceTree = "<group>"; };
+		2D650B72222235BB003B9F6C /* EventLocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventLocationCell.swift; sourceTree = "<group>"; };
+		2D650B73222235BB003B9F6C /* BlankCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlankCell.swift; sourceTree = "<group>"; };
+		2D650B74222235BB003B9F6C /* EndRepeatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndRepeatCell.swift; sourceTree = "<group>"; };
+		2D650B75222235BB003B9F6C /* AddEventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventTableViewController.swift; sourceTree = "<group>"; };
+		2D650B76222235BB003B9F6C /* IncorpCalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncorpCalCell.swift; sourceTree = "<group>"; };
+		2D650B8222223612003B9F6C /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
+		2D650B8322223612003B9F6C /* Month.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Month.swift; sourceTree = "<group>"; };
+		2D650B8422223613003B9F6C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2D650B8522223613003B9F6C /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		2D650B8A222236A2003B9F6C /* EventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
 		2D650B8C22223721003B9F6C /* Email.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Email.swift; sourceTree = "<group>"; };
 		2D650B8D22223722003B9F6C /* Password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Password.swift; sourceTree = "<group>"; };
@@ -130,10 +130,10 @@
 		2D650BB12222378B003B9F6C /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		2D650BB22222378B003B9F6C /* FreeHourTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeHourTableViewCell.swift; sourceTree = "<group>"; };
 		2D650BB722223793003B9F6C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		2D650BB92222380F003B9F6C /* DayCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DayCollectionViewCell.swift; path = DayCollection/DayCollectionViewCell.swift; sourceTree = "<group>"; };
-		2D650BBA2222380F003B9F6C /* DayCollectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DayCollectionHeader.swift; path = DayCollection/DayCollectionHeader.swift; sourceTree = "<group>"; };
-		2D650BBB2222380F003B9F6C /* DayCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DayCollectionViewController.swift; path = DayCollection/DayCollectionViewController.swift; sourceTree = "<group>"; };
-		2D650BBC22223810003B9F6C /* SpaceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpaceCell.swift; path = DayCollection/SpaceCell.swift; sourceTree = "<group>"; };
+		2D650BB92222380F003B9F6C /* DayCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayCollectionViewCell.swift; sourceTree = "<group>"; };
+		2D650BBA2222380F003B9F6C /* DayCollectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayCollectionHeader.swift; sourceTree = "<group>"; };
+		2D650BBB2222380F003B9F6C /* DayCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayCollectionViewController.swift; sourceTree = "<group>"; };
+		2D650BBC22223810003B9F6C /* SpaceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceCell.swift; sourceTree = "<group>"; };
 		39A6E845D5661E673BD1F494 /* Pods-MobileJTUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileJTUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobileJTUITests/Pods-MobileJTUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4FEF47435C619380C83F0388 /* Pods_MobileJT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileJT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		611DFFF76874D723036D4B07 /* Pods_MobileJTTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileJTTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,53 +196,20 @@
 		2D650AFC2222306B003B9F6C /* MobileJT */ = {
 			isa = PBXGroup;
 			children = (
-				2D650BBA2222380F003B9F6C /* DayCollectionHeader.swift */,
-				2D650BB92222380F003B9F6C /* DayCollectionViewCell.swift */,
-				2D650BBB2222380F003B9F6C /* DayCollectionViewController.swift */,
-				2D650BBC22223810003B9F6C /* SpaceCell.swift */,
-				2D650B8222223612003B9F6C /* Day.swift */,
-				2D650B8522223613003B9F6C /* Event.swift */,
-				2D650B8322223612003B9F6C /* Month.swift */,
-				2D650B8422223613003B9F6C /* User.swift */,
-				2D650B75222235BB003B9F6C /* AddEventTableViewController.swift */,
-				2D650B71222235BA003B9F6C /* AllDayCell.swift */,
-				2D650B73222235BB003B9F6C /* BlankCell.swift */,
-				2D650B6D222235BA003B9F6C /* EndDateCell.swift */,
-				2D650B74222235BB003B9F6C /* EndRepeatCell.swift */,
-				2D650B72222235BB003B9F6C /* EventLocationCell.swift */,
-				2D650B6E222235BA003B9F6C /* EventNameCell.swift */,
-				2D650B76222235BB003B9F6C /* IncorpCalCell.swift */,
-				2D650B6F222235BA003B9F6C /* RepeatCell.swift */,
-				2D650B70222235BA003B9F6C /* StartDateCell.swift */,
-				2D650B672222350C003B9F6C /* AddEventTableViewCell.swift */,
-				2D650B682222350C003B9F6C /* AddEventTableViewController?.swift */,
-				2D650B3C222230E0003B9F6C /* AppDelegate.swift */,
-				2D650B8A222236A2003B9F6C /* EventManager.swift */,
-				2D650B36222230DF003B9F6C /* Assets.xcassets */,
 				2D650B39222230E0003B9F6C /* Main.storyboard */,
-				2D650B8C22223721003B9F6C /* Email.swift */,
-				2D650B9122223723003B9F6C /* fName.swift */,
-				2D650B9322223724003B9F6C /* Height.swift */,
-				2D650B9222223724003B9F6C /* LabelCell.swift */,
-				2D650B8F22223722003B9F6C /* lName.swift */,
-				2D650B9022223723003B9F6C /* LoginViewController.swift */,
-				2D650B9522223725003B9F6C /* NewMemeberViewController.swift */,
-				2D650B8D22223722003B9F6C /* Password.swift */,
-				2D650B9422223724003B9F6C /* Username.swift */,
-				2D650B8E22223722003B9F6C /* Weight.swift */,
-				2D650BA722223750003B9F6C /* PathController.swift */,
-				2D650BA42222374F003B9F6C /* SideBar.swift */,
-				2D650BA922223752003B9F6C /* SideBarCalCell.swift */,
-				2D650BA622223750003B9F6C /* SideBarProfileCell.swift */,
-				2D650BA822223751003B9F6C /* SideBarSignOutCell.swift */,
-				2D650BAF2222378A003B9F6C /* EventTableViewCell.swift */,
-				2D650BB02222378A003B9F6C /* EventTableViewController.swift */,
-				2D650BB12222378B003B9F6C /* EventViewController.swift */,
-				2D650BB22222378B003B9F6C /* FreeHourTableViewCell.swift */,
-				2D650BB722223793003B9F6C /* ProfileViewController.swift */,
+				2D650B36222230DF003B9F6C /* Assets.xcassets */,
+				2D650B3C222230E0003B9F6C /* AppDelegate.swift */,
 				2D650B38222230E0003B9F6C /* Base.lproj */,
 				2D650B3B222230E0003B9F6C /* Info.plist */,
 				2D650B2B222230DF003B9F6C /* MobileJT-Bridging-Header.h */,
+				2DF3DB5422458D57000CD828 /* LoginPage */,
+				2DF3DB5322458D07000CD828 /* ProfilePage */,
+				2DF3DB5222458C85000CD828 /* SideBar */,
+				2DF3DB5122458BC6000CD828 /* Depreciated */,
+				2DF3DB4F22458B95000CD828 /* DayCollection */,
+				2DF3DB4E22458B61000CD828 /* EventManagement */,
+				2DF3DB4D22458B17000CD828 /* DataTypes */,
+				2DF3DB4C22458AEA000CD828 /* AddEvent */,
 			);
 			path = MobileJT;
 			sourceTree = "<group>";
@@ -263,6 +230,103 @@
 				2D650B1F2222306C003B9F6C /* Info.plist */,
 			);
 			path = MobileJTUITests;
+			sourceTree = "<group>";
+		};
+		2DF3DB4C22458AEA000CD828 /* AddEvent */ = {
+			isa = PBXGroup;
+			children = (
+				2D650B672222350C003B9F6C /* AddEventTableViewCell.swift */,
+				2D650B682222350C003B9F6C /* AddEventTableViewController?.swift */,
+				2D650B75222235BB003B9F6C /* AddEventTableViewController.swift */,
+				2D650B71222235BA003B9F6C /* AllDayCell.swift */,
+				2D650B73222235BB003B9F6C /* BlankCell.swift */,
+				2D650B6D222235BA003B9F6C /* EndDateCell.swift */,
+				2D650B74222235BB003B9F6C /* EndRepeatCell.swift */,
+				2D650B72222235BB003B9F6C /* EventLocationCell.swift */,
+				2D650B6E222235BA003B9F6C /* EventNameCell.swift */,
+				2D650B76222235BB003B9F6C /* IncorpCalCell.swift */,
+				2D650B6F222235BA003B9F6C /* RepeatCell.swift */,
+				2D650B70222235BA003B9F6C /* StartDateCell.swift */,
+			);
+			path = AddEvent;
+			sourceTree = "<group>";
+		};
+		2DF3DB4D22458B17000CD828 /* DataTypes */ = {
+			isa = PBXGroup;
+			children = (
+				2D650B8222223612003B9F6C /* Day.swift */,
+				2D650B8522223613003B9F6C /* Event.swift */,
+				2D650B8322223612003B9F6C /* Month.swift */,
+				2D650B8422223613003B9F6C /* User.swift */,
+			);
+			path = DataTypes;
+			sourceTree = "<group>";
+		};
+		2DF3DB4E22458B61000CD828 /* EventManagement */ = {
+			isa = PBXGroup;
+			children = (
+				2D650B8A222236A2003B9F6C /* EventManager.swift */,
+				2D650BAF2222378A003B9F6C /* EventTableViewCell.swift */,
+				2D650BB02222378A003B9F6C /* EventTableViewController.swift */,
+				2D650BB12222378B003B9F6C /* EventViewController.swift */,
+			);
+			path = EventManagement;
+			sourceTree = "<group>";
+		};
+		2DF3DB4F22458B95000CD828 /* DayCollection */ = {
+			isa = PBXGroup;
+			children = (
+				2D650BBA2222380F003B9F6C /* DayCollectionHeader.swift */,
+				2D650BB92222380F003B9F6C /* DayCollectionViewCell.swift */,
+				2D650BBB2222380F003B9F6C /* DayCollectionViewController.swift */,
+				2D650BBC22223810003B9F6C /* SpaceCell.swift */,
+			);
+			path = DayCollection;
+			sourceTree = "<group>";
+		};
+		2DF3DB5122458BC6000CD828 /* Depreciated */ = {
+			isa = PBXGroup;
+			children = (
+				2D650B8C22223721003B9F6C /* Email.swift */,
+			);
+			path = Depreciated;
+			sourceTree = "<group>";
+		};
+		2DF3DB5222458C85000CD828 /* SideBar */ = {
+			isa = PBXGroup;
+			children = (
+				2D650BA42222374F003B9F6C /* SideBar.swift */,
+				2D650BA922223752003B9F6C /* SideBarCalCell.swift */,
+				2D650BA622223750003B9F6C /* SideBarProfileCell.swift */,
+				2D650BA822223751003B9F6C /* SideBarSignOutCell.swift */,
+			);
+			path = SideBar;
+			sourceTree = "<group>";
+		};
+		2DF3DB5322458D07000CD828 /* ProfilePage */ = {
+			isa = PBXGroup;
+			children = (
+				2D650BB722223793003B9F6C /* ProfileViewController.swift */,
+			);
+			path = ProfilePage;
+			sourceTree = "<group>";
+		};
+		2DF3DB5422458D57000CD828 /* LoginPage */ = {
+			isa = PBXGroup;
+			children = (
+				2D650B9122223723003B9F6C /* fName.swift */,
+				2D650B9322223724003B9F6C /* Height.swift */,
+				2D650B9222223724003B9F6C /* LabelCell.swift */,
+				2D650B8F22223722003B9F6C /* lName.swift */,
+				2D650B9022223723003B9F6C /* LoginViewController.swift */,
+				2D650B9522223725003B9F6C /* NewMemeberViewController.swift */,
+				2D650B8D22223722003B9F6C /* Password.swift */,
+				2D650B9422223724003B9F6C /* Username.swift */,
+				2D650B8E22223722003B9F6C /* Weight.swift */,
+				2D650BA722223750003B9F6C /* PathController.swift */,
+				2D650BB22222378B003B9F6C /* FreeHourTableViewCell.swift */,
+			);
+			path = LoginPage;
 			sourceTree = "<group>";
 		};
 		AC66C425AAE4D178CFFA0874 /* Frameworks */ = {

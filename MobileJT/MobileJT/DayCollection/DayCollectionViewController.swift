@@ -264,6 +264,7 @@ class DayCollectionViewController: UICollectionViewController {
         let find: Document = ["Parent": id!]
         do {
             let res = try collection!!.find(find)
+            //Deleting an event does not yet work
             try collection!!.deleteOne(res.next()!)
         }
         catch {
