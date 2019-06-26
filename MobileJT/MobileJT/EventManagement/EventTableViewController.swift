@@ -163,6 +163,7 @@ class EventTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         lastTouch = indexPath.row
+        self.performSegue(withIdentifier: "AddHere", sender: self)
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -200,49 +201,6 @@ class EventTableViewController: UITableViewController {
         dateFormatter.dateFormat = format
         return dateFormatter.string(from: conv)
     }
-    
-//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        let event = todos[indexPath.row]
-//        let s = event.startTimeH
-//        let ms = event.minS
-//        let e = event.endTimeH
-//        let me = event.minE
-//        let chunk = 100.0
-//        if (e < s) {
-//            let f = e + 24
-//            let begin = Double(s + (ms / 100))
-//            let end = Double(f + (me / 100))
-//            let z = (end - begin)
-//            print(z)
-//            return CGFloat(z * chunk)
-//        }
-//        else {
-//            let begin = Double(s + (ms / 100))
-//            let end = Double(e + (me / 100))
-//            let z = (end - begin)
-//            print(z)
-//            return CGFloat(z * chunk)
-//        }
-//    }
-
-    
-//    @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
-//        if let sourceViewController = sender.source as? EventViewController, let event = sourceViewController.event {
-//            
-//            if let selectedIndexPath = tableView.indexPathForSelectedRow {
-//                // Update an existing meal.
-//                events[selectedIndexPath.row] = event
-//                tableView.reloadRows(at: [selectedIndexPath], with: .none)
-//            }
-//            else {
-//                // Add a new meal.
-//                let newIndexPath = IndexPath(row: events.count, section: 0)
-//                
-//                events.append(event)
-//                tableView.insertRows(at: [newIndexPath], with: .automatic)
-//            }
-//        }
-//    }
 
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -295,13 +253,11 @@ class EventTableViewController: UITableViewController {
                     eventDetailViewController.month = month
                     eventDetailViewController.year = year
                 case "AddHere":
-                    print(sender)
                     guard let addItem = segue.destination as? UINavigationController
                         else {
                             fatalError("Unexpected destination: \(segue.destination)")
                     }
                     let additemVC = addItem.viewControllers[0] as? AddEventTableViewController
-                    //Instead of using last touch, use the sender to find the matching cell, then send the corresponding int value throug this variable
                     let chosen = todos[lastTouch]
                     var dateComponents = DateComponents()
                     dateComponents.year = self.year!
@@ -336,56 +292,3 @@ class EventTableViewController: UITableViewController {
 //        }
     }
 }
-
-//    if (j < events.count) {
-//    if (totalMins % 60 != 0) {
-//    if (events[j].startTimeH >= interval[ind - 1] && events[j].startTimeH <= interval[ind]) {
-//    let s = events[j].startTimeH
-//    let e = events[j].endTimeH
-//    let a = events[j].minS
-//    let b = events[j].minE
-//    if (a > 0) {
-//    let nextLoc = a
-//    let currentLoc = interval[ind]
-//    todos.append(Event(currentLoc, totalMins - (60 * currentLoc) , currentLoc, mE: nextLoc )!)
-//    totalMins -= a
-//    todos.append(events[j])
-//    link.append(ind)
-//    j += 1
-//    let tHrs = (e - s) * 60
-//    let tMins = (b - a)
-//    let tDist = tHrs + tMins
-//    totalMins -= tDist
-//    }
-//    else {
-//    todos.append(events[j])
-//    link.append(ind)
-//    j += 1
-//    let tHrs = (e - s) * 60
-//    let tMins = (b - a)
-//    let tDist = tHrs + tMins
-//    totalMins -= tDist
-//    }
-//    }
-//    else {
-//    let nextLoc = interval[ind+1]
-//    let currentLoc = interval[ind]
-//    let nextDiv = 1440/nextLoc
-//    let diff = nextDiv - totalMins
-//    todos.append(Event(currentLoc, totalMins - (60 * currentLoc) , nextLoc % 24, mE: 0 )!)
-//    ind += 1
-//    totalMins -= diff
-//    }
-//    }
-//    else {
-//    todos.append(Event(hours[interval[ind]], hours[(interval[ind] + 1) % 24])!)
-//    ind += 1
-//    totalMins -= 60
-//    }
-//    }
-//    else {
-//    todos.append(Event(hours[interval[ind]], hours[(interval[ind] + 1) % 24])!)
-//    ind += 1
-//    totalMins -= 60
-//    }
-//}

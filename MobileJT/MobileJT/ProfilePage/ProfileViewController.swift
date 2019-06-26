@@ -26,8 +26,6 @@ class ProfileViewController: UIViewController {
         self.height.text = String(user!.height!)
         self.weight.text = String(user!.weight!
         )
-
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func sideBar(_ sender: Any) {

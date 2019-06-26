@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D352CA6D98A8D2BE5DAA0F1 /* Pods_MobileJTTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 611DFFF76874D723036D4B07 /* Pods_MobileJTTests.framework */; };
+		00816D19BA1BD72ABAA82BF1 /* Pods_MobileJTTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 464E0C4BF2B77AA1E7EE0FEA /* Pods_MobileJTTests.framework */; };
 		2D650B132222306C003B9F6C /* MobileJTTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D650B122222306C003B9F6C /* MobileJTTests.swift */; };
 		2D650B1E2222306C003B9F6C /* MobileJTUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D650B1D2222306C003B9F6C /* MobileJTUITests.swift */; };
 		2D650B48222230E0003B9F6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D650B36222230DF003B9F6C /* Assets.xcassets */; };
@@ -56,8 +56,13 @@
 		2D650BBE22223810003B9F6C /* DayCollectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D650BBA2222380F003B9F6C /* DayCollectionHeader.swift */; };
 		2D650BBF22223810003B9F6C /* DayCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D650BBB2222380F003B9F6C /* DayCollectionViewController.swift */; };
 		2D650BC022223810003B9F6C /* SpaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D650BBC22223810003B9F6C /* SpaceCell.swift */; };
-		51467603D3279688F67744C9 /* Pods_MobileJTUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9CA778548EFDB31AFDBBA8E /* Pods_MobileJTUITests.framework */; };
-		AD245895306476CA73FD96BB /* Pods_MobileJT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FEF47435C619380C83F0388 /* Pods_MobileJT.framework */; };
+		2DB5306322C40D8000B54EED /* ClassListingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB5306222C40D8000B54EED /* ClassListingTableViewController.swift */; };
+		2DB5306522C40DCD00B54EED /* ClassListingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB5306422C40DCD00B54EED /* ClassListingTableViewCell.swift */; };
+		2DF5E3B722C3E28F003655D7 /* AdminTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF5E3B622C3E28F003655D7 /* AdminTableViewController.swift */; };
+		2DF5E3B922C3E2A4003655D7 /* AdminTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF5E3B822C3E2A4003655D7 /* AdminTableViewCell.swift */; };
+		2DF9F97922C2C67900F0615C /* SideBarAdminCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF9F97822C2C67900F0615C /* SideBarAdminCell.swift */; };
+		4CD5D4B7073B59C1A69DF285 /* Pods_MobileJTUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6B5EF6F70E33838C1BA36DB /* Pods_MobileJTUITests.framework */; };
+		B5C88B07EB84F4B4683076E1 /* Pods_MobileJT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825609D03CE33861F8537617 /* Pods_MobileJT.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,8 +83,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1D8105EFE0140556FAEE1BAF /* Pods-MobileJTTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileJTTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobileJTTests/Pods-MobileJTTests.release.xcconfig"; sourceTree = "<group>"; };
-		219FEEE8B655B86B57D743EA /* Pods-MobileJTTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileJTTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MobileJTTests/Pods-MobileJTTests.debug.xcconfig"; sourceTree = "<group>"; };
+		02DFA3397E1CB330FC500B1B /* Pods-MobileJTTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileJTTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MobileJTTests/Pods-MobileJTTests.debug.xcconfig"; sourceTree = "<group>"; };
+		05630EBECC4A9CD5DF4D6BE2 /* Pods-MobileJTUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileJTUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobileJTUITests/Pods-MobileJTUITests.release.xcconfig"; sourceTree = "<group>"; };
+		2CD08CAFE45F98D675495956 /* Pods-MobileJT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileJT.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MobileJT/Pods-MobileJT.debug.xcconfig"; sourceTree = "<group>"; };
 		2D650AFA2222306B003B9F6C /* MobileJT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileJT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D650B0E2222306C003B9F6C /* MobileJTTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobileJTTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D650B122222306C003B9F6C /* MobileJTTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileJTTests.swift; sourceTree = "<group>"; };
@@ -134,13 +140,18 @@
 		2D650BBA2222380F003B9F6C /* DayCollectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayCollectionHeader.swift; sourceTree = "<group>"; };
 		2D650BBB2222380F003B9F6C /* DayCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayCollectionViewController.swift; sourceTree = "<group>"; };
 		2D650BBC22223810003B9F6C /* SpaceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceCell.swift; sourceTree = "<group>"; };
-		39A6E845D5661E673BD1F494 /* Pods-MobileJTUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileJTUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobileJTUITests/Pods-MobileJTUITests.release.xcconfig"; sourceTree = "<group>"; };
-		4FEF47435C619380C83F0388 /* Pods_MobileJT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileJT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		611DFFF76874D723036D4B07 /* Pods_MobileJTTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileJTTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C1D4DD2062C7D0621C86256 /* Pods-MobileJT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileJT.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MobileJT/Pods-MobileJT.debug.xcconfig"; sourceTree = "<group>"; };
-		A320B4119966DD2EAAE514F7 /* Pods-MobileJT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileJT.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobileJT/Pods-MobileJT.release.xcconfig"; sourceTree = "<group>"; };
-		A9CA778548EFDB31AFDBBA8E /* Pods_MobileJTUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileJTUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C37C6DE7DE24B66F1F3F6071 /* Pods-MobileJTUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileJTUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MobileJTUITests/Pods-MobileJTUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2DB5306222C40D8000B54EED /* ClassListingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassListingTableViewController.swift; sourceTree = "<group>"; };
+		2DB5306422C40DCD00B54EED /* ClassListingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassListingTableViewCell.swift; sourceTree = "<group>"; };
+		2DC44FB922C2BDC800517587 /* MobileJT-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MobileJT-Bridging-Header.h"; sourceTree = "<group>"; };
+		2DF5E3B622C3E28F003655D7 /* AdminTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminTableViewController.swift; sourceTree = "<group>"; };
+		2DF5E3B822C3E2A4003655D7 /* AdminTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminTableViewCell.swift; sourceTree = "<group>"; };
+		2DF9F97822C2C67900F0615C /* SideBarAdminCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarAdminCell.swift; sourceTree = "<group>"; };
+		464E0C4BF2B77AA1E7EE0FEA /* Pods_MobileJTTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileJTTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		825609D03CE33861F8537617 /* Pods_MobileJT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileJT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95AA116E8952E853A7B9C6D3 /* Pods-MobileJTUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileJTUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MobileJTUITests/Pods-MobileJTUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B6B5EF6F70E33838C1BA36DB /* Pods_MobileJTUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileJTUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA76559AA9E6E011FAEFAD92 /* Pods-MobileJT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileJT.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobileJT/Pods-MobileJT.release.xcconfig"; sourceTree = "<group>"; };
+		DC9E59318BA4B105995E37CF /* Pods-MobileJTTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileJTTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobileJTTests/Pods-MobileJTTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,7 +159,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD245895306476CA73FD96BB /* Pods_MobileJT.framework in Frameworks */,
+				B5C88B07EB84F4B4683076E1 /* Pods_MobileJT.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,7 +167,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D352CA6D98A8D2BE5DAA0F1 /* Pods_MobileJTTests.framework in Frameworks */,
+				00816D19BA1BD72ABAA82BF1 /* Pods_MobileJTTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,7 +175,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				51467603D3279688F67744C9 /* Pods_MobileJTUITests.framework in Frameworks */,
+				4CD5D4B7073B59C1A69DF285 /* Pods_MobileJTUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,12 +185,13 @@
 		2D650AF12222306B003B9F6C = {
 			isa = PBXGroup;
 			children = (
+				2DC44FB922C2BDC800517587 /* MobileJT-Bridging-Header.h */,
 				2D650AFC2222306B003B9F6C /* MobileJT */,
 				2D650B112222306C003B9F6C /* MobileJTTests */,
 				2D650B1C2222306C003B9F6C /* MobileJTUITests */,
 				2D650AFB2222306B003B9F6C /* Products */,
-				D8FA45C6CFACD35449A5B129 /* Pods */,
-				AC66C425AAE4D178CFFA0874 /* Frameworks */,
+				7DD4884FBA40517103DF081F /* Pods */,
+				96C94B9203CFC23811E0EDBC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -202,7 +214,9 @@
 				2D650B38222230E0003B9F6C /* Base.lproj */,
 				2D650B3B222230E0003B9F6C /* Info.plist */,
 				2D650B2B222230DF003B9F6C /* MobileJT-Bridging-Header.h */,
+				2DF5E3B222C3CE86003655D7 /* Navigation */,
 				2DF3DB5422458D57000CD828 /* LoginPage */,
+				2DF5E3B322C3DC7C003655D7 /* AdminPage */,
 				2DF3DB5322458D07000CD828 /* ProfilePage */,
 				2DF3DB5222458C85000CD828 /* SideBar */,
 				2DF3DB5122458BC6000CD828 /* Depreciated */,
@@ -299,6 +313,7 @@
 				2D650BA922223752003B9F6C /* SideBarCalCell.swift */,
 				2D650BA622223750003B9F6C /* SideBarProfileCell.swift */,
 				2D650BA822223751003B9F6C /* SideBarSignOutCell.swift */,
+				2DF9F97822C2C67900F0615C /* SideBarAdminCell.swift */,
 			);
 			path = SideBar;
 			sourceTree = "<group>";
@@ -323,33 +338,51 @@
 				2D650B8D22223722003B9F6C /* Password.swift */,
 				2D650B9422223724003B9F6C /* Username.swift */,
 				2D650B8E22223722003B9F6C /* Weight.swift */,
-				2D650BA722223750003B9F6C /* PathController.swift */,
 				2D650BB22222378B003B9F6C /* FreeHourTableViewCell.swift */,
 			);
 			path = LoginPage;
 			sourceTree = "<group>";
 		};
-		AC66C425AAE4D178CFFA0874 /* Frameworks */ = {
+		2DF5E3B222C3CE86003655D7 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				4FEF47435C619380C83F0388 /* Pods_MobileJT.framework */,
-				611DFFF76874D723036D4B07 /* Pods_MobileJTTests.framework */,
-				A9CA778548EFDB31AFDBBA8E /* Pods_MobileJTUITests.framework */,
+				2D650BA722223750003B9F6C /* PathController.swift */,
 			);
-			name = Frameworks;
+			path = Navigation;
 			sourceTree = "<group>";
 		};
-		D8FA45C6CFACD35449A5B129 /* Pods */ = {
+		2DF5E3B322C3DC7C003655D7 /* AdminPage */ = {
 			isa = PBXGroup;
 			children = (
-				8C1D4DD2062C7D0621C86256 /* Pods-MobileJT.debug.xcconfig */,
-				A320B4119966DD2EAAE514F7 /* Pods-MobileJT.release.xcconfig */,
-				219FEEE8B655B86B57D743EA /* Pods-MobileJTTests.debug.xcconfig */,
-				1D8105EFE0140556FAEE1BAF /* Pods-MobileJTTests.release.xcconfig */,
-				C37C6DE7DE24B66F1F3F6071 /* Pods-MobileJTUITests.debug.xcconfig */,
-				39A6E845D5661E673BD1F494 /* Pods-MobileJTUITests.release.xcconfig */,
+				2DF5E3B622C3E28F003655D7 /* AdminTableViewController.swift */,
+				2DF5E3B822C3E2A4003655D7 /* AdminTableViewCell.swift */,
+				2DB5306222C40D8000B54EED /* ClassListingTableViewController.swift */,
+				2DB5306422C40DCD00B54EED /* ClassListingTableViewCell.swift */,
+			);
+			path = AdminPage;
+			sourceTree = "<group>";
+		};
+		7DD4884FBA40517103DF081F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2CD08CAFE45F98D675495956 /* Pods-MobileJT.debug.xcconfig */,
+				BA76559AA9E6E011FAEFAD92 /* Pods-MobileJT.release.xcconfig */,
+				02DFA3397E1CB330FC500B1B /* Pods-MobileJTTests.debug.xcconfig */,
+				DC9E59318BA4B105995E37CF /* Pods-MobileJTTests.release.xcconfig */,
+				95AA116E8952E853A7B9C6D3 /* Pods-MobileJTUITests.debug.xcconfig */,
+				05630EBECC4A9CD5DF4D6BE2 /* Pods-MobileJTUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		96C94B9203CFC23811E0EDBC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				825609D03CE33861F8537617 /* Pods_MobileJT.framework */,
+				464E0C4BF2B77AA1E7EE0FEA /* Pods_MobileJTTests.framework */,
+				B6B5EF6F70E33838C1BA36DB /* Pods_MobileJTUITests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -359,11 +392,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D650B222222306C003B9F6C /* Build configuration list for PBXNativeTarget "MobileJT" */;
 			buildPhases = (
-				47FEC88569F3FBF4E72EEA0D /* [CP] Check Pods Manifest.lock */,
+				F99AE7926E7A0F125081A1E9 /* [CP] Check Pods Manifest.lock */,
 				2D650AF62222306B003B9F6C /* Sources */,
 				2D650AF72222306B003B9F6C /* Frameworks */,
 				2D650AF82222306B003B9F6C /* Resources */,
-				19870E00700DF0DE357990B1 /* [CP] Embed Pods Frameworks */,
+				D4158014D65F598C8AF0B816 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -378,7 +411,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D650B252222306C003B9F6C /* Build configuration list for PBXNativeTarget "MobileJTTests" */;
 			buildPhases = (
-				1DD307475BA089A0616EF0C7 /* [CP] Check Pods Manifest.lock */,
+				F702F895C4D9230248A5FAA2 /* [CP] Check Pods Manifest.lock */,
 				2D650B0A2222306C003B9F6C /* Sources */,
 				2D650B0B2222306C003B9F6C /* Frameworks */,
 				2D650B0C2222306C003B9F6C /* Resources */,
@@ -397,7 +430,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D650B282222306C003B9F6C /* Build configuration list for PBXNativeTarget "MobileJTUITests" */;
 			buildPhases = (
-				6B9C83BA4ED228E834FF3826 /* [CP] Check Pods Manifest.lock */,
+				587213E9553D42A235B04F86 /* [CP] Check Pods Manifest.lock */,
 				2D650B152222306C003B9F6C /* Sources */,
 				2D650B162222306C003B9F6C /* Frameworks */,
 				2D650B172222306C003B9F6C /* Resources */,
@@ -485,7 +518,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		19870E00700DF0DE357990B1 /* [CP] Embed Pods Frameworks */ = {
+		587213E9553D42A235B04F86 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MobileJTUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D4158014D65F598C8AF0B816 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -519,7 +574,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MobileJT/Pods-MobileJT-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		1DD307475BA089A0616EF0C7 /* [CP] Check Pods Manifest.lock */ = {
+		F702F895C4D9230248A5FAA2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -541,7 +596,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		47FEC88569F3FBF4E72EEA0D /* [CP] Check Pods Manifest.lock */ = {
+		F99AE7926E7A0F125081A1E9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -563,28 +618,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6B9C83BA4ED228E834FF3826 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MobileJTUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -597,6 +630,7 @@
 				2D650B8B222236A2003B9F6C /* EventManager.swift in Sources */,
 				2D650BAB22223752003B9F6C /* SideBarProfileCell.swift in Sources */,
 				2D650B8622223613003B9F6C /* Day.swift in Sources */,
+				2DF5E3B722C3E28F003655D7 /* AdminTableViewController.swift in Sources */,
 				2D650BB42222378B003B9F6C /* EventTableViewController.swift in Sources */,
 				2D650BB52222378B003B9F6C /* EventViewController.swift in Sources */,
 				2D650B79222235BB003B9F6C /* RepeatCell.swift in Sources */,
@@ -605,6 +639,7 @@
 				2D650B9A22223725003B9F6C /* LoginViewController.swift in Sources */,
 				2D650B6A2222350C003B9F6C /* AddEventTableViewCell.swift in Sources */,
 				2D650B7B222235BB003B9F6C /* AllDayCell.swift in Sources */,
+				2DF9F97922C2C67900F0615C /* SideBarAdminCell.swift in Sources */,
 				2D650B9822223725003B9F6C /* Weight.swift in Sources */,
 				2D650B8822223613003B9F6C /* User.swift in Sources */,
 				2D650B9622223725003B9F6C /* Email.swift in Sources */,
@@ -615,13 +650,16 @@
 				2D650B9922223725003B9F6C /* lName.swift in Sources */,
 				2D650B9B22223725003B9F6C /* fName.swift in Sources */,
 				2D650B9E22223725003B9F6C /* Username.swift in Sources */,
+				2DF5E3B922C3E2A4003655D7 /* AdminTableViewCell.swift in Sources */,
 				2D650B7D222235BB003B9F6C /* BlankCell.swift in Sources */,
 				2D650B8922223613003B9F6C /* Event.swift in Sources */,
 				2D650B7A222235BB003B9F6C /* StartDateCell.swift in Sources */,
 				2D650BAD22223752003B9F6C /* SideBarSignOutCell.swift in Sources */,
 				2D650B8722223613003B9F6C /* Month.swift in Sources */,
 				2D650BC022223810003B9F6C /* SpaceCell.swift in Sources */,
+				2DB5306522C40DCD00B54EED /* ClassListingTableViewCell.swift in Sources */,
 				2D650BAE22223752003B9F6C /* SideBarCalCell.swift in Sources */,
+				2DB5306322C40D8000B54EED /* ClassListingTableViewController.swift in Sources */,
 				2D650B77222235BB003B9F6C /* EndDateCell.swift in Sources */,
 				2D650BBD22223810003B9F6C /* DayCollectionViewCell.swift in Sources */,
 				2D650BB822223793003B9F6C /* ProfileViewController.swift in Sources */,
@@ -726,6 +764,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "MobileJT-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -780,6 +819,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "MobileJT-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -787,7 +827,7 @@
 		};
 		2D650B232222306C003B9F6C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8C1D4DD2062C7D0621C86256 /* Pods-MobileJT.debug.xcconfig */;
+			baseConfigurationReference = 2CD08CAFE45F98D675495956 /* Pods-MobileJT.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -808,7 +848,7 @@
 		};
 		2D650B242222306C003B9F6C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A320B4119966DD2EAAE514F7 /* Pods-MobileJT.release.xcconfig */;
+			baseConfigurationReference = BA76559AA9E6E011FAEFAD92 /* Pods-MobileJT.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -828,7 +868,7 @@
 		};
 		2D650B262222306C003B9F6C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 219FEEE8B655B86B57D743EA /* Pods-MobileJTTests.debug.xcconfig */;
+			baseConfigurationReference = 02DFA3397E1CB330FC500B1B /* Pods-MobileJTTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -849,7 +889,7 @@
 		};
 		2D650B272222306C003B9F6C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1D8105EFE0140556FAEE1BAF /* Pods-MobileJTTests.release.xcconfig */;
+			baseConfigurationReference = DC9E59318BA4B105995E37CF /* Pods-MobileJTTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -870,7 +910,7 @@
 		};
 		2D650B292222306C003B9F6C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C37C6DE7DE24B66F1F3F6071 /* Pods-MobileJTUITests.debug.xcconfig */;
+			baseConfigurationReference = 95AA116E8952E853A7B9C6D3 /* Pods-MobileJTUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -890,7 +930,7 @@
 		};
 		2D650B2A2222306C003B9F6C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 39A6E845D5661E673BD1F494 /* Pods-MobileJTUITests.release.xcconfig */;
+			baseConfigurationReference = 05630EBECC4A9CD5DF4D6BE2 /* Pods-MobileJTUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E3C4A687108486DF417B933D8552A3ED"
+               BlueprintIdentifier = "21947E440048C8BB5F4450E220045767"
                BlueprintName = "MongoSwift"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "MongoSwift.framework">

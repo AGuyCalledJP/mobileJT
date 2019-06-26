@@ -48,8 +48,8 @@ public struct CommandStartedEvent: MongoEvent, InitializableFromOpaquePointer {
 
     /// Initializes a CommandStartedEvent from an OpaquePointer to a mongoc_apm_command_started_t
     fileprivate init(_ event: OpaquePointer) {
-        // swiftlint:disable:next force_unwrapping - documented as always returning a value.
-        self.command = Document(fromPointer: mongoc_apm_command_started_get_command(event)!)
+        // we have to copy because libmongoc owns the pointer.
+        self.command = Document(copying: mongoc_apm_command_started_get_command(event))
         self.databaseName = String(cString: mongoc_apm_command_started_get_database_name(event))
         self.commandName = String(cString: mongoc_apm_command_started_get_command_name(event))
         self.requestId = mongoc_apm_command_started_get_request_id(event)
@@ -89,8 +89,8 @@ public struct CommandSucceededEvent: MongoEvent, InitializableFromOpaquePointer 
     /// Initializes a CommandSucceededEvent from an OpaquePointer to a mongoc_apm_command_succeeded_t
     fileprivate init(_ event: OpaquePointer) {
         self.duration = mongoc_apm_command_succeeded_get_duration(event)
-        // swiftlint:disable:next force_unwrapping - documented as always returning a value.
-        self.reply = Document(fromPointer: mongoc_apm_command_succeeded_get_reply(event)!)
+        // we have to copy because libmongoc owns the pointer.
+        self.reply = Document(copying: mongoc_apm_command_succeeded_get_reply(event))
         self.commandName = String(cString: mongoc_apm_command_succeeded_get_command_name(event))
         self.requestId = mongoc_apm_command_succeeded_get_request_id(event)
         self.operationId = mongoc_apm_command_succeeded_get_operation_id(event)
@@ -132,7 +132,7 @@ public struct CommandFailedEvent: MongoEvent, InitializableFromOpaquePointer {
         self.commandName = String(cString: mongoc_apm_command_failed_get_command_name(event))
         var error = bson_error_t()
         mongoc_apm_command_failed_get_error(event, &error)
-        self.failure = MongoError.commandError(message: toErrorString(error))
+        self.failure = parseMongocError(error) // should always return a ServerError.commandError
         self.requestId = mongoc_apm_command_failed_get_request_id(event)
         self.operationId = mongoc_apm_command_failed_get_operation_id(event)
         self.connectionId = ConnectionId(mongoc_apm_command_failed_get_host(event))
@@ -163,8 +163,10 @@ public struct ServerDescriptionChangedEvent: MongoEvent, InitializableFromOpaque
     fileprivate init(_ event: OpaquePointer) {
         self.connectionId = ConnectionId(mongoc_apm_server_changed_get_host(event))
         var oid = bson_oid_t()
-        mongoc_apm_server_changed_get_topology_id(event, &oid)
-        self.topologyId = ObjectId(fromPointer: &oid)
+        withUnsafeMutablePointer(to: &oid) { oidPtr in
+            mongoc_apm_server_changed_get_topology_id(event, oidPtr)
+        }
+        self.topologyId = ObjectId(bsonOid: oid)
         self.previousDescription = ServerDescription(mongoc_apm_server_changed_get_previous_description(event))
         self.newDescription = ServerDescription(mongoc_apm_server_changed_get_new_description(event))
     }
@@ -188,8 +190,10 @@ public struct ServerOpeningEvent: MongoEvent, InitializableFromOpaquePointer {
     fileprivate init(_ event: OpaquePointer) {
         self.connectionId = ConnectionId(mongoc_apm_server_opening_get_host(event))
         var oid = bson_oid_t()
-        mongoc_apm_server_opening_get_topology_id(event, &oid)
-        self.topologyId = ObjectId(fromPointer: &oid)
+        withUnsafeMutablePointer(to: &oid) { oidPtr in
+            mongoc_apm_server_opening_get_topology_id(event, oidPtr)
+        }
+        self.topologyId = ObjectId(bsonOid: oid)
     }
 }
 
@@ -211,8 +215,10 @@ public struct ServerClosedEvent: MongoEvent, InitializableFromOpaquePointer {
     fileprivate init(_ event: OpaquePointer) {
         self.connectionId = ConnectionId(mongoc_apm_server_closed_get_host(event))
         var oid = bson_oid_t()
-        mongoc_apm_server_closed_get_topology_id(event, &oid)
-        self.topologyId = ObjectId(fromPointer: &oid)
+        withUnsafeMutablePointer(to: &oid) { oidPtr in
+            mongoc_apm_server_closed_get_topology_id(event, oidPtr)
+        }
+        self.topologyId = ObjectId(bsonOid: oid)
     }
 }
 
@@ -236,8 +242,10 @@ public struct TopologyDescriptionChangedEvent: MongoEvent, InitializableFromOpaq
     /// Initializes a TopologyDescriptionChangedEvent from an OpaquePointer to a mongoc_apm_topology_changed_t
     fileprivate init(_ event: OpaquePointer) {
         var oid = bson_oid_t()
-        mongoc_apm_topology_changed_get_topology_id(event, &oid)
-        self.topologyId = ObjectId(fromPointer: &oid)
+        withUnsafeMutablePointer(to: &oid) { oidPtr in
+            mongoc_apm_topology_changed_get_topology_id(event, oidPtr)
+        }
+        self.topologyId = ObjectId(bsonOid: oid)
         self.previousDescription = TopologyDescription(mongoc_apm_topology_changed_get_previous_description(event))
         self.newDescription = TopologyDescription(mongoc_apm_topology_changed_get_new_description(event))
     }
@@ -257,8 +265,10 @@ public struct TopologyOpeningEvent: MongoEvent, InitializableFromOpaquePointer {
     /// Initializes a TopologyOpeningEvent from an OpaquePointer to a mongoc_apm_topology_opening_t
     fileprivate init(_ event: OpaquePointer) {
         var oid = bson_oid_t()
-        mongoc_apm_topology_opening_get_topology_id(event, &oid)
-        self.topologyId = ObjectId(fromPointer: &oid)
+        withUnsafeMutablePointer(to: &oid) { oidPtr in
+            mongoc_apm_topology_opening_get_topology_id(event, oidPtr)
+        }
+        self.topologyId = ObjectId(bsonOid: oid)
     }
 }
 
@@ -276,8 +286,10 @@ public struct TopologyClosedEvent: MongoEvent, InitializableFromOpaquePointer {
     /// Initializes a TopologyClosedEvent from an OpaquePointer to a mongoc_apm_topology_closed_t
     fileprivate init(_ event: OpaquePointer) {
         var oid = bson_oid_t()
-        mongoc_apm_topology_closed_get_topology_id(event, &oid)
-        self.topologyId = ObjectId(fromPointer: &oid)
+        withUnsafeMutablePointer(to: &oid) { oidPtr in
+            mongoc_apm_topology_closed_get_topology_id(event, oidPtr)
+        }
+        self.topologyId = ObjectId(bsonOid: oid)
     }
 }
 
@@ -319,8 +331,8 @@ public struct ServerHeartbeatSucceededEvent: MongoEvent, InitializableFromOpaque
     /// Initializes a ServerHeartbeatSucceededEvent from an OpaquePointer to a mongoc_apm_server_heartbeat_succeeded_t
     fileprivate init(_ event: OpaquePointer) {
         self.duration = mongoc_apm_server_heartbeat_succeeded_get_duration(event)
-        // swiftlint:disable:next force_unwrapping - documented as always returning a value.
-        self.reply = Document(fromPointer: mongoc_apm_server_heartbeat_succeeded_get_reply(event)!)
+        // we have to copy because libmongoc owns the pointer.
+        self.reply = Document(copying: mongoc_apm_server_heartbeat_succeeded_get_reply(event))
         self.connectionId = ConnectionId(mongoc_apm_server_heartbeat_succeeded_get_host(event))
     }
 }
@@ -347,7 +359,7 @@ public struct ServerHeartbeatFailedEvent: MongoEvent, InitializableFromOpaquePoi
         self.duration = mongoc_apm_server_heartbeat_failed_get_duration(event)
         var error = bson_error_t()
         mongoc_apm_server_heartbeat_failed_get_error(event, &error)
-        self.failure = MongoError.commandError(message: toErrorString(error))
+        self.failure = parseMongocError(error)
         self.connectionId = ConnectionId(mongoc_apm_server_heartbeat_failed_get_host(event))
     }
 }
