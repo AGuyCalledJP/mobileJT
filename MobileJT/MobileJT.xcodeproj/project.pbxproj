@@ -58,9 +58,11 @@
 		2D650BC022223810003B9F6C /* SpaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D650BBC22223810003B9F6C /* SpaceCell.swift */; };
 		2DB5306322C40D8000B54EED /* ClassListingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB5306222C40D8000B54EED /* ClassListingTableViewController.swift */; };
 		2DB5306522C40DCD00B54EED /* ClassListingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB5306422C40DCD00B54EED /* ClassListingTableViewCell.swift */; };
+		2DB5306822C4296300B54EED /* AdminSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB5306722C4296300B54EED /* AdminSettingsTableViewController.swift */; };
+		2DB5306A22C4297300B54EED /* AdminSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB5306922C4297300B54EED /* AdminSettingsTableViewCell.swift */; };
+		2DB5306C22C42E6600B54EED /* SideBarSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB5306B22C42E6600B54EED /* SideBarSettingsTableViewCell.swift */; };
 		2DF5E3B722C3E28F003655D7 /* AdminTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF5E3B622C3E28F003655D7 /* AdminTableViewController.swift */; };
 		2DF5E3B922C3E2A4003655D7 /* AdminTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF5E3B822C3E2A4003655D7 /* AdminTableViewCell.swift */; };
-		2DF9F97922C2C67900F0615C /* SideBarAdminCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF9F97822C2C67900F0615C /* SideBarAdminCell.swift */; };
 		4CD5D4B7073B59C1A69DF285 /* Pods_MobileJTUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6B5EF6F70E33838C1BA36DB /* Pods_MobileJTUITests.framework */; };
 		B5C88B07EB84F4B4683076E1 /* Pods_MobileJT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825609D03CE33861F8537617 /* Pods_MobileJT.framework */; };
 /* End PBXBuildFile section */
@@ -142,10 +144,12 @@
 		2D650BBC22223810003B9F6C /* SpaceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceCell.swift; sourceTree = "<group>"; };
 		2DB5306222C40D8000B54EED /* ClassListingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassListingTableViewController.swift; sourceTree = "<group>"; };
 		2DB5306422C40DCD00B54EED /* ClassListingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassListingTableViewCell.swift; sourceTree = "<group>"; };
+		2DB5306722C4296300B54EED /* AdminSettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminSettingsTableViewController.swift; sourceTree = "<group>"; };
+		2DB5306922C4297300B54EED /* AdminSettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminSettingsTableViewCell.swift; sourceTree = "<group>"; };
+		2DB5306B22C42E6600B54EED /* SideBarSettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarSettingsTableViewCell.swift; sourceTree = "<group>"; };
 		2DC44FB922C2BDC800517587 /* MobileJT-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MobileJT-Bridging-Header.h"; sourceTree = "<group>"; };
 		2DF5E3B622C3E28F003655D7 /* AdminTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminTableViewController.swift; sourceTree = "<group>"; };
 		2DF5E3B822C3E2A4003655D7 /* AdminTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminTableViewCell.swift; sourceTree = "<group>"; };
-		2DF9F97822C2C67900F0615C /* SideBarAdminCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarAdminCell.swift; sourceTree = "<group>"; };
 		464E0C4BF2B77AA1E7EE0FEA /* Pods_MobileJTTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileJTTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		825609D03CE33861F8537617 /* Pods_MobileJT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileJT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95AA116E8952E853A7B9C6D3 /* Pods-MobileJTUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileJTUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MobileJTUITests/Pods-MobileJTUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -216,9 +220,8 @@
 				2D650B2B222230DF003B9F6C /* MobileJT-Bridging-Header.h */,
 				2DF5E3B222C3CE86003655D7 /* Navigation */,
 				2DF3DB5422458D57000CD828 /* LoginPage */,
-				2DF5E3B322C3DC7C003655D7 /* AdminPage */,
+				2DB5306622C4290D00B54EED /* AdminSettings */,
 				2DF3DB5322458D07000CD828 /* ProfilePage */,
-				2DF3DB5222458C85000CD828 /* SideBar */,
 				2DF3DB5122458BC6000CD828 /* Depreciated */,
 				2DF3DB4F22458B95000CD828 /* DayCollection */,
 				2DF3DB4E22458B61000CD828 /* EventManagement */,
@@ -244,6 +247,26 @@
 				2D650B1F2222306C003B9F6C /* Info.plist */,
 			);
 			path = MobileJTUITests;
+			sourceTree = "<group>";
+		};
+		2DB5306622C4290D00B54EED /* AdminSettings */ = {
+			isa = PBXGroup;
+			children = (
+				2DB5306722C4296300B54EED /* AdminSettingsTableViewController.swift */,
+				2DB5306922C4297300B54EED /* AdminSettingsTableViewCell.swift */,
+				2DB5306D22C437B300B54EED /* UserList */,
+				2DF5E3B322C3DC7C003655D7 /* CourseAdmininstration */,
+			);
+			path = AdminSettings;
+			sourceTree = "<group>";
+		};
+		2DB5306D22C437B300B54EED /* UserList */ = {
+			isa = PBXGroup;
+			children = (
+				2DF5E3B622C3E28F003655D7 /* AdminTableViewController.swift */,
+				2DF5E3B822C3E2A4003655D7 /* AdminTableViewCell.swift */,
+			);
+			path = UserList;
 			sourceTree = "<group>";
 		};
 		2DF3DB4C22458AEA000CD828 /* AddEvent */ = {
@@ -313,7 +336,7 @@
 				2D650BA922223752003B9F6C /* SideBarCalCell.swift */,
 				2D650BA622223750003B9F6C /* SideBarProfileCell.swift */,
 				2D650BA822223751003B9F6C /* SideBarSignOutCell.swift */,
-				2DF9F97822C2C67900F0615C /* SideBarAdminCell.swift */,
+				2DB5306B22C42E6600B54EED /* SideBarSettingsTableViewCell.swift */,
 			);
 			path = SideBar;
 			sourceTree = "<group>";
@@ -347,19 +370,18 @@
 			isa = PBXGroup;
 			children = (
 				2D650BA722223750003B9F6C /* PathController.swift */,
+				2DF3DB5222458C85000CD828 /* SideBar */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
 		};
-		2DF5E3B322C3DC7C003655D7 /* AdminPage */ = {
+		2DF5E3B322C3DC7C003655D7 /* CourseAdmininstration */ = {
 			isa = PBXGroup;
 			children = (
-				2DF5E3B622C3E28F003655D7 /* AdminTableViewController.swift */,
-				2DF5E3B822C3E2A4003655D7 /* AdminTableViewCell.swift */,
 				2DB5306222C40D8000B54EED /* ClassListingTableViewController.swift */,
 				2DB5306422C40DCD00B54EED /* ClassListingTableViewCell.swift */,
 			);
-			path = AdminPage;
+			path = CourseAdmininstration;
 			sourceTree = "<group>";
 		};
 		7DD4884FBA40517103DF081F /* Pods */ = {
@@ -638,11 +660,12 @@
 				2D650B9C22223725003B9F6C /* LabelCell.swift in Sources */,
 				2D650B9A22223725003B9F6C /* LoginViewController.swift in Sources */,
 				2D650B6A2222350C003B9F6C /* AddEventTableViewCell.swift in Sources */,
+				2DB5306C22C42E6600B54EED /* SideBarSettingsTableViewCell.swift in Sources */,
 				2D650B7B222235BB003B9F6C /* AllDayCell.swift in Sources */,
-				2DF9F97922C2C67900F0615C /* SideBarAdminCell.swift in Sources */,
 				2D650B9822223725003B9F6C /* Weight.swift in Sources */,
 				2D650B8822223613003B9F6C /* User.swift in Sources */,
 				2D650B9622223725003B9F6C /* Email.swift in Sources */,
+				2DB5306822C4296300B54EED /* AdminSettingsTableViewController.swift in Sources */,
 				2D650B7E222235BB003B9F6C /* EndRepeatCell.swift in Sources */,
 				2D650B9722223725003B9F6C /* Password.swift in Sources */,
 				2D650BAA22223752003B9F6C /* SideBar.swift in Sources */,
@@ -650,6 +673,7 @@
 				2D650B9922223725003B9F6C /* lName.swift in Sources */,
 				2D650B9B22223725003B9F6C /* fName.swift in Sources */,
 				2D650B9E22223725003B9F6C /* Username.swift in Sources */,
+				2DB5306A22C4297300B54EED /* AdminSettingsTableViewCell.swift in Sources */,
 				2DF5E3B922C3E2A4003655D7 /* AdminTableViewCell.swift in Sources */,
 				2D650B7D222235BB003B9F6C /* BlankCell.swift in Sources */,
 				2D650B8922223613003B9F6C /* Event.swift in Sources */,

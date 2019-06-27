@@ -67,11 +67,11 @@ class PathController: UITableViewController {
                 return cell
             }
             else if indexPath.row == 2 { //Make it so that if user doesnt have admin delegation this doesnt appear
-                let cellIdentifier = "SideBarAdminCell"
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? SideBarAdminCell  else {
-                    fatalError("The dequeued cell is not an instance of SideBarAdminCell.")
+                let cellIdentifier = "Settings"
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? SideBarSettingsTableViewCell  else {
+                    fatalError("The dequeued cell is not an instance of SideBarSettingsTableViewCell.")
                 }
-                cell.label.text = "Admin"
+                cell.label.text = "Settings"
                 
                 return cell
             }
@@ -127,12 +127,11 @@ class PathController: UITableViewController {
                 s.user = self.user
                 s.uid = self.uid
                 s.allEvents = (self.user?.events)!
-                print("MJ gone")
-            case "Admin":
-                print("WIP")
-                //Do transition things here
+            case "Settings":
+                print("Im gonna change some things around here")
             default:
-                print("A nibba dead")
+                //How do I do nothing?
+                let _ = 1
         }
     }
 }
