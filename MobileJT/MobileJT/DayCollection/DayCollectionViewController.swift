@@ -36,12 +36,6 @@ class DayCollectionViewController: UICollectionViewController {
         for i in hold1 {
             date.append((Int(i))!)
         }
-//        if (allEvents.isEmpty) {
-//            if (loadEvents() != nil) {
-//                allEvents = loadEvents()!
-//
-//            }
-//        }
         currentMonth = date[0] - 1
         currentYear = date[2]
         self.month = loadMonth()
@@ -50,8 +44,8 @@ class DayCollectionViewController: UICollectionViewController {
         let year = String(currentYear)
         self.title = name! + " " + year
         self.days = (month?.days)!
-        navigationItem.leftBarButtonItem?.title = (month?.prevMonth())!
-        navigationItem.rightBarButtonItem?.title = (month?.nextMonth())!
+        navigationItem.leftBarButtonItems![1].title = (month?.prevMonth())!
+        navigationItem.rightBarButtonItems![1].title = (month?.nextMonth())!
     }
     
     //Change this from loading days to loading a month of days at a time
@@ -67,8 +61,8 @@ class DayCollectionViewController: UICollectionViewController {
         let year = String(currentYear)
         self.title = name! + " " + year
         self.days = (month?.days)!
-        navigationItem.leftBarButtonItem?.title = (month?.prevMonth())!
-        navigationItem.rightBarButtonItem?.title = (month?.nextMonth())!
+        navigationItem.leftBarButtonItems![1].title = (month?.prevMonth())!
+        navigationItem.rightBarButtonItems![1].title = (month?.nextMonth())!
     }
     
     

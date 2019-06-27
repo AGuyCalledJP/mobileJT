@@ -1,6 +1,6 @@
 PODS:
   - mongo-embedded-c-driver (1.13.0-4.0.4)
-  - MongoSwift (0.0.9):
+  - MongoSwift (0.1.3):
     - mongo-embedded-c-driver (~> 1.13.0-4.0.0)
   - MultiSelectSegmentedControl (1.2.1)
   - SideMenu (5.0.3)
@@ -19,7 +19,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   mongo-embedded-c-driver: b46360baa15fc142baae80628822f26663220bde
-  MongoSwift: c7420b38a7e223439667f8c50aefada29c270df8
+  MongoSwift: 5d2fdc52e72181830148ac8a90f32b8025c97177
   MultiSelectSegmentedControl: 495230a5a5fbb6edb03d541f173433922ef0c592
   SideMenu: 1dcaabce84538c53325c287f7fe62999379a641c
 

@@ -77,7 +77,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, CLLocationMana
         // initialize global state
         MongoSwift.initialize()
         
-        LoginViewController.client = try MongoClient(connectionString: "mongodb://localhost:27017")
+        LoginViewController.client = try MongoClient("mongodb://localhost:27017")
         LoginViewController.db = try LoginViewController.client?.db("mobileJT")
 //
 //        do {
@@ -88,7 +88,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, CLLocationMana
 //        }
         
         // free all resources
-        MongoSwift.cleanup()
+        MongoSwift.cleanupMongoSwift()
     }
     
 
@@ -124,6 +124,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate, CLLocationMana
     
     //Update this once events are saving to make it load events for the user
     func login() throws {
+//        let hashpass = sha256(pass!)
+//        print(hashpass)
         let collection = try? LoginViewController.db?.collection("Users")
         let query : Document = ["Username": use!, "Password": pass!]
         do {
@@ -137,14 +139,30 @@ class LoginViewController: UIViewController, UITextFieldDelegate, CLLocationMana
             let email = doc["Email"] as! String
             let username = doc["Username"] as! String
             let password = doc["Password"] as! String
+            let delegation = doc["Delegation"] as! String
             //Update in the future
             let events = getEvents()
-            user = User(fName, lName, height, weight, events, username, password, email)
+            user = User(fName, lName, Int(height), Int(weight), events, username, password, email, delegation)
         }
         catch {
             print("Error with Mongodb: \(error)")
         }
     }
+    
+//    func sha256(_ data: Data) -> Data? {
+//        guard let res = NSMutableData(length: Int(CC_SHA256_DIGEST_LENGTH)) else { return nil }
+//        CC_SHA256((data as NSData).bytes, CC_LONG(data.count), res.mutableBytes.assumingMemoryBound(to: UInt8.self))
+//        return res as Data
+//    }
+//    
+//    func sha256(_ str: String) -> String? {
+//        guard
+//            let data = str.data(using: String.Encoding.utf8),
+//            let shaData = sha256(data)
+//            else { return nil }
+//        let rc = shaData.base64EncodedString(options: [])
+//        return rc
+//    }
     
     private func getEvents() -> [Event] {
         var events = [Event]()
@@ -169,7 +187,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, CLLocationMana
                 //Update in the future
                 let ongoing = makeOngoing(id)
                 print(ongoing)
-                let e = Event(name, ongoing, location, yearS, yearE, monthS, monthE, dayS, dayE, startTimeH, endTimeH, minS, minE)
+                let e = Event(name, ongoing, location, Int(yearS), Int(yearE), Int(monthS), Int(monthE), Int(dayS), Int(dayE), Int(startTimeH), Int(endTimeH), Int(minS), Int(minE))
                 events.append(e!)
                 print("Event")
                 print(e)
@@ -221,7 +239,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, CLLocationMana
         if let sourceViewController = sender.source as? NewMemberTableViewController, let user = sourceViewController.user {
             let collection = try? LoginViewController.db?.collection("Users")
             if !(user.userName?.isEmpty)! {
-                let doc: Document = ["fName": user.fName!, "lName": user.lName!, "Height": user.height!, "Weight": user.weight!, "Email": user.email!, "Username": user.userName!, "Password": user.password!]
+                let doc: Document = ["fName": user.fName!, "lName": user.lName!, "Height": user.height!, "Weight": user.weight!, "Email": user.email!, "Username": user.userName!, "Password": user.password!, "Delegation": user.delegation!]
                 do {
                     try collection!!.insertOne(doc)
                 }
