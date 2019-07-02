@@ -13,7 +13,6 @@
 		2D650B48222230E0003B9F6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D650B36222230DF003B9F6C /* Assets.xcassets */; };
 		2D650B4A222230E0003B9F6C /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 2D650B38222230E0003B9F6C /* Base.lproj */; };
 		2D650B4B222230E0003B9F6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D650B39222230E0003B9F6C /* Main.storyboard */; };
-		2D650B4D222230E0003B9F6C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D650B3B222230E0003B9F6C /* Info.plist */; };
 		2D650B4E222230E0003B9F6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D650B3C222230E0003B9F6C /* AppDelegate.swift */; };
 		2D650B6A2222350C003B9F6C /* AddEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D650B672222350C003B9F6C /* AddEventTableViewCell.swift */; };
 		2D650B6B2222350C003B9F6C /* AddEventTableViewController?.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D650B682222350C003B9F6C /* AddEventTableViewController?.swift */; };
@@ -517,7 +516,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D650B4B222230E0003B9F6C /* Main.storyboard in Resources */,
-				2D650B4D222230E0003B9F6C /* Info.plist in Resources */,
 				2D650B4A222230E0003B9F6C /* Base.lproj in Resources */,
 				2D650B48222230E0003B9F6C /* Assets.xcassets in Resources */,
 			);

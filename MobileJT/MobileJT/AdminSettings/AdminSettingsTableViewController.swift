@@ -18,12 +18,10 @@ class AdminSettingsTableViewController: UITableViewController {
         super.viewDidLoad()
         makeTeam()
         team.sort()
-        print(team)
     }
     
     private func makeTeam() {
-        let collection = try? LoginViewController.db?.collection("User")
-        print("What in tarnation")
+        let collection = try? LoginViewController.db?.collection("Users")
         do {
             let document = try collection?!.find()
             while let doc = document!.next() {
@@ -163,18 +161,6 @@ class AdminSettingsTableViewController: UITableViewController {
             self.performSegue(withIdentifier: "Academics", sender: self)
         }
     }
-    
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }
-    }
-    */
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -193,5 +179,11 @@ class AdminSettingsTableViewController: UITableViewController {
         default:
             fatalError("Unexpected destination: \(segue.destination)")
         }
+    }
+    
+    @IBAction func unwindToSettings(sender: UIStoryboardSegue) {
+        team = [User]()
+        makeTeam()
+        print(team.count)
     }
 }
